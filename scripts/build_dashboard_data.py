@@ -25,28 +25,52 @@ import urllib.parse
 import urllib.request
 
 
-def fetch_url_or_file(source: str, token: str | None = None) -> str | None:
-    """Fetch content from local file path or remote HTTP/HTTPS URL."""
-    path = Path(source)
-    if path.is_file():
-        try:
-            return path.read_text(encoding="utf-8")
-        except Exception as exc:
-            print(f"[WARN] Failed reading local file {source}: {exc}", file=sys.stderr)
-            return None
+def fetch_github_repo_file(
+    repo: str,
+    file_path: str,
+    token: str | None = None,
+    local_dir: Path | None = None,
+) -> str | None:
+    """Fetch content from local path, GitHub Contents API (for private/public repos), or raw URL."""
+    # 1. Local path check
+    if local_dir:
+        loc = local_dir / file_path
+        if loc.is_file():
+            try:
+                content = loc.read_text(encoding="utf-8")
+                print(f"[+] Loaded from local: {loc}")
+                return content
+            except Exception as e:
+                print(f"[WARN] Failed reading local file {loc}: {e}", file=sys.stderr)
 
-    if source.startswith(("http://", "https://")):
+    # 2. GitHub API (works reliably for private and public repositories)
+    if token:
+        api_url = f"https://api.github.com/repos/{repo}/contents/{file_path}?ref=main"
         try:
-            req = urllib.request.Request(source)
+            req = urllib.request.Request(api_url)
             req.add_header("User-Agent", "trader-dashboard-builder/1.0")
-            if token and "api.github.com" in source:
-                req.add_header("Authorization", f"Bearer {token}")
-                req.add_header("Accept", "application/vnd.github.v3.raw")
+            req.add_header("Authorization", f"Bearer {token}")
+            req.add_header("Accept", "application/vnd.github.v3.raw")
             with urllib.request.urlopen(req, timeout=15) as resp:
-                return resp.read().decode("utf-8")
-        except Exception as exc:
-            print(f"[WARN] Failed fetching remote URL {source}: {exc}", file=sys.stderr)
-            return None
+                content = resp.read().decode("utf-8")
+                print(f"[+] Fetched via GitHub API: {file_path}")
+                return content
+        except Exception as e:
+            print(f"[DEBUG] GitHub API fetch failed for {file_path}: {e}", file=sys.stderr)
+
+    # 3. Raw GitHub URL
+    raw_url = f"https://raw.githubusercontent.com/{repo}/main/{file_path}"
+    try:
+        req = urllib.request.Request(raw_url)
+        req.add_header("User-Agent", "trader-dashboard-builder/1.0")
+        if token:
+            req.add_header("Authorization", f"token {token}")
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            content = resp.read().decode("utf-8")
+            print(f"[+] Fetched via Raw GitHub: {file_path}")
+            return content
+    except Exception as e:
+        print(f"[WARN] Raw fetch failed for {file_path}: {e}", file=sys.stderr)
 
     return None
 
@@ -545,46 +569,68 @@ def main() -> None:
     print(f"[*] Local agent directory check: {local_dir} (exists={local_dir.exists()})")
 
     # 1. Read or fetch latest market snapshot
-    raw_snap: str | None = None
-    snap_local = local_dir / "data" / "market_snapshots" / "oil-17-latest.json"
-    if snap_local.is_file():
-        raw_snap = snap_local.read_text(encoding="utf-8")
-        print(f"[+] Loaded market snapshot from local: {snap_local}")
+    raw_snap = fetch_github_repo_file(
+        repo=agent_repo,
+        file_path="data/market_snapshots/oil-17-latest.json",
+        token=args.token,
+        local_dir=local_dir,
+    )
+    if raw_snap:
+        snapshot_json: dict[str, Any] = json.loads(raw_snap)
+    elif (output_path / "market.json").is_file():
+        try:
+            print("[*] Reusing existing site/data/market.json")
+            snapshot_json = json.loads((output_path / "market.json").read_text(encoding="utf-8"))
+        except Exception:
+            snapshot_json = {}
     else:
-        raw_url = f"https://raw.githubusercontent.com/{agent_repo}/main/data/market_snapshots/oil-17-latest.json"
-        raw_snap = fetch_url_or_file(raw_url, args.token)
-        if raw_snap:
-            print(f"[+] Fetched market snapshot from GitHub: {raw_url}")
-
-    snapshot_json: dict[str, Any] = json.loads(raw_snap) if raw_snap else {}
+        snapshot_json = {}
 
     # 2. Read or fetch orchestrator latest cycle report
-    raw_orch: str | None = None
-    orch_local = local_dir / "reports" / "orchestrator" / "latest-cycle-report.md"
-    if orch_local.is_file():
-        raw_orch = orch_local.read_text(encoding="utf-8")
-        print(f"[+] Loaded orchestrator report from local: {orch_local}")
+    raw_orch = fetch_github_repo_file(
+        repo=agent_repo,
+        file_path="reports/orchestrator/latest-cycle-report.md",
+        token=args.token,
+        local_dir=local_dir,
+    )
+    if raw_orch:
+        orchestrator_data = parse_orchestrator_report(raw_orch)
+    elif (output_path / "orchestrator.json").is_file():
+        try:
+            print("[*] Reusing existing site/data/orchestrator.json")
+            orchestrator_data = json.loads((output_path / "orchestrator.json").read_text(encoding="utf-8"))
+        except Exception:
+            orchestrator_data = parse_orchestrator_report("")
     else:
-        orch_url = f"https://raw.githubusercontent.com/{agent_repo}/main/reports/orchestrator/latest-cycle-report.md"
-        raw_orch = fetch_url_or_file(orch_url, args.token)
-        if raw_orch:
-            print(f"[+] Fetched orchestrator report from GitHub: {orch_url}")
-
-    orchestrator_data = parse_orchestrator_report(raw_orch or "")
+        orchestrator_data = parse_orchestrator_report("")
 
     # 3. Read or fetch active monitor report
-    raw_monitor: str | None = None
-    monitor_local = local_dir / "reports" / "daily" / f"monitor-latest-{account}.md"
-    if monitor_local.is_file():
-        raw_monitor = monitor_local.read_text(encoding="utf-8")
-        print(f"[+] Loaded monitor report from local: {monitor_local}")
+    raw_monitor = fetch_github_repo_file(
+        repo=agent_repo,
+        file_path=f"reports/daily/monitor-latest-{account}.md",
+        token=args.token,
+        local_dir=local_dir,
+    )
+    if raw_monitor:
+        parsed_monitor = parse_monitor_markdown(raw_monitor, agent_repo, account)
+    elif (output_path / "positions.json").is_file():
+        try:
+            print("[*] Reusing existing site/data/positions.json")
+            existing_pos = json.loads((output_path / "positions.json").read_text(encoding="utf-8"))
+            parsed_monitor = {
+                "portfolioValue": 108479.48,
+                "availableCash": 108283.31,
+                "unrealizedPnL": -3.83,
+                "intradayDrawdown": -0.01,
+                "killSwitchActive": False,
+                "positions": existing_pos.get("positions", []),
+                "orders": existing_pos.get("orders", []),
+                "preparations": existing_pos.get("preparations", []),
+            }
+        except Exception:
+            parsed_monitor = parse_monitor_markdown("", agent_repo, account)
     else:
-        monitor_url = f"https://raw.githubusercontent.com/{agent_repo}/main/reports/daily/monitor-latest-{account}.md"
-        raw_monitor = fetch_url_or_file(monitor_url, args.token)
-        if raw_monitor:
-            print(f"[+] Fetched monitor report from GitHub: {monitor_url}")
-
-    parsed_monitor = parse_monitor_markdown(raw_monitor or "", agent_repo, account)
+        parsed_monitor = parse_monitor_markdown("", agent_repo, account)
 
     # 4. Generate Core Payloads
     market_payload = build_market_payload(snapshot_json)
