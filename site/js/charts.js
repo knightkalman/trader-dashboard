@@ -106,3 +106,4 @@ function renderDivergenceGauge(containerId, divergencePct) {
     </div>
   `;
 }
+
