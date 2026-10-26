@@ -8,7 +8,13 @@ let refreshTimerInterval = null;
 
 async function fetchJson(endpoint) {
   try {
-    const res = await fetch(`${endpoint}?_t=${Date.now()}`);
+    const res = await fetch(`${endpoint}?_t=${Date.now()}`, {
+      cache: "no-store",
+      headers: {
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache",
+      },
+    });
     if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${endpoint}`);
     return await res.json();
   } catch (err) {
