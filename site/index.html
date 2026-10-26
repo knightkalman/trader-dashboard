@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1419">
+  <title>eToro Autonomous Trading Observability Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎛️</text></svg>">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand-section">
+        <span class="brand-logo">⚡ TRADER DASHBOARD</span>
+        <span id="account-mode-badge" class="badge badge-demo">DEMO</span>
+        <span id="orchestrator-status-badge" class="badge badge-safe">MODE: PREPARE_ONLY</span>
+      </div>
+
+      <div class="header-controls">
+        <span class="refresh-timer" id="last-updated-text">Syncing...</span>
+        <span class="refresh-timer">Auto-refresh in <strong id="refresh-countdown">60s</strong></span>
+        <a id="link-issue-panel" href="https://github.com/knightkalman/trader-agent/issues/1" target="_blank" class="btn-ctrl btn-primary">
+          🎛️ Issue #1 Live Control Panel
+        </a>
+        <a href="https://github.com/knightkalman/trader-agent/actions/workflows/trading-agent-pipeline.yml" target="_blank" class="btn-ctrl">
+          ⚙️ Actions UI
+        </a>
+      </div>
+    </header>
+
+    <!-- KPI Metric Strip -->
+    <div class="kpi-strip">
+      <div class="kpi-card highlight-blue">
+        <div class="kpi-label">Total Portfolio Equity</div>
+        <div id="kpi-equity" class="kpi-value">--</div>
+        <div class="kpi-sub">Demo Account Sizing</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-label">Available Cash</div>
+        <div id="kpi-cash" class="kpi-value">--</div>
+        <div class="kpi-sub">Unencumbered Liquidity</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-label">Used Margin</div>
+        <div id="kpi-margin" class="kpi-value">--</div>
+        <div class="kpi-sub">Active CFD Exposure</div>
+      </div>
+
+      <div class="kpi-card highlight-green">
+        <div class="kpi-label">Unrealized P&amp;L</div>
+        <div id="kpi-unrealized" class="kpi-value val-green">--</div>
+        <div class="kpi-sub">Live Floating Return</div>
+      </div>
+
+      <div class="kpi-card highlight-amber">
+        <div class="kpi-label">Realized Net P&amp;L Today</div>
+        <div id="kpi-realized" class="kpi-value">--</div>
+        <div class="kpi-sub">Fully Loaded (netProfit - fees)</div>
+      </div>
+    </div>
+
+    <!-- Alert / Pending Preparations Banner -->
+    <div id="preparations-banner" class="alert-banner" style="display:none;"></div>
+
+    <!-- PANEL 1: Active Positions & Running Orders (Human-in-the-Loop Controls) -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>🎯 Active Positions &amp; Human-in-the-Loop Controls</span>
+          <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(Market: OIL · ID 17)</span>
+        </div>
+        <span style="font-size:12px; color:var(--text-muted);">
+          Click any action below to trigger instant control in <a href="https://github.com/knightkalman/trader-agent" target="_blank">trader-agent</a>
+        </span>
+      </div>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Position ID</th>
+              <th>Instrument</th>
+              <th>Side / Lev</th>
+              <th>Units</th>
+              <th>Invested</th>
+              <th>Open &rarr; Current</th>
+              <th>Unrealized P&amp;L</th>
+              <th>Stop-Loss / TP</th>
+              <th>Human-in-the-Loop Action Links</th>
+            </tr>
+          </thead>
+          <tbody id="active-positions-table-body">
+            <tr><td colspan="9" style="text-align:center; color:var(--text-dim); padding:20px;">Loading active trades...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Grid 2-Col: Orchestrator Decision Funnel & Market Context -->
+    <div class="grid-2col">
+      <!-- PANEL 2: Orchestrator 10-Minute Confluence & Parity Visualizer -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">
+            <span>🧠 Orchestrator Decision Funnel</span>
+          </div>
+          <span id="orchestrator-status-text" class="mono" style="font-size:12px; color:var(--text-muted);">Cycle: --</span>
+        </div>
+
+        <div class="confluence-box">
+          <div class="confluence-header">
+            <div>
+              <div style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:600;">100-Point Confluence Score</div>
+              <div style="font-size:12px; color:var(--text-dim);" id="confluence-threshold-val">--</div>
+            </div>
+            <div id="confluence-score-val" class="confluence-score-big">--</div>
+          </div>
+
+          <div class="progress-track">
+            <div id="confluence-progress-fill" class="progress-fill" style="width:0%;"></div>
+            <div id="confluence-threshold-marker" class="threshold-marker" style="left:65%;"></div>
+          </div>
+
+          <div class="pillar-list">
+            <div class="pillar-row">
+              <span style="width:160px; color:var(--text-muted);">Regime &amp; News (Max 35)</span>
+              <div class="pillar-bar-container"><div id="pillar-regime-bar" class="pillar-bar-fill" style="width:0%;"></div></div>
+              <span id="pillar-regime-val" class="mono" style="width:50px; text-align:right;">--</span>
+            </div>
+
+            <div class="pillar-row">
+              <span style="width:160px; color:var(--text-muted);">Window &amp; HTF (Max 20)</span>
+              <div class="pillar-bar-container"><div id="pillar-htf-bar" class="pillar-bar-fill" style="width:0%;"></div></div>
+              <span id="pillar-htf-val" class="mono" style="width:50px; text-align:right;">--</span>
+            </div>
+
+            <div class="pillar-row">
+              <span style="width:160px; color:var(--text-muted);">Momentum (RSI/ADX) (15)</span>
+              <div class="pillar-bar-container"><div id="pillar-mom-bar" class="pillar-bar-fill" style="width:0%;"></div></div>
+              <span id="pillar-mom-val" class="mono" style="width:50px; text-align:right;">--</span>
+            </div>
+
+            <div class="pillar-row">
+              <span style="width:160px; color:var(--text-muted);">Volatility &amp; RVOL (15)</span>
+              <div class="pillar-bar-container"><div id="pillar-vol-bar" class="pillar-bar-fill" style="width:0%;"></div></div>
+              <span id="pillar-vol-val" class="mono" style="width:50px; text-align:right;">--</span>
+            </div>
+
+            <div class="pillar-row">
+              <span style="width:160px; color:var(--text-muted);">Spread Efficiency (15)</span>
+              <div class="pillar-bar-container"><div id="pillar-spread-bar" class="pillar-bar-fill" style="width:0%;"></div></div>
+              <span id="pillar-spread-val" class="mono" style="width:50px; text-align:right;">--</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size:12px; margin-top:12px; color:var(--text-muted);">
+          <strong>Diagnostic:</strong> <span id="orchestrator-diag-text">--</span>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-bottom:6px;">6-Block Data Parity Gate</div>
+          <div class="parity-grid">
+            <div class="parity-item"><span class="icon-check">✓</span> 1. Upstream Signal</div>
+            <div class="parity-item"><span class="icon-check">✓</span> 2. Benchmarks (WTI/Brent)</div>
+            <div class="parity-item"><span class="icon-check">✓</span> 3. Direction Compression</div>
+            <div class="parity-item"><span class="icon-check">✓</span> 4. AI News Sentiment</div>
+            <div class="parity-item"><span class="icon-check">✓</span> 5. eToro Instrument Overview</div>
+            <div class="parity-item"><span class="icon-check">✓</span> 6. Technicals + Context</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: Live Oil Market & Institutional Technicals -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">
+            <span>🛢️ Oil (ID 17) Market &amp; Technicals</span>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <span id="mkt-oil-quote" class="mono" style="font-size:18px; font-weight:800; color:var(--text);">--</span>
+            <span id="mkt-oil-chg" class="mono">--</span>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-size:12px;">
+          <span id="mkt-oil-spread" style="color:var(--text-muted);">Spread: --</span>
+          <span style="color:var(--text-muted);">Physical: WTI <strong id="mkt-wti-price" class="mono" style="color:var(--text);">--</strong> · Brent <strong id="mkt-brent-price" class="mono" style="color:var(--text);">--</strong></span>
+        </div>
+
+        <div id="divergence-gauge-box" style="margin-bottom:16px;"></div>
+
+        <div style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-top:8px;">Technicals (15m &amp; 4h HTF)</div>
+        <div class="tech-grid">
+          <div class="tech-cell"><div class="tech-cell-label">EMA 20</div><div id="tech-ema20" class="tech-cell-val">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">EMA 50</div><div id="tech-ema50" class="tech-cell-val">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">SMA 200</div><div id="tech-sma200" class="tech-cell-val">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">RSI (14)</div><div id="tech-rsi" class="tech-cell-val val-blue">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">ADX (14)</div><div id="tech-adx" class="tech-cell-val">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">ATR %</div><div id="tech-atr" class="tech-cell-val">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">RVOL</div><div id="tech-rvol" class="tech-cell-val">--</div></div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; padding:10px 14px; background:var(--panel-light); border-radius:6px; border:1px solid var(--border);">
+          <div style="font-size:12px;">
+            <span style="color:var(--text-muted);">AI News Sentiment:</span> 
+            <strong id="sent-dir" class="mono" style="color:var(--amber);">--</strong>
+          </div>
+          <div style="font-size:12px;">
+            <span style="color:var(--text-muted);">Score:</span>
+            <strong id="sent-score" class="mono">--</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid 2-Col: Performance Equity Curve & Closed Trades -->
+    <div class="grid-2col">
+      <!-- PANEL 4: Reconciled Equity Curve & KPI Scorecard -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">
+            <span>📈 Reconciled Performance &amp; Equity Curve</span>
+          </div>
+          <span style="font-size:11px; color:var(--text-muted);">Net of all CFD overnight fees &amp; spreads</span>
+        </div>
+
+        <div style="height:190px; width:100%; position:relative; margin-bottom:14px;">
+          <canvas id="equity-curve-canvas" style="width:100%; height:100%;"></canvas>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; text-align:center;">
+          <div class="tech-cell"><div class="tech-cell-label">Win Rate</div><div id="hist-winrate" class="tech-cell-val val-green">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">Profit Factor</div><div id="hist-profitfactor" class="tech-cell-val">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">Expectancy ($E)</div><div id="hist-expectancy" class="tech-cell-val val-blue">--</div></div>
+          <div class="tech-cell"><div class="tech-cell-label">Total Fees</div><div id="hist-fees" class="tech-cell-val">--</div></div>
+        </div>
+      </div>
+
+      <!-- PANEL 5: Closed Trade Log Journal -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">
+            <span>📜 Closed Trade Audit Journal</span>
+          </div>
+          <span style="font-size:11px; color:var(--text-muted);">Source: get-my-trading-history</span>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Asset</th>
+                <th>Side</th>
+                <th>Rates</th>
+                <th>Fees</th>
+                <th>Realized Net</th>
+                <th>Exit Reason</th>
+              </tr>
+            </thead>
+            <tbody id="closed-trades-table-body">
+              <tr><td colspan="7" style="text-align:center; color:var(--text-dim); padding:16px;">Loading closed trades...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div>
+        <span>Autonomous Trading Agent: <a href="https://github.com/knightkalman/trader-agent" target="_blank" style="color:var(--blue);">knightkalman/trader-agent</a></span>
+        · <span>Orchestrator: 10m Cadence</span>
+      </div>
+      <div>
+        <span>Live Web Dashboard: <a href="https://knightkalman.github.io/trader-dashboard/" style="color:var(--green);">knightkalman.github.io/trader-dashboard</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <div id="toast">Command copied!</div>
+
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

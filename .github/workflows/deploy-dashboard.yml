@@ -1,0 +1,91 @@
+name: Deploy Trading Observability Dashboard to GitHub Pages
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      account:
+        description: "Target eToro Account (demo or real)"
+        required: false
+        default: "demo"
+        type: choice
+        options:
+          - demo
+          - real
+  repository_dispatch:
+    types:
+      - etoro-order-signal
+      - orchestrator-cycle-completed
+      - refresh-dashboard
+  push:
+    branches:
+      - main
+    paths:
+      - "site/**"
+      - "scripts/**"
+      - ".github/workflows/deploy-dashboard.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages-deploy
+  cancel-in-progress: false
+
+env:
+  ETORO_DEFAULT_ACCOUNT: ${{ inputs.account || vars.ETORO_DEFAULT_ACCOUNT || 'demo' }}
+  TRADING_AGENT_REPO: "knightkalman/trader-agent"
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trader-dashboard repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ingest Agent Telemetry & Generate Payloads
+        env:
+          GH_TOKEN: ${{ secrets.DASHBOARD_GITHUB_TOKEN || github.token }}
+          ACCOUNT_MODE: ${{ env.ETORO_DEFAULT_ACCOUNT }}
+        run: |
+          python3 scripts/build_dashboard_data.py \
+            --agent-repo "${TRADING_AGENT_REPO}" \
+            --account "${ACCOUNT_MODE}" \
+            --output-dir site/data
+
+      - name: Validate Generated Dashboard Payloads
+        run: |
+          python3 -c "
+          import json, sys
+          from pathlib import Path
+          required = ['summary.json', 'orchestrator.json', 'positions.json', 'history.json', 'market.json']
+          missing = [f for f in required if not (Path('site/data') / f).is_file()]
+          if missing:
+              print(f'ERROR: Missing required data files: {missing}', file=sys.stderr)
+              sys.exit(1)
+          print('All dashboard JSON payloads successfully verified.')
+          "
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
