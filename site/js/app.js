@@ -101,8 +101,19 @@ function renderHeaderAndKpis(summary) {
 
   const realizedEl = document.getElementById("kpi-realized");
   if (realizedEl) {
-    realizedEl.innerText = formatCurrency(port.realizedNetPnLToday);
-    realizedEl.className = `kpi-value ${port.realizedNetPnLToday >= 0 ? "val-green" : "val-red"}`;
+    const todayPnl = port.realizedNetPnLToday ?? 0;
+    realizedEl.innerText = formatCurrency(todayPnl);
+    realizedEl.className = `kpi-value ${todayPnl >= 0 ? "val-green" : "val-red"}`;
+  }
+
+  const realizedSubEl = document.getElementById("kpi-realized-sub");
+  if (realizedSubEl) {
+    const todayCount = port.closedTradesToday ?? 0;
+    if (port.realizedNetPnLTotal !== undefined && port.realizedNetPnLTotal !== null) {
+      realizedSubEl.innerText = `${todayCount} closed today · All-time: ${formatCurrency(port.realizedNetPnLTotal)}`;
+    } else {
+      realizedSubEl.innerText = "Fully Loaded (netProfit - fees)";
+    }
   }
 
   const issueBtn = document.getElementById("link-issue-panel");
@@ -301,15 +312,21 @@ function renderPerformanceAndJournal(hist) {
 
     tbody.innerHTML = trades.map(t => {
       const pnlClass = t.realizedNetPnL >= 0 ? "val-green" : "val-red";
+      const closedDateLabel = t.closeDateTime
+        ? new Date(t.closeDateTime).toISOString().replace("T", " ").slice(0, 16) + " UTC"
+        : "";
       return `
         <tr>
           <td class="mono">#${t.positionId}</td>
           <td><strong>${t.symbol}</strong></td>
-          <td><span class="badge ${t.direction === 'buy' ? 'badge-buy' : 'badge-short'}">${t.direction.toUpperCase()}</span> ${t.leverage}x</td>
+          <td><span class="badge ${t.direction === 'buy' || t.direction === 'long' ? 'badge-buy' : 'badge-short'}">${t.direction.toUpperCase()}</span> ${t.leverage}x</td>
           <td class="mono">${t.openRate} &rarr; ${t.closeRate}</td>
           <td class="mono">${formatCurrency(t.fees)}</td>
           <td class="mono ${pnlClass}"><strong>${formatCurrency(t.realizedNetPnL)}</strong> (${formatPct(t.returnPct)})</td>
-          <td style="font-size:11px; color:var(--text-muted);">${t.exitReason}</td>
+          <td style="font-size:11px; color:var(--text-muted);">
+            <div>${t.exitReason}</div>
+            ${closedDateLabel ? `<div class="mono" style="font-size:10px; opacity:0.75;">Closed: ${closedDateLabel}</div>` : ""}
+          </td>
         </tr>
       `;
     }).join("");

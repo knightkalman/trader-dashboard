@@ -14,7 +14,7 @@ sanitizes credentials, and generates static JSON payloads in `site/data/`:
 from __future__ import annotations
 
 import argparse
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import json
 import os
 from pathlib import Path
@@ -23,6 +23,21 @@ import sys
 from typing import Any
 import urllib.parse
 import urllib.request
+
+
+def _parse_iso_utc(iso_str: Any) -> datetime | None:
+    if not iso_str or not isinstance(iso_str, str):
+        return None
+    cleaned = iso_str.strip()
+    if cleaned.endswith("Z"):
+        cleaned = cleaned[:-1] + "+00:00"
+    try:
+        dt = datetime.fromisoformat(cleaned)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except ValueError:
+        return None
 
 
 def fetch_github_repo_file(
@@ -487,27 +502,149 @@ def build_market_payload(snapshot_json: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def build_history_payload(daily_report_md: str | None = None) -> dict[str, Any]:
-    """Generate reconciled realized trade history and performance metrics."""
-    trades = [
-        {
-            "positionId": 3624890122,
-            "symbol": "OIL",
-            "direction": "short",
-            "leverage": 5,
-            "openDateTime": "2026-10-25T11:15:00Z",
-            "closeDateTime": "2026-10-25T14:45:00Z",
-            "durationHours": 3.5,
-            "openRate": 102.85,
-            "closeRate": 103.50,
-            "investedAmount": 200.0,
-            "netProfitBeforeFees": -6.71,
-            "fees": 0.00,
-            "realizedNetPnL": -6.71,
-            "returnPct": -3.35,
-            "exitReason": "Stop-Loss triggered (fixed SL=103.50)",
-        }
-    ]
+def _normalize_closed_trade(raw: dict[str, Any]) -> dict[str, Any]:
+    """Normalize a raw closed trade from eToro `get-my-trading-history` or an already-normalized trade dict."""
+    if "realizedNetPnL" in raw and "openDateTime" in raw and "closeDateTime" in raw:
+        return dict(raw)
+
+    market = raw.get("market") or {}
+    symbol = str(market.get("symbol") or raw.get("symbol") or "OIL").upper()
+    open_dt_str = str(raw.get("openTime") or raw.get("openDateTime") or "")
+    close_dt_str = str(raw.get("closeTime") or raw.get("closeDateTime") or "")
+    open_dt = _parse_iso_utc(open_dt_str)
+    close_dt = _parse_iso_utc(close_dt_str)
+    dur_hours = (
+        round(max(0.0, (close_dt - open_dt).total_seconds() / 3600.0), 2)
+        if (open_dt and close_dt)
+        else float(raw.get("durationHours") or 0.0)
+    )
+    open_rate = float(raw.get("openRate") or 0.0)
+    close_rate = float(raw.get("closeRate") or 0.0)
+    invested = float(
+        raw.get("investment")
+        or raw.get("initialInvestment")
+        or raw.get("investedAmount")
+        or 200.0
+    )
+    net_profit = float(
+        raw.get("netProfit")
+        if raw.get("netProfit") is not None
+        else (raw.get("netProfitBeforeFees") or 0.0)
+    )
+    fees = float(raw.get("fees") or 0.0)
+    realized_net = round(net_profit - fees, 2)
+    return_pct = round((realized_net / invested * 100.0) if invested else 0.0, 2)
+
+    sl_rate = float(raw.get("stopLossRate") or 0.0)
+    tp_rate = float(raw.get("takeProfitRate") or 0.0)
+    exit_reason = raw.get("exitReason")
+    if not exit_reason:
+        if sl_rate > 0.01 and abs(close_rate - sl_rate) <= max(0.05, close_rate * 0.002):
+            sl_mode = "trailing" if raw.get("trailingStopLoss") else "fixed"
+            exit_reason = f"Stop-Loss triggered ({sl_mode} SL={sl_rate:.2f})"
+        elif tp_rate > 0.01 and abs(close_rate - tp_rate) <= max(0.05, close_rate * 0.002):
+            exit_reason = f"Take-Profit triggered (TP={tp_rate:.2f})"
+        else:
+            exit_reason = f"Closed @ {close_rate:.2f}"
+
+    return {
+        "positionId": int(raw.get("positionId") or 0),
+        "symbol": symbol,
+        "direction": str(raw.get("direction") or "buy").lower(),
+        "leverage": int(raw.get("leverage") or 1),
+        "openDateTime": open_dt.strftime("%Y-%m-%dT%H:%M:%SZ") if open_dt else open_dt_str,
+        "closeDateTime": close_dt.strftime("%Y-%m-%dT%H:%M:%SZ") if close_dt else close_dt_str,
+        "durationHours": dur_hours,
+        "openRate": open_rate,
+        "closeRate": close_rate,
+        "investedAmount": round(invested, 2),
+        "netProfitBeforeFees": round(net_profit, 2),
+        "fees": round(fees, 2),
+        "realizedNetPnL": realized_net,
+        "returnPct": return_pct,
+        "exitReason": exit_reason,
+    }
+
+
+DEFAULT_CLOSED_TRADES: list[dict[str, Any]] = [
+    {
+        "positionId": 3625646006,
+        "symbol": "OIL",
+        "direction": "short",
+        "leverage": 5,
+        "openDateTime": "2026-10-26T07:24:53Z",
+        "closeDateTime": "2026-10-26T15:50:52Z",
+        "durationHours": 8.43,
+        "openRate": 100.93,
+        "closeRate": 102.00,
+        "investedAmount": 199.99,
+        "netProfitBeforeFees": -10.60,
+        "fees": 0.00,
+        "realizedNetPnL": -10.60,
+        "returnPct": -5.30,
+        "exitReason": "Stop-Loss triggered (fixed SL=102.00)",
+    },
+    {
+        "positionId": 3625442511,
+        "symbol": "OIL",
+        "direction": "short",
+        "leverage": 5,
+        "openDateTime": "2026-10-25T17:01:06Z",
+        "closeDateTime": "2026-10-25T17:38:02Z",
+        "durationHours": 0.62,
+        "openRate": 101.77,
+        "closeRate": 102.26,
+        "investedAmount": 200.00,
+        "netProfitBeforeFees": -4.81,
+        "fees": 0.00,
+        "realizedNetPnL": -4.81,
+        "returnPct": -2.41,
+        "exitReason": "Closed @ 102.26",
+    },
+    {
+        "positionId": 3625441963,
+        "symbol": "OIL",
+        "direction": "long",
+        "leverage": 5,
+        "openDateTime": "2026-10-25T14:46:45Z",
+        "closeDateTime": "2026-10-25T14:51:53Z",
+        "durationHours": 0.09,
+        "openRate": 102.76,
+        "closeRate": 102.07,
+        "investedAmount": 199.99,
+        "netProfitBeforeFees": -6.71,
+        "fees": 0.00,
+        "realizedNetPnL": -6.71,
+        "returnPct": -3.36,
+        "exitReason": "Closed @ 102.07",
+    },
+]
+
+
+def build_history_payload(
+    daily_report_md: str | None = None,
+    *,
+    history_doc: dict[str, Any] | None = None,
+    current_equity: float | None = None,
+    now_utc: datetime | None = None,
+) -> dict[str, Any]:
+    """Generate reconciled realized trade history and performance metrics, distinguishing today vs all-time."""
+    now = (now_utc or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    today_date = now.date()
+    cutoff_24h = now - timedelta(hours=24)
+
+    raw_trades = None
+    if isinstance(history_doc, dict):
+        if "closedTrades" in history_doc and isinstance(history_doc["closedTrades"], list):
+            raw_trades = history_doc["closedTrades"]
+        elif "trades" in history_doc and isinstance(history_doc["trades"], list):
+            raw_trades = history_doc["trades"]
+
+    if raw_trades is None:
+        raw_trades = DEFAULT_CLOSED_TRADES
+
+    trades = [_normalize_closed_trade(t) for t in raw_trades if isinstance(t, dict)]
+    trades.sort(key=lambda t: t.get("closeDateTime") or "", reverse=True)
 
     total_closed = len(trades)
     winning_trades = [t for t in trades if t["realizedNetPnL"] > 0]
@@ -525,15 +662,52 @@ def build_history_payload(daily_report_md: str | None = None) -> dict[str, Any]:
     total_fees = sum(t["fees"] for t in trades)
     net_pnl = sum(t["realizedNetPnL"] for t in trades)
 
+    # Filter trades closed today (UTC date) and within rolling 24h
+    trades_today = []
+    trades_24h = []
+    for t in trades:
+        close_dt = _parse_iso_utc(t.get("closeDateTime"))
+        if close_dt is not None:
+            if close_dt.date() == today_date:
+                trades_today.append(t)
+            if close_dt >= cutoff_24h:
+                trades_24h.append(t)
+
+    realized_today = round(sum(t["realizedNetPnL"] for t in trades_today), 2)
+    realized_24h = round(sum(t["realizedNetPnL"] for t in trades_24h), 2)
+
+    # Reconstruct chronological equity progression up to current live timestamp
+    chronological = list(reversed(trades))
+    live_eq = float(current_equity if current_equity is not None else 108467.90)
+    starting_eq = round(live_eq - net_pnl, 2)
+
     equity_progression = [
-        {"timestamp": "2026-10-24T00:00:00Z", "equity": 108490.02, "realizedNetPnL": 0.0},
-        {"timestamp": "2026-10-25T14:45:00Z", "equity": 108483.31, "realizedNetPnL": -6.71},
-        {"timestamp": "2026-10-25T17:33:54Z", "equity": 108479.48, "realizedNetPnL": -6.71},
+        {"timestamp": "2026-10-24T00:00:00Z", "equity": starting_eq, "realizedNetPnL": 0.0}
     ]
+    running_pnl = 0.0
+    for t in chronological:
+        running_pnl = round(running_pnl + float(t["realizedNetPnL"]), 2)
+        equity_progression.append(
+            {
+                "timestamp": t["closeDateTime"],
+                "equity": round(starting_eq + running_pnl, 2),
+                "realizedNetPnL": running_pnl,
+            }
+        )
+    now_iso_short = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    if not equity_progression or equity_progression[-1]["timestamp"] != now_iso_short:
+        equity_progression.append(
+            {
+                "timestamp": now_iso_short,
+                "equity": round(live_eq, 2),
+                "realizedNetPnL": round(net_pnl, 2),
+            }
+        )
 
     return {
         "metrics": {
             "totalClosedTrades": total_closed,
+            "closedTradesToday": len(trades_today),
             "winningTrades": len(winning_trades),
             "losingTrades": len(losing_trades),
             "winRate": round(win_rate, 2),
@@ -541,7 +715,9 @@ def build_history_payload(daily_report_md: str | None = None) -> dict[str, Any]:
             "expectancy": round(expectancy, 2),
             "totalFees": round(total_fees, 2),
             "realizedNetPnL": round(net_pnl, 2),
-            "maxHistoricalDrawdown": -0.01,
+            "realizedNetPnLToday": realized_today,
+            "realizedNetPnL24h": realized_24h,
+            "maxHistoricalDrawdown": -0.02,
             "feeDragRatio": 0.0,
         },
         "trades": trades,
@@ -618,10 +794,10 @@ def main() -> None:
             print("[*] Reusing existing site/data/positions.json")
             existing_pos = json.loads((output_path / "positions.json").read_text(encoding="utf-8"))
             parsed_monitor = {
-                "portfolioValue": 108479.48,
-                "availableCash": 108283.31,
-                "unrealizedPnL": -3.83,
-                "intradayDrawdown": -0.01,
+                "portfolioValue": 108467.90,
+                "availableCash": 108467.90,
+                "unrealizedPnL": 0.0,
+                "intradayDrawdown": 0.0,
                 "killSwitchActive": False,
                 "positions": existing_pos.get("positions", []),
                 "orders": existing_pos.get("orders", []),
@@ -632,13 +808,51 @@ def main() -> None:
     else:
         parsed_monitor = parse_monitor_markdown("", agent_repo, account)
 
-    # 4. Generate Core Payloads
-    market_payload = build_market_payload(snapshot_json)
-    history_payload = build_history_payload()
+    # 3b. Read or fetch live closed trading history artifact from trader-agent
+    raw_hist = fetch_github_repo_file(
+        repo=agent_repo,
+        file_path=f"reports/daily/history-latest-{account}.json",
+        token=args.token,
+        local_dir=local_dir,
+    )
+    history_doc: dict[str, Any] | None = None
+    if raw_hist:
+        try:
+            history_doc = json.loads(raw_hist)
+        except Exception:
+            history_doc = None
+    elif (output_path / "history.json").is_file():
+        try:
+            print("[*] Reusing existing site/data/history.json trades")
+            history_doc = json.loads((output_path / "history.json").read_text(encoding="utf-8"))
+        except Exception:
+            history_doc = None
 
-    now_iso = datetime.now(timezone.utc).isoformat()
+    if isinstance(history_doc, dict) and isinstance(history_doc.get("totals"), dict):
+        totals = history_doc["totals"]
+        if totals.get("totalValue") is not None:
+            parsed_monitor["portfolioValue"] = float(totals["totalValue"])
+        if totals.get("availableCash") is not None:
+            parsed_monitor["availableCash"] = float(totals["availableCash"])
+        if totals.get("unrealizedPnL") is not None or totals.get("unrealizedPnl") is not None:
+            parsed_monitor["unrealizedPnL"] = float(
+                totals.get("unrealizedPnL")
+                if totals.get("unrealizedPnL") is not None
+                else totals.get("unrealizedPnl") or 0.0
+            )
+
+    # 4. Generate Core Payloads
+    now_utc = datetime.now(timezone.utc)
+    now_iso = now_utc.isoformat()
+    market_payload = build_market_payload(snapshot_json)
+    history_payload = build_history_payload(
+        history_doc=history_doc,
+        current_equity=parsed_monitor.get("portfolioValue", 108467.90),
+        now_utc=now_utc,
+    )
+
     summary_payload = {
-        "schemaVersion": "1.1",
+        "schemaVersion": "1.2",
         "generatedAt": now_iso,
         "account": account,
         "agentRepo": agent_repo,
@@ -659,7 +873,10 @@ def main() -> None:
             "usedMargin": round(parsed_monitor.get("portfolioValue", 100000.0) - parsed_monitor.get("availableCash", 100000.0), 2),
             "unrealizedPnL": parsed_monitor.get("unrealizedPnL", 0.0),
             "intradayDrawdownPct": parsed_monitor.get("intradayDrawdown", 0.0),
-            "realizedNetPnLToday": history_payload["metrics"]["realizedNetPnL"],
+            "realizedNetPnLToday": history_payload["metrics"]["realizedNetPnLToday"],
+            "realizedNetPnL24h": history_payload["metrics"]["realizedNetPnL24h"],
+            "realizedNetPnLTotal": history_payload["metrics"]["realizedNetPnL"],
+            "closedTradesToday": history_payload["metrics"]["closedTradesToday"],
             "openPositionsCount": len(parsed_monitor.get("positions", [])),
             "pendingOrdersCount": len(parsed_monitor.get("orders", [])),
             "pendingPreparationsCount": len(parsed_monitor.get("preparations", [])),

@@ -1,10 +1,12 @@
 """Unit tests for Dashboard Data Aggregator (`tests/test_build_data.py`)."""
 
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 import unittest
 
 from scripts.build_dashboard_data import (
+    build_history_payload,
     build_market_payload,
     build_position_action_links,
     parse_monitor_markdown,
@@ -85,6 +87,62 @@ class TestDashboardDataBuilder(unittest.TestCase):
         self.assertEqual(parsed["positions"][0]["positionId"], 3625442511)
         self.assertEqual(len(parsed["preparations"]), 1)
         self.assertEqual(parsed["preparations"][0]["signalId"], "sig_20261025_oil_002")
+
+    def test_build_history_payload_separates_today_from_historical_pnl(self):
+        history_doc = {
+            "closedTrades": [
+                {
+                    "positionId": 3625646006,
+                    "market": {"symbol": "OIL"},
+                    "direction": "short",
+                    "leverage": 5,
+                    "openTime": "2026-10-26T07:24:53Z",
+                    "closeTime": "2026-10-26T15:50:52Z",
+                    "openRate": 100.93,
+                    "closeRate": 102.00,
+                    "investment": 199.99,
+                    "fees": 0.0,
+                    "netProfit": -10.60,
+                    "stopLossRate": 102.00,
+                    "takeProfitRate": 98.51,
+                },
+                {
+                    "positionId": 3625441963,
+                    "market": {"symbol": "OIL"},
+                    "direction": "long",
+                    "leverage": 5,
+                    "openTime": "2026-10-25T14:46:45Z",
+                    "closeTime": "2026-10-25T14:51:53Z",
+                    "openRate": 102.76,
+                    "closeRate": 102.07,
+                    "investment": 199.99,
+                    "fees": 0.0,
+                    "netProfit": -6.71,
+                    "stopLossRate": 98.50,
+                    "takeProfitRate": 110.00,
+                },
+            ]
+        }
+
+        # On 2026-11-01, no trades closed today -> realizedNetPnLToday must be 0.0
+        payload_nov1 = build_history_payload(
+            history_doc=history_doc,
+            current_equity=108467.90,
+            now_utc=datetime(2026, 11, 1, 18, 0, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(payload_nov1["metrics"]["realizedNetPnLToday"], 0.0)
+        self.assertEqual(payload_nov1["metrics"]["closedTradesToday"], 0)
+        self.assertEqual(payload_nov1["metrics"]["realizedNetPnL"], -17.31)
+
+        # On 2026-10-26, only the Oct 26 trade (-10.60) closed today
+        payload_oct26 = build_history_payload(
+            history_doc=history_doc,
+            current_equity=108467.90,
+            now_utc=datetime(2026, 10, 26, 18, 0, 0, tzinfo=timezone.utc),
+        )
+        self.assertEqual(payload_oct26["metrics"]["realizedNetPnLToday"], -10.60)
+        self.assertEqual(payload_oct26["metrics"]["closedTradesToday"], 1)
+        self.assertEqual(payload_oct26["metrics"]["realizedNetPnL"], -17.31)
 
 
 if __name__ == "__main__":
