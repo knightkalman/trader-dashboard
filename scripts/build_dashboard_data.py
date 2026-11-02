@@ -138,6 +138,11 @@ def parse_orchestrator_report(report_md: str) -> dict[str, Any]:
     if mode_match:
         data["executionMode"] = mode_match.group(1).strip()
 
+    watch_match = re.search(r"\*\*Allowed Watchlist\*\*:\s*`([^`]+)`", report_md)
+    if watch_match:
+        watchlist_raw = watch_match.group(1).strip()
+        data["watchlist"] = [s.strip() for s in watchlist_raw.split(",") if s.strip()]
+
     snap_match = re.search(r"\*\*Step 3 Snapshot ID\*\*:\s*`([^`]+)`", report_md)
     if snap_match:
         data["snapshotId"] = snap_match.group(1).strip()
@@ -337,7 +342,16 @@ def parse_monitor_markdown(monitor_md: str, repo: str, account: str) -> dict[str
                 if not raw_pid:
                     continue
                 pid = int(raw_pid)
-                symbol_name = cols[1].replace("**", "").strip()
+                raw_symbol_cell = cols[1]
+                sym_m = re.search(r"\*\*([A-Za-z0-9_]+)\*\*", raw_symbol_cell)
+                if sym_m:
+                    symbol = sym_m.group(1).upper()
+                else:
+                    first_token = raw_symbol_cell.split()[0].replace("*", "").strip().upper()
+                    symbol = first_token if first_token else "OIL"
+                name_m = re.search(r"\((.+)\)", raw_symbol_cell)
+                display_name = name_m.group(1).strip() if name_m else raw_symbol_cell.replace("**", "").strip()
+
                 direction = cols[2].replace("`", "").strip()
                 leverage = cols[3].replace("`", "").strip()
                 units = float(re.sub(r"[^\d\.]", "", cols[4]) or "0")
@@ -365,8 +379,8 @@ def parse_monitor_markdown(monitor_md: str, repo: str, account: str) -> dict[str
 
                 pos_dict = {
                     "positionId": pid,
-                    "symbol": "OIL",
-                    "displayName": symbol_name,
+                    "symbol": symbol,
+                    "displayName": display_name,
                     "direction": direction,
                     "leverage": leverage,
                     "units": units,
@@ -379,7 +393,7 @@ def parse_monitor_markdown(monitor_md: str, repo: str, account: str) -> dict[str
                     "takeProfitRate": tp_rate,
                     "stopLossType": sl_type,
                 }
-                pos_dict["actionLinks"] = build_position_action_links(repo, account, pos_dict, "OIL")
+                pos_dict["actionLinks"] = build_position_action_links(repo, account, pos_dict, symbol)
                 result["positions"].append(pos_dict)
 
     prep_table_match = re.search(
@@ -403,8 +417,12 @@ def parse_monitor_markdown(monitor_md: str, repo: str, account: str) -> dict[str
                 approval_link_m = re.search(r"\((https://[^\)]+)\)", cols[5]) if len(cols) > 5 else None
                 approval_url = approval_link_m.group(1) if approval_link_m else f"https://github.com/{repo}/issues/1"
 
+                sym_m = re.search(r"\b(?:OPEN|CLOSE|MODIFY|CANCEL)\s+([A-Za-z0-9_]+)\b", details, re.IGNORECASE)
+                prep_symbol = sym_m.group(1).upper() if sym_m else "OIL"
+
                 result["preparations"].append({
                     "signalId": sig_id,
+                    "symbol": prep_symbol,
                     "action": action,
                     "targetDetails": details,
                     "quote": quote_val,
@@ -851,6 +869,8 @@ def main() -> None:
         now_utc=now_utc,
     )
 
+    watchlist = orchestrator_data.get("watchlist") or ["OIL", "NVDA"]
+    target_inst = ", ".join(watchlist) if watchlist else "OIL (ID: 17)"
     summary_payload = {
         "schemaVersion": "1.2",
         "generatedAt": now_iso,
@@ -861,7 +881,8 @@ def main() -> None:
             "orchestratorEnabled": orchestrator_data.get("orchestratorEnabled", True),
             "executionMode": orchestrator_data.get("executionMode", "prepare_only"),
             "killSwitchActive": parsed_monitor.get("killSwitchActive", False),
-            "targetInstrument": "OIL (ID: 17)",
+            "targetInstrument": target_inst,
+            "watchlist": watchlist,
             "cycleCadence": orchestrator_data.get("cadence", "10m"),
             "lastCycleStatus": orchestrator_data.get("status", "UNKNOWN"),
             "lastCycleTimestamp": orchestrator_data.get("cycleTimestamp", now_iso),

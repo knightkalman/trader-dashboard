@@ -161,15 +161,24 @@ function renderActiveTrades(posData, summary) {
     return;
   }
 
+  const instIdMap = { "OIL": 17, "NVDA": 1137 };
+
   container.innerHTML = positions.map(pos => {
     const pnlClass = pos.unrealizedPnL >= 0 ? "val-green" : "val-red";
-    const dirBadge = pos.direction === "buy" ? '<span class="badge badge-buy">BUY</span>' : '<span class="badge badge-short">SELL</span>';
+    const dirBadge = pos.direction === "buy" || pos.direction === "long"
+      ? '<span class="badge badge-buy">BUY</span>'
+      : '<span class="badge badge-short">SELL</span>';
     const links = pos.actionLinks || {};
+    const sym = pos.symbol || "OIL";
+    const idTag = instIdMap[sym] ? `(ID ${instIdMap[sym]})` : "";
+    const nameLabel = pos.displayName && pos.displayName !== sym
+      ? `<br><span style="color:var(--text-dim); font-size:11px;">${pos.displayName}</span>`
+      : "";
 
     return `
       <tr>
         <td class="mono"><strong>#${pos.positionId}</strong></td>
-        <td><strong>${pos.symbol}</strong> <span style="color:var(--text-muted); font-size:11px;">(ID 17)</span></td>
+        <td><strong>${sym}</strong> <span style="color:var(--text-muted); font-size:11px;">${idTag}</span>${nameLabel}</td>
         <td>${dirBadge} <span class="mono">${pos.leverage}</span></td>
         <td class="mono">${pos.units}</td>
         <td class="mono">${formatCurrency(pos.invested)}</td>

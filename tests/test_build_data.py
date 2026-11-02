@@ -75,7 +75,8 @@ class TestDashboardDataBuilder(unittest.TestCase):
 
 | Position ID | Instrument | Direction | Leverage | Units | Invested | Open $\rightarrow$ Current | Unrealized P&L | Stop-Loss / Take-Profit | Clickable Actions |
 |-------------|------------|-----------|----------|-------|----------|----------------------------|----------------|-------------------------|-------------------|
-| `3625442511` | **OIL** | `short` | `5x` | `9.826078` | `$200.00` | `101.77` $\rightarrow$ `102.16` | **`$-3.83`** | `SL=103.0 (fixed), TP=0.01` | **[Actions]** |
+| `3625442511` | **OIL** (Oil (Non Expiry)) | `short` | `5x` | `9.826078` | `$200.00` | `101.77` $\rightarrow$ `102.16` | **`$-3.83`** | `SL=103.0 (fixed), TP=0.01` | **[Actions]** |
+| `3631717687` | **NVDA** (NVIDIA Corporation) | `long` | `2x` | `1.936202` | `$199.99` | `206.59` $\rightarrow$ `206.72` | **`$0.25`** | `SL=204.41 (fixed), TP=211.85` | **[Actions]** |
 """
         parsed = parse_monitor_markdown(sample_md, "knightkalman/trader-agent", "demo")
         self.assertEqual(parsed["portfolioValue"], 108479.48)
@@ -83,10 +84,21 @@ class TestDashboardDataBuilder(unittest.TestCase):
         self.assertEqual(parsed["unrealizedPnL"], -3.83)
         self.assertEqual(parsed["intradayDrawdown"], -0.01)
         self.assertFalse(parsed["killSwitchActive"])
-        self.assertEqual(len(parsed["positions"]), 1)
+        self.assertEqual(len(parsed["positions"]), 2)
         self.assertEqual(parsed["positions"][0]["positionId"], 3625442511)
+        self.assertEqual(parsed["positions"][0]["symbol"], "OIL")
+        self.assertEqual(parsed["positions"][0]["displayName"], "Oil (Non Expiry)")
+        self.assertIn("Position+3625442511+%28OIL%29", parsed["positions"][0]["actionLinks"]["modifyUrl"])
+
+        self.assertEqual(parsed["positions"][1]["positionId"], 3631717687)
+        self.assertEqual(parsed["positions"][1]["symbol"], "NVDA")
+        self.assertEqual(parsed["positions"][1]["displayName"], "NVIDIA Corporation")
+        self.assertIn("Position+3631717687+%28NVDA%29", parsed["positions"][1]["actionLinks"]["modifyUrl"])
+        self.assertIn("NVDA", parsed["positions"][1]["actionLinks"]["closeFullUrl"])
+
         self.assertEqual(len(parsed["preparations"]), 1)
         self.assertEqual(parsed["preparations"][0]["signalId"], "sig_20261025_oil_002")
+        self.assertEqual(parsed["preparations"][0]["symbol"], "OIL")
 
     def test_build_history_payload_separates_today_from_historical_pnl(self):
         history_doc = {
