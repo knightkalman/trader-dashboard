@@ -314,8 +314,15 @@ function renderPerformanceAndJournal(hist) {
   const tbody = document.getElementById("closed-trades-table-body");
   if (tbody) {
     const trades = hist.trades || [];
+    const countBadge = document.getElementById("closed-trades-count");
+    if (countBadge) {
+      countBadge.innerText = `${trades.length} ${trades.length === 1 ? 'trade' : 'trades'}`;
+      countBadge.style.display = "inline-flex";
+    }
+
     if (trades.length === 0) {
       tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--text-dim); padding:16px;">No closed trades recorded in reporting period.</td></tr>`;
+      updateClosedTradesScroll();
       return;
     }
 
@@ -328,17 +335,40 @@ function renderPerformanceAndJournal(hist) {
         <tr>
           <td class="mono">#${t.positionId}</td>
           <td><strong>${t.symbol}</strong></td>
-          <td><span class="badge ${t.direction === 'buy' || t.direction === 'long' ? 'badge-buy' : 'badge-short'}">${t.direction.toUpperCase()}</span> ${t.leverage}x</td>
+          <td><span class="badge ${t.direction === 'buy' || t.direction === 'long' ? 'badge-buy' : 'badge-short'}">${t.direction.toUpperCase()}</span> <span style="font-size:11px; color:var(--text-muted);">${t.leverage}x</span></td>
           <td class="mono">${t.openRate} &rarr; ${t.closeRate}</td>
           <td class="mono">${formatCurrency(t.fees)}</td>
-          <td class="mono ${pnlClass}"><strong>${formatCurrency(t.realizedNetPnL)}</strong> (${formatPct(t.returnPct)})</td>
-          <td style="font-size:11px; color:var(--text-muted);">
-            <div>${t.exitReason}</div>
-            ${closedDateLabel ? `<div class="mono" style="font-size:10px; opacity:0.75;">Closed: ${closedDateLabel}</div>` : ""}
+          <td class="mono ${pnlClass}"><strong>${formatCurrency(t.realizedNetPnL)}</strong> <span style="font-size:10px; opacity:0.85;">(${formatPct(t.returnPct)})</span></td>
+          <td class="cell-exit">
+            <div class="trade-exit-reason">${t.exitReason}</div>
+            ${closedDateLabel ? `<div class="mono trade-close-date">Closed: ${closedDateLabel}</div>` : ""}
           </td>
         </tr>
       `;
     }).join("");
+
+    updateClosedTradesScroll();
+  }
+}
+
+function updateClosedTradesScroll() {
+  const container = document.getElementById("closed-trades-container");
+  const tbody = document.getElementById("closed-trades-table-body");
+  if (!container || !tbody) return;
+
+  const rows = tbody.querySelectorAll("tr");
+  if (rows.length > 10) {
+    const thead = container.querySelector("thead");
+    const headerHeight = thead ? thead.offsetHeight : 34;
+    let tenRowsHeight = 0;
+    for (let i = 0; i < 10; i++) {
+      tenRowsHeight += rows[i].offsetHeight;
+    }
+    container.style.maxHeight = `${headerHeight + tenRowsHeight + 1}px`;
+    container.classList.add("has-overflow");
+  } else {
+    container.style.maxHeight = "none";
+    container.classList.remove("has-overflow");
   }
 }
 
@@ -363,6 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
   startAutoRefresh();
 
   window.addEventListener("resize", () => {
+    updateClosedTradesScroll();
     fetchJson("data/history.json").then(hist => {
       if (hist && typeof renderEquityCurve === "function") {
         renderEquityCurve("equity-curve-canvas", hist.equityProgression);
