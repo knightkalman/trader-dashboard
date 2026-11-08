@@ -91,19 +91,19 @@ def fetch_github_repo_file(
 
 
 def parse_orchestrator_report(report_md: str) -> dict[str, Any]:
-    """Parse `reports/orchestrator/latest-cycle-report.md` into structured data."""
+    """Parse `reports/orchestrator/latest-cycle-report.md` into structured multi-ticker data."""
     data: dict[str, Any] = {
         "cycleTimestamp": None,
         "orchestratorEnabled": True,
-        "cadence": "10m",
-        "executionMode": "prepare_only",
+        "cadence": "9m",
+        "executionMode": "auto_execute_all",
         "dispatchChannel": "inline_prepare",
         "instrument": "OIL",
         "instrumentId": 17,
         "status": "UNKNOWN",
         "snapshotId": None,
         "confluenceScore": 0.0,
-        "confluenceThreshold": 65.0,
+        "confluenceThreshold": 75.0,
         "confluenceBreakdown": {
             "regimeAndNews": {"score": 0.0, "max": 35.0},
             "windowAndHtf": {"score": 0.0, "max": 20.0},
@@ -121,6 +121,17 @@ def parse_orchestrator_report(report_md: str) -> dict[str, Any]:
             "technicals": True,
             "allPassed": True,
         },
+        "watchlist": ["OIL", "NVDA"],
+        "topCandidate": "OIL",
+        "funnelMetrics": {
+            "totalWatched": 0,
+            "parityPassed": 0,
+            "confluenceEligible": 0,
+            "actionableEntries": 0,
+            "activeProtectiveActions": 0,
+        },
+        "rankedCandidates": [],
+        "evaluations": {},
     }
 
     if not report_md:
@@ -138,38 +149,263 @@ def parse_orchestrator_report(report_md: str) -> dict[str, Any]:
     if mode_match:
         data["executionMode"] = mode_match.group(1).strip()
 
+    cadence_match = re.search(r"\*\*Cadence\*\*:\s*`([^`]+)`", report_md)
+    if cadence_match:
+        data["cadence"] = cadence_match.group(1).strip()
+
     watch_match = re.search(r"\*\*Allowed Watchlist\*\*:\s*`([^`]+)`", report_md)
     if watch_match:
         watchlist_raw = watch_match.group(1).strip()
         data["watchlist"] = [s.strip() for s in watchlist_raw.split(",") if s.strip()]
 
-    snap_match = re.search(r"\*\*Step 3 Snapshot ID\*\*:\s*`([^`]+)`", report_md)
-    if snap_match:
-        data["snapshotId"] = snap_match.group(1).strip()
-
-    score_match = re.search(r"\*\*100-Point Confluence Score\*\*:\s*\*\*`([\d\.]+)\s*/\s*([\d\.]+)`\*\*(?:\s*\(Entry Threshold:\s*`([\d\.]+)`\))?", report_md)
-    if score_match:
-        data["confluenceScore"] = float(score_match.group(1))
-        if score_match.group(3):
-            data["confluenceThreshold"] = float(score_match.group(3))
-        else:
-            data["confluenceThreshold"] = 65.0
-
-    breakdown_match = re.search(
-        r"Oil Signal Regime & News\*:\s*`([\d\.]+)\s*/\s*35`.*?Window & HTF\*:\s*`([\d\.]+)\s*/\s*20`.*?Momentum \(RSI/ADX\)\*:\s*`([\d\.]+)\s*/\s*15`.*?Volatility/RVOL\*:\s*`([\d\.]+)\s*/\s*15`.*?Spread Efficiency\*:\s*`([\d\.]+)\s*/\s*15`",
+    # Parse 1: Active Trading Suggestions Summary table if present
+    summary_table_match = re.search(
+        r"## 📊 Active Trading Suggestions Summary.*?\n\|([^\n]+)\|\n\|[-|\s]+\|\n(.*?)(?=\n## |\Z)",
         report_md,
         re.DOTALL,
     )
-    if breakdown_match:
-        data["confluenceBreakdown"]["regimeAndNews"]["score"] = float(breakdown_match.group(1))
-        data["confluenceBreakdown"]["windowAndHtf"]["score"] = float(breakdown_match.group(2))
-        data["confluenceBreakdown"]["momentum"]["score"] = float(breakdown_match.group(3))
-        data["confluenceBreakdown"]["volatilityRvol"]["score"] = float(breakdown_match.group(4))
-        data["confluenceBreakdown"]["spreadEfficiency"]["score"] = float(breakdown_match.group(5))
+    table_candidates: dict[str, dict[str, Any]] = {}
+    if summary_table_match:
+        rows_text = summary_table_match.group(2).strip()
+        for line in rows_text.splitlines():
+            line = line.strip()
+            if not line.startswith("|") or "Ticker" in line:
+                continue
+            cols = [c.strip() for c in line.strip("|").split("|")]
+            if len(cols) >= 6:
+                sym_m = re.search(r"`([A-Za-z0-9_]+)`", cols[0])
+                id_m = re.search(r"ID:\s*(\d+)", cols[0])
+                if not sym_m:
+                    continue
+                sym = sym_m.group(1).upper()
+                inst_id = int(id_m.group(1)) if id_m else 0
 
-    diag_match = re.search(r"\*\*Diagnostic\*\*:\s*(.+)", report_md)
-    if diag_match:
-        data["diagnostic"] = diag_match.group(1).strip()
+                quote_raw = cols[1]
+                mid_m = re.search(r"Mid\s*`?\$?([\d\.]+)`?", quote_raw)
+                sp_m = re.search(r"Sp\s*`?([\d\.]+)%?`?", quote_raw)
+                mid_val = float(mid_m.group(1)) if mid_m else 0.0
+                sp_pct = float(sp_m.group(1)) if sp_m else 0.0
+
+                sugg_raw = cols[3]
+                dir_m = re.search(r"\*\*`?([A-Za-z0-9_]+)`?\*\*", sugg_raw)
+                act_m = re.search(r"action=([A-Za-z0-9_]+)", sugg_raw)
+                conv_m = re.search(r"conv=([\d\.]+)", sugg_raw)
+                direction = dir_m.group(1) if dir_m else "neutral"
+                action = act_m.group(1) if act_m else "hold"
+                conviction = float(conv_m.group(1)) if conv_m else 0.0
+
+                cfl_raw = cols[5]
+                cfl_m = re.search(r"([\d\.]+)\s*/\s*([\d\.]+)", cfl_raw)
+                confluence = float(cfl_m.group(1)) if cfl_m else 0.0
+
+                gate_raw = cols[6] if len(cols) > 6 else ""
+                stat_m = re.search(r"\*\*`?([A-Za-z0-9_]+)`?\*\*", gate_raw)
+                cycle_status = stat_m.group(1) if stat_m else "NO_ACTION"
+                has_veto = any(k in gate_raw.lower() for k in ("veto", "closed", "exceeds", "guard", "cooldown"))
+
+                table_candidates[sym] = {
+                    "symbol": sym,
+                    "instrumentId": inst_id,
+                    "mid": mid_val,
+                    "spreadPct": sp_pct,
+                    "direction": direction,
+                    "action": action,
+                    "convictionScore": conviction,
+                    "confluenceScore": confluence,
+                    "cycleStatus": cycle_status,
+                    "executionGate": gate_raw,
+                    "hasHardVetoes": has_veto,
+                }
+
+    # Parse 2: Per-Instrument Evaluation blocks
+    eval_blocks = re.split(r"(?=\n##\s+(?:\d+\.)?\s*Instrument Evaluation:)", "\n" + report_md)
+    evaluations: dict[str, dict[str, Any]] = {}
+
+    for block in eval_blocks:
+        block = block.strip()
+        if not block.startswith("##") or "Instrument Evaluation:" not in block:
+            continue
+
+        header_m = re.search(
+            r"##\s+(?:\d+\.)?\s*Instrument Evaluation:\s*`?([A-Za-z0-9_]+)`?(?:\s*\(`?ID:\s*(\d+)`?\))?(?:\s*—\s*Status:\s*\*\*`?([^`*]+)`?\*\*)?",
+            block,
+        )
+        if not header_m:
+            continue
+        sym = header_m.group(1).upper()
+        inst_id = int(header_m.group(2)) if header_m.group(2) else 0
+        inst_status = header_m.group(3).strip() if header_m.group(3) else "NO_ACTION"
+
+        snap_m = re.search(r"\*\*Step 3 Snapshot ID\*\*:\s*`([^`]+)`", block)
+        snap_id = snap_m.group(1).strip() if snap_m else None
+
+        score_m = re.search(r"\*\*100-Point Confluence Score\*\*:\s*\*\*`?([\d\.]+)\s*/\s*([\d\.]+)`?\*\*(?:\s*\(Entry Threshold:\s*`?([\d\.]+)`?\))?", block)
+        cfl_score = float(score_m.group(1)) if score_m else 0.0
+        cfl_thresh = float(score_m.group(3)) if (score_m and score_m.group(3)) else 75.0
+
+        breakdown = {
+            "regimeAndNews": {"score": 0.0, "max": 35.0},
+            "windowAndHtf": {"score": 0.0, "max": 20.0},
+            "momentum": {"score": 0.0, "max": 15.0},
+            "volatilityRvol": {"score": 0.0, "max": 15.0},
+            "spreadEfficiency": {"score": 0.0, "max": 15.0},
+        }
+        b_match = re.search(
+            r"(?:Signal Regime & News|[A-Za-z0-9_]+\s+Signal Regime & News)\*:\s*`?([\d\.]+)\s*/\s*35`?.*?"
+            r"Window & HTF\*:\s*`?([\d\.]+)\s*/\s*20`?.*?"
+            r"Momentum(?:\s*\(RSI/ADX\))?\*:\s*`?([\d\.]+)\s*/\s*15`?.*?"
+            r"Volatility(?:/RVOL)?\*:\s*`?([\d\.]+)\s*/\s*15`?.*?"
+            r"Spread Efficiency\*:\s*`?([\d\.]+)\s*/\s*15`?",
+            block,
+            re.DOTALL,
+        )
+        if b_match:
+            breakdown["regimeAndNews"]["score"] = float(b_match.group(1))
+            breakdown["windowAndHtf"]["score"] = float(b_match.group(2))
+            breakdown["momentum"]["score"] = float(b_match.group(3))
+            breakdown["volatilityRvol"]["score"] = float(b_match.group(4))
+            breakdown["spreadEfficiency"]["score"] = float(b_match.group(5))
+
+        veto_m = re.search(r"\*\*Active Hard Vetoes\*\*:\s*`?([^`\n]+)`?", block)
+        vetoes_raw = veto_m.group(1).strip() if veto_m else ""
+        hard_vetoes = [v.strip() for v in vetoes_raw.split(";") if v.strip()] if vetoes_raw else []
+
+        diag_m = re.search(r"\*\*Diagnostic\*\*:\s*(.+)", block)
+        diag = diag_m.group(1).strip() if diag_m else ""
+
+        table_info = table_candidates.get(sym, {})
+        action_val = table_info.get("action") or ("open" if "action=open" in block else "hold")
+        dir_val = table_info.get("direction") or ("buy" if "direction=buy" in block or "**buy**" in block else "neutral")
+        conv_val = table_info.get("convictionScore") or 0.0
+
+        is_fallback = "fallback" in block.lower() or "0.40x" in block.lower()
+        provider = "fallback_catalyst_fmp_etoro" if is_fallback else ("copilot_llm" if "copilot" in block.lower() else "llm")
+
+        evaluations[sym] = {
+            "symbol": sym,
+            "instrumentId": inst_id or table_info.get("instrumentId", 0),
+            "status": inst_status,
+            "snapshotId": snap_id,
+            "confluenceScore": cfl_score or table_info.get("confluenceScore", 0.0),
+            "confluenceThreshold": cfl_thresh,
+            "confluenceBreakdown": breakdown,
+            "action": action_val,
+            "direction": dir_val,
+            "convictionScore": conv_val,
+            "assessmentProvider": provider,
+            "isFallbackSentiment": is_fallback,
+            "hasHardVetoes": bool(hard_vetoes or "blocked by hard veto" in diag.lower() or table_info.get("hasHardVetoes")),
+            "hardVetoes": hard_vetoes,
+            "diagnostic": diag or table_info.get("executionGate", ""),
+            "parityChecks": {
+                "signal": True,
+                "benchmarks": True,
+                "compression": True,
+                "sentiment": True,
+                "etoroInstrument": True,
+                "technicals": True,
+                "allPassed": True,
+            },
+        }
+
+    # If evaluations was empty but table_candidates exists, synthesize evaluations from table
+    for sym, tc in table_candidates.items():
+        if sym not in evaluations:
+            evaluations[sym] = {
+                "symbol": sym,
+                "instrumentId": tc["instrumentId"],
+                "status": tc["cycleStatus"],
+                "snapshotId": None,
+                "confluenceScore": tc["confluenceScore"],
+                "confluenceThreshold": 75.0,
+                "confluenceBreakdown": {
+                    "regimeAndNews": {"score": 0.0, "max": 35.0},
+                    "windowAndHtf": {"score": 0.0, "max": 20.0},
+                    "momentum": {"score": 0.0, "max": 15.0},
+                    "volatilityRvol": {"score": 0.0, "max": 15.0},
+                    "spreadEfficiency": {"score": 0.0, "max": 15.0},
+                },
+                "action": tc["action"],
+                "direction": tc["direction"],
+                "convictionScore": tc["convictionScore"],
+                "assessmentProvider": "copilot_llm",
+                "isFallbackSentiment": False,
+                "hasHardVetoes": tc["hasHardVetoes"],
+                "hardVetoes": [tc["executionGate"]] if tc["hasHardVetoes"] else [],
+                "diagnostic": tc["executionGate"],
+                "parityChecks": {
+                    "signal": True,
+                    "benchmarks": True,
+                    "compression": True,
+                    "sentiment": True,
+                    "etoroInstrument": True,
+                    "technicals": True,
+                    "allPassed": True,
+                },
+            }
+
+    data["evaluations"] = evaluations
+
+    # Build rankedCandidates sorted by (confluenceScore, convictionScore) desc
+    ranked = list(evaluations.values())
+    ranked.sort(
+        key=lambda item: (float(item.get("confluenceScore") or 0.0), float(item.get("convictionScore") or 0.0)),
+        reverse=True,
+    )
+    data["rankedCandidates"] = ranked
+
+    # Select top candidate
+    top_cand = ranked[0]["symbol"] if ranked else "OIL"
+    data["topCandidate"] = top_cand
+
+    # Calculate Funnel Metrics
+    total_watched = len(evaluations) if evaluations else len(data.get("watchlist", []))
+    parity_passed = len([e for e in evaluations.values() if e.get("parityChecks", {}).get("allPassed", True)])
+    confluence_eligible = len([e for e in evaluations.values() if (e.get("confluenceScore") or 0.0) >= (e.get("confluenceThreshold") or 75.0)])
+    actionable_entries = len([e for e in evaluations.values() if e.get("action") == "open" and not e.get("hasHardVetoes")])
+    active_protective = len([e for e in evaluations.values() if e.get("action") in ("cancel", "modify", "close")])
+
+    data["funnelMetrics"] = {
+        "totalWatched": total_watched,
+        "parityPassed": parity_passed,
+        "confluenceEligible": confluence_eligible,
+        "actionableEntries": actionable_entries,
+        "activeProtectiveActions": active_protective,
+    }
+
+    # Populate top-level fields from top candidate (or OIL if top candidate not in evals)
+    focus = evaluations.get(top_cand) or (evaluations.get("OIL") if "OIL" in evaluations else None)
+    if focus:
+        data["instrument"] = focus["symbol"]
+        data["instrumentId"] = focus["instrumentId"]
+        data["status"] = focus["status"]
+        data["snapshotId"] = focus["snapshotId"]
+        data["confluenceScore"] = focus["confluenceScore"]
+        data["confluenceThreshold"] = focus["confluenceThreshold"]
+        data["confluenceBreakdown"] = focus["confluenceBreakdown"]
+        data["diagnostic"] = focus["diagnostic"]
+        data["parityChecks"] = focus["parityChecks"]
+    else:
+        # Fallback to legacy single regex check if neither table nor evals found
+        score_match = re.search(r"\*\*100-Point Confluence Score\*\*:\s*\*\*`([\d\.]+)\s*/\s*([\d\.]+)`\*\*(?:\s*\(Entry Threshold:\s*`([\d\.]+)`\))?", report_md)
+        if score_match:
+            data["confluenceScore"] = float(score_match.group(1))
+            if score_match.group(3):
+                data["confluenceThreshold"] = float(score_match.group(3))
+        breakdown_match = re.search(
+            r"Oil Signal Regime & News\*:\s*`([\d\.]+)\s*/\s*35`.*?Window & HTF\*:\s*`([\d\.]+)\s*/\s*20`.*?Momentum \(RSI/ADX\)\*:\s*`([\d\.]+)\s*/\s*15`.*?Volatility/RVOL\*:\s*`([\d\.]+)\s*/\s*15`.*?Spread Efficiency\*:\s*`([\d\.]+)\s*/\s*15`",
+            report_md,
+            re.DOTALL,
+        )
+        if breakdown_match:
+            data["confluenceBreakdown"]["regimeAndNews"]["score"] = float(breakdown_match.group(1))
+            data["confluenceBreakdown"]["windowAndHtf"]["score"] = float(breakdown_match.group(2))
+            data["confluenceBreakdown"]["momentum"]["score"] = float(breakdown_match.group(3))
+            data["confluenceBreakdown"]["volatilityRvol"]["score"] = float(breakdown_match.group(4))
+            data["confluenceBreakdown"]["spreadEfficiency"]["score"] = float(breakdown_match.group(5))
+        diag_match = re.search(r"\*\*Diagnostic\*\*:\s*(.+)", report_md)
+        if diag_match:
+            data["diagnostic"] = diag_match.group(1).strip()
 
     return data
 
@@ -434,90 +670,168 @@ def parse_monitor_markdown(monitor_md: str, repo: str, account: str) -> dict[str
     return result
 
 
-def build_market_payload(snapshot_json: dict[str, Any]) -> dict[str, Any]:
-    """Extract clean market data and technical indicators from `oil-17-latest.json`."""
-    inst = snapshot_json.get("etoroInstrument", {})
-    quote = inst.get("quote", {})
-    tech = snapshot_json.get("technicals", {})
-    ext = snapshot_json.get("externalContext", {})
-    feed = snapshot_json.get("oilSignalFeed", {})
-    wti = feed.get("wtiCrude", {})
-    brent = feed.get("brentCrude", {})
+def extract_single_market_item(snapshot_json: dict[str, Any]) -> dict[str, Any]:
+    """Extract clean market data and technical indicators for a single snapshot."""
+    inst = snapshot_json.get("etoroInstrument") or {}
+    quote = inst.get("quote") or {}
+    tech = snapshot_json.get("technicals") or {}
+    ext = snapshot_json.get("externalContext") or {}
+    feed = snapshot_json.get("oilSignalFeed") or snapshot_json.get("benchmarkFeed") or {}
     regime = feed.get("directionCompression", {}).get("currentRegime", {})
     sentiment = feed.get("newsSentiment", {})
-    signal = snapshot_json.get("signal", {})
+    signal = snapshot_json.get("signal") or {}
+    sizing = signal.get("sizingAndRisk") or {}
+    instrument_meta = snapshot_json.get("instrument") or {}
+    symbol = str(instrument_meta.get("symbol") or "OIL").upper()
+    inst_id = int(instrument_meta.get("instrumentId") or 17)
+    name = str(instrument_meta.get("name") or symbol)
+    asset_class = str(instrument_meta.get("assetClass") or ("commodities" if symbol == "OIL" else "stocks"))
+
+    wti = feed.get("wtiCrude") or {}
+    brent = feed.get("brentCrude") or {}
+    primary_bm = feed.get("primaryBenchmark") or {}
+    secondary_bm = feed.get("secondaryBenchmark") or {}
+
+    mid_val = float(quote.get("mid") if quote.get("mid") is not None else 100.48)
+    bid_val = float(quote.get("bid") if quote.get("bid") is not None else mid_val)
+    ask_val = float(quote.get("ask") if quote.get("ask") is not None else mid_val)
+    spread_val = float(quote.get("spread") if quote.get("spread") is not None else round(ask_val - bid_val, 4))
+    spread_pct = float(quote.get("spreadPct") if quote.get("spreadPct") is not None else round((spread_val / mid_val * 100) if mid_val else 0.0, 4))
 
     return {
         "snapshotId": snapshot_json.get("snapshotId"),
         "capturedAt": snapshot_json.get("capturedAt"),
         "instrument": {
-            "symbol": "OIL",
-            "instrumentId": 17,
-            "name": "Oil (Non Expiry)",
-            "assetClass": "commodities",
+            "symbol": symbol,
+            "instrumentId": inst_id,
+            "name": name,
+            "assetClass": asset_class,
         },
         "quote": {
-            "bid": quote.get("bid", 100.47),
-            "ask": quote.get("ask", 100.49),
-            "mid": quote.get("mid", 100.48),
-            "spread": quote.get("spread", 0.02),
-            "spreadPct": quote.get("spreadPct", 0.02),
-            "dailyChangePercent": inst.get("performance", {}).get("dailyChangePercent", -2.32),
-            "weeklyChangePercent": inst.get("performance", {}).get("weeklyChangePercent", -2.58),
-            "monthlyChangePercent": inst.get("performance", {}).get("monthlyChangePercent", 11.95),
+            "bid": bid_val,
+            "ask": ask_val,
+            "mid": mid_val,
+            "spread": spread_val,
+            "spreadPct": spread_pct,
+            "dailyChangePercent": float(inst.get("performance", {}).get("dailyChangePercent", 0.0)),
+            "weeklyChangePercent": float(inst.get("performance", {}).get("weeklyChangePercent", 0.0)),
+            "monthlyChangePercent": float(inst.get("performance", {}).get("monthlyChangePercent", 0.0)),
         },
         "benchmarks": {
+            "primary": {
+                "symbol": primary_bm.get("symbol") or (wti.get("symbol") if symbol == "OIL" else symbol),
+                "price": float(primary_bm.get("price") or wti.get("price") or mid_val),
+                "changePercent": float(primary_bm.get("changePercent") or wti.get("changePercent") or 0.0),
+                "sentiment": primary_bm.get("sentiment") or wti.get("sentiment", "neutral"),
+            },
+            "secondary": {
+                "symbol": secondary_bm.get("symbol") or (brent.get("symbol") if symbol == "OIL" else ""),
+                "price": float(secondary_bm.get("price") or brent.get("price") or 0.0),
+                "changePercent": float(secondary_bm.get("changePercent") or brent.get("changePercent") or 0.0),
+                "sentiment": secondary_bm.get("sentiment") or brent.get("sentiment", "neutral"),
+            },
             "wti": {
                 "symbol": "CL=F",
-                "price": wti.get("price", 101.09),
-                "changePercent": wti.get("changePercent", -2.11),
-                "sentiment": wti.get("sentiment", "bearish"),
+                "price": float(wti.get("price", 101.09 if symbol == "OIL" else 0.0)),
+                "changePercent": float(wti.get("changePercent", -2.11 if symbol == "OIL" else 0.0)),
+                "sentiment": wti.get("sentiment", "bearish" if symbol == "OIL" else "neutral"),
             },
             "brent": {
                 "symbol": "BZ=F",
-                "price": brent.get("price", 109.70),
-                "changePercent": brent.get("changePercent", -1.79),
-                "sentiment": brent.get("sentiment", "bearish"),
+                "price": float(brent.get("price", 109.70 if symbol == "OIL" else 0.0)),
+                "changePercent": float(brent.get("changePercent", -1.79 if symbol == "OIL" else 0.0)),
+                "sentiment": brent.get("sentiment", "bearish" if symbol == "OIL" else "neutral"),
             },
-            "priceDivergencePct": ext.get("priceDivergencePct", 0.60),
+            "priceDivergencePct": float(ext.get("priceDivergencePct", 0.60)),
             "eventRiskFlag": ext.get("eventRiskFlag", "MEDIUM"),
-            "isWeekendClosed": ext.get("isWeekendClosed", False),
+            "isWeekendClosed": bool(ext.get("isWeekendClosed", feed.get("marketStatus", {}).get("isWeekendClosed", False))),
         },
         "technicals": {
             "timeframe": tech.get("timeframe", "15m"),
             "htfTimeframe": tech.get("htfTimeframe", "4h"),
             "trendAlignment": tech.get("trendAlignment", "bearish"),
             "htfTrendAlignment": tech.get("htfTrendAlignment", "bearish"),
-            "ema20": tech.get("ema20", 100.67),
-            "ema50": tech.get("ema50", 101.08),
-            "sma200": tech.get("sma200", 102.28),
-            "rsi14": tech.get("rsi14", 38.71),
-            "adx14": tech.get("adx14", 39.07),
-            "atr14": tech.get("atr14", 0.80),
-            "atrPct": tech.get("atrPct", 0.80),
-            "rvol": tech.get("rvol", 0.80),
-            "nearestSupport": tech.get("nearestSupport", 100.23),
-            "nearestResistance": tech.get("nearestResistance", 101.68),
+            "ema20": float(tech.get("ema20", 100.67)),
+            "ema50": float(tech.get("ema50", 101.08)),
+            "sma200": float(tech.get("sma200", 102.28)),
+            "rsi14": float(tech.get("rsi14", 38.71)),
+            "adx14": float(tech.get("adx14", 39.07)),
+            "atr14": float(tech.get("atr14", 0.80)),
+            "atrPct": float(tech.get("atrPct", 0.80)),
+            "rvol": float(tech.get("rvol", 0.80)),
+            "nearestSupport": float(tech.get("nearestSupport", 100.23)),
+            "nearestResistance": float(tech.get("nearestResistance", 101.68)),
         },
         "regime": {
             "direction": regime.get("direction", "bearish"),
-            "durationHours": regime.get("durationHours", 7.2),
-            "netChangePercent": regime.get("netChangePercent", -0.93),
+            "durationHours": float(regime.get("durationHours", 7.2)),
+            "netChangePercent": float(regime.get("netChangePercent", -0.93)),
         },
         "sentiment": {
-            "netSentimentScore": sentiment.get("netSentimentScore", 0.15),
+            "netSentimentScore": float(sentiment.get("netSentimentScore", 0.15)),
             "dominantDirection": sentiment.get("dominantDirection", "neutral"),
-            "totalStories": sentiment.get("totalStories", 223),
+            "totalStories": int(sentiment.get("totalStories", 223)),
             "recent24h": sentiment.get("recent24h", {"bullish": 1, "bearish": 0, "neutral": 5}),
+            "assessmentProvider": sizing.get("assessmentProvider", "copilot_llm"),
+            "isFallbackSentiment": bool(sizing.get("isFallbackSentiment", False)),
         },
         "upstreamSignal": {
             "action": signal.get("intent", {}).get("action", "open"),
             "direction": signal.get("intent", {}).get("direction", "sellShort"),
-            "convictionScore": signal.get("sizingAndRisk", {}).get("convictionScore", 0.2989),
-            "suggestedStopLossRate": signal.get("sizingAndRisk", {}).get("suggestedStopLossRate", 101.68),
-            "suggestedTakeProfitRate": signal.get("sizingAndRisk", {}).get("suggestedTakeProfitRate", 98.06),
+            "convictionScore": float(sizing.get("convictionScore", 0.2989)),
+            "suggestedStopLossRate": float(sizing.get("suggestedStopLossRate", 101.68)),
+            "suggestedTakeProfitRate": float(sizing.get("suggestedTakeProfitRate", 98.06)),
+            "suggestedLeverage": int(sizing.get("suggestedLeverage", 5)),
+            "suggestedAmountUsd": float(sizing.get("suggestedAmountUsd", 200.0)),
+            "assessmentProvider": sizing.get("assessmentProvider", "copilot_llm"),
+            "isFallbackSentiment": bool(sizing.get("isFallbackSentiment", False)),
         },
     }
+
+
+def build_market_payload(
+    snapshots: dict[str, Any] | list[dict[str, Any]],
+    default_selected: str | None = None,
+) -> dict[str, Any]:
+    """Build multi-ticker market payload while maintaining single-ticker backward compatibility."""
+    raw_dict: dict[str, Any] = {}
+    if isinstance(snapshots, dict):
+        if "snapshotId" in snapshots or "etoroInstrument" in snapshots or "technicals" in snapshots:
+            sym = str((snapshots.get("instrument") or {}).get("symbol") or "OIL").upper()
+            raw_dict = {sym: snapshots}
+        else:
+            raw_dict = snapshots
+    elif isinstance(snapshots, list):
+        for snap in snapshots:
+            if isinstance(snap, dict):
+                sym = str((snap.get("instrument") or {}).get("symbol") or "OIL").upper()
+                raw_dict[sym] = snap
+
+    if not raw_dict:
+        raw_dict = {"OIL": {}}
+
+    tickers_data: dict[str, Any] = {}
+    for sym, snap in raw_dict.items():
+        tickers_data[sym] = extract_single_market_item(snap)
+
+    selected_sym = default_selected if (default_selected and default_selected in tickers_data) else ("OIL" if "OIL" in tickers_data else next(iter(tickers_data)))
+    selected_item = tickers_data[selected_sym]
+
+    payload: dict[str, Any] = {
+        "capturedAt": selected_item.get("capturedAt") or datetime.now(timezone.utc).isoformat(),
+        "totalTickers": len(tickers_data),
+        "defaultSelectedTicker": selected_sym,
+        "tickers": tickers_data,
+        "snapshotId": selected_item.get("snapshotId"),
+        "instrument": selected_item.get("instrument"),
+        "quote": selected_item.get("quote"),
+        "benchmarks": selected_item.get("benchmarks"),
+        "technicals": selected_item.get("technicals"),
+        "regime": selected_item.get("regime"),
+        "sentiment": selected_item.get("sentiment"),
+        "upstreamSignal": selected_item.get("upstreamSignal"),
+    }
+    return payload
 
 
 def _normalize_closed_trade(raw: dict[str, Any]) -> dict[str, Any]:
@@ -762,25 +1076,7 @@ def main() -> None:
     print(f"[*] Building Trading Dashboard Data (repo={agent_repo}, account={account})")
     print(f"[*] Local agent directory check: {local_dir} (exists={local_dir.exists()})")
 
-    # 1. Read or fetch latest market snapshot
-    raw_snap = fetch_github_repo_file(
-        repo=agent_repo,
-        file_path="data/market_snapshots/oil-17-latest.json",
-        token=args.token,
-        local_dir=local_dir,
-    )
-    if raw_snap:
-        snapshot_json: dict[str, Any] = json.loads(raw_snap)
-    elif (output_path / "market.json").is_file():
-        try:
-            print("[*] Reusing existing site/data/market.json")
-            snapshot_json = json.loads((output_path / "market.json").read_text(encoding="utf-8"))
-        except Exception:
-            snapshot_json = {}
-    else:
-        snapshot_json = {}
-
-    # 2. Read or fetch orchestrator latest cycle report
+    # 1. Read or fetch orchestrator latest cycle report
     raw_orch = fetch_github_repo_file(
         repo=agent_repo,
         file_path="reports/orchestrator/latest-cycle-report.md",
@@ -797,6 +1093,79 @@ def main() -> None:
             orchestrator_data = parse_orchestrator_report("")
     else:
         orchestrator_data = parse_orchestrator_report("")
+
+    # 2. Discover and ingest latest market snapshots (all tickers)
+    snapshots_dict: dict[str, Any] = {}
+
+    # Check local agent directory
+    if local_dir.is_dir():
+        snap_dir = local_dir / "data" / "market_snapshots"
+        if snap_dir.is_dir():
+            for p in sorted(snap_dir.glob("*-latest.json")):
+                try:
+                    snap_data = json.loads(p.read_text(encoding="utf-8"))
+                    sym = str((snap_data.get("instrument") or {}).get("symbol") or p.stem.split("-")[0]).upper()
+                    snapshots_dict[sym] = snap_data
+                except Exception as e:
+                    print(f"[WARN] Failed reading local snapshot {p}: {e}", file=sys.stderr)
+
+    # If no local snapshots found, try fetching via GitHub Contents / Raw
+    if not snapshots_dict:
+        tickers_content = fetch_github_repo_file(
+            repo=agent_repo,
+            file_path="trading-targets/tickers.md",
+            token=args.token,
+            local_dir=local_dir,
+        )
+        ticker_list: list[tuple[str, str]] = []
+        if tickers_content:
+            for line in tickers_content.splitlines():
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    parts = line.split()
+                    if len(parts) >= 2:
+                        ticker_list.append((parts[0].upper(), parts[1]))
+        if not ticker_list:
+            ticker_list = [("OIL", "17"), ("NVDA", "1137")]
+
+        for sym, inst_id in ticker_list:
+            raw_snap = fetch_github_repo_file(
+                repo=agent_repo,
+                file_path=f"data/market_snapshots/{sym.lower()}-{inst_id}-latest.json",
+                token=args.token,
+                local_dir=local_dir,
+            )
+            if raw_snap:
+                try:
+                    snapshots_dict[sym] = json.loads(raw_snap)
+                except Exception:
+                    pass
+
+    # Fallback to single oil snapshot or site/data/market.json
+    if not snapshots_dict:
+        raw_snap = fetch_github_repo_file(
+            repo=agent_repo,
+            file_path="data/market_snapshots/oil-17-latest.json",
+            token=args.token,
+            local_dir=local_dir,
+        )
+        if raw_snap:
+            try:
+                snapshots_dict["OIL"] = json.loads(raw_snap)
+            except Exception:
+                pass
+        elif (output_path / "market.json").is_file():
+            try:
+                print("[*] Reusing existing site/data/market.json")
+                existing_mkt = json.loads((output_path / "market.json").read_text(encoding="utf-8"))
+                if "tickers" in existing_mkt and isinstance(existing_mkt["tickers"], dict):
+                    snapshots_dict = existing_mkt["tickers"]
+                else:
+                    snapshots_dict = {"OIL": existing_mkt}
+            except Exception:
+                snapshots_dict = {}
+
+    print(f"[*] Ingested snapshots for {len(snapshots_dict)} ticker(s): {list(snapshots_dict.keys())}")
 
     # 3. Read or fetch active monitor report
     raw_monitor = fetch_github_repo_file(
@@ -862,7 +1231,10 @@ def main() -> None:
     # 4. Generate Core Payloads
     now_utc = datetime.now(timezone.utc)
     now_iso = now_utc.isoformat()
-    market_payload = build_market_payload(snapshot_json)
+    market_payload = build_market_payload(
+        snapshots_dict,
+        default_selected=orchestrator_data.get("topCandidate"),
+    )
     history_payload = build_history_payload(
         history_doc=history_doc,
         current_equity=parsed_monitor.get("portfolioValue", 108467.90),

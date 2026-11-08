@@ -5,6 +5,10 @@
 
 let refreshCountdown = 60;
 let refreshTimerInterval = null;
+let currentOrchestrator = null;
+let currentMarket = null;
+let selectedTicker = null;
+let activeMatrixFilter = "all";
 
 async function fetchJson(endpoint) {
   try {
@@ -52,6 +56,33 @@ function formatPct(val, withSign = true) {
   return `${sign}${num.toFixed(2)}%`;
 }
 
+function selectTicker(symbol) {
+  if (!symbol) return;
+  selectedTicker = symbol.toUpperCase();
+  if (currentOrchestrator) {
+    renderOrchestratorFunnel(currentOrchestrator, selectedTicker);
+  }
+  if (currentMarket) {
+    renderMarketAndTechnicals(currentMarket, selectedTicker, activeMatrixFilter);
+  }
+}
+
+function setupMatrixFilters() {
+  const bar = document.getElementById("matrix-filter-bar");
+  if (!bar || bar.dataset.initialized) return;
+  bar.dataset.initialized = "true";
+  bar.addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    bar.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeMatrixFilter = btn.dataset.filter || "all";
+    if (currentMarket) {
+      renderMarketAndTechnicals(currentMarket, selectedTicker, activeMatrixFilter);
+    }
+  });
+}
+
 async function loadDashboardData() {
   const [summary, positions, orchestrator, market, history] = await Promise.all([
     fetchJson("data/summary.json"),
@@ -61,10 +92,16 @@ async function loadDashboardData() {
     fetchJson("data/history.json"),
   ]);
 
+  currentOrchestrator = orchestrator;
+  currentMarket = market;
+  if (!selectedTicker) {
+    selectedTicker = orchestrator?.topCandidate || market?.defaultSelectedTicker || "OIL";
+  }
+
   renderHeaderAndKpis(summary);
   renderActiveTrades(positions, summary);
-  renderOrchestratorFunnel(orchestrator);
-  renderMarketAndTechnicals(market);
+  renderOrchestratorFunnel(orchestrator, selectedTicker);
+  renderMarketAndTechnicals(market, selectedTicker, activeMatrixFilter);
   renderPerformanceAndJournal(history);
 
   const lastUpdatedEl = document.getElementById("last-updated-text");
@@ -206,7 +243,7 @@ function escapeJsString(str) {
   return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"');
 }
 
-function renderOrchestratorFunnel(orch) {
+function renderOrchestratorFunnel(orch, selTicker) {
   if (!orch) return;
 
   const scoreEl = document.getElementById("confluence-score-val");
@@ -215,11 +252,59 @@ function renderOrchestratorFunnel(orch) {
   const markerEl = document.getElementById("confluence-threshold-marker");
   const statusEl = document.getElementById("orchestrator-status-text");
   const diagEl = document.getElementById("orchestrator-diag-text");
+  const tierBadge = document.getElementById("sentiment-tier-badge");
+  const tickerSelect = document.getElementById("funnel-ticker-select");
 
-  const score = orch.confluenceScore || 0;
-  const threshold = orch.confluenceThreshold || 65.0;
+  // 1. Pipeline Summary Counters
+  const fn = orch.funnelMetrics || {};
+  const totalWatched = fn.totalWatched || (orch.watchlist?.length || 0);
+  const parityPassed = fn.parityPassed || totalWatched;
+  const confluenceEligible = fn.confluenceEligible !== undefined ? fn.confluenceEligible : 0;
+  const actionableEntries = fn.actionableEntries !== undefined ? fn.actionableEntries : 0;
 
-  if (scoreEl) scoreEl.innerText = score.toFixed(2);
+  const wEl = document.getElementById("fn-stage-watched");
+  const pEl = document.getElementById("fn-stage-parity");
+  const cEl = document.getElementById("fn-stage-confluence");
+  const aEl = document.getElementById("fn-stage-actionable");
+  if (wEl) wEl.innerText = totalWatched;
+  if (pEl) pEl.innerText = parityPassed;
+  if (cEl) cEl.innerText = confluenceEligible;
+  if (aEl) aEl.innerText = actionableEntries;
+
+  // 2. Resolve Active Candidate
+  const targetSymbol = (selTicker || orch.topCandidate || orch.instrument || "OIL").toUpperCase();
+  const evals = orch.evaluations || {};
+  const activeEval = evals[targetSymbol] || orch.rankedCandidates?.find(c => c.symbol === targetSymbol) || orch;
+
+  // 3. Populate Ticker Select Dropdown if needed
+  if (tickerSelect) {
+    const symbols = Object.keys(evals).length > 0
+      ? Object.keys(evals)
+      : (orch.rankedCandidates?.length > 0 ? orch.rankedCandidates.map(c => c.symbol) : (orch.watchlist || ["OIL"]));
+    
+    const rankedMap = {};
+    (orch.rankedCandidates || []).forEach((c) => { rankedMap[c.symbol] = c.confluenceScore; });
+
+    const currentOpts = Array.from(tickerSelect.options).map(o => o.value).join(",");
+    const newOpts = symbols.join(",");
+    if (currentOpts !== newOpts) {
+      tickerSelect.innerHTML = symbols.map(s => {
+        const sc = rankedMap[s] !== undefined ? ` (${rankedMap[s].toFixed(1)})` : "";
+        return `<option value="${s}">${s}${sc}</option>`;
+      }).join("");
+
+      tickerSelect.onchange = (e) => {
+        selectTicker(e.target.value);
+      };
+    }
+    tickerSelect.value = targetSymbol;
+  }
+
+  // 4. Confluence Score & Marker
+  const score = activeEval.confluenceScore !== undefined ? activeEval.confluenceScore : (orch.confluenceScore || 0);
+  const threshold = activeEval.confluenceThreshold !== undefined ? activeEval.confluenceThreshold : (orch.confluenceThreshold || 75.0);
+
+  if (scoreEl) scoreEl.innerText = score.toFixed(1);
   if (thresholdEl) thresholdEl.innerText = `/ 100.0 (Min: ${threshold.toFixed(1)})`;
 
   const pct = Math.min(Math.max(score, 0), 100);
@@ -231,15 +316,48 @@ function renderOrchestratorFunnel(orch) {
     markerEl.style.left = `${threshold}%`;
   }
 
-  if (statusEl) {
-    statusEl.innerHTML = `Cycle Status: <strong>${orch.status || "UNKNOWN"}</strong> · Cadence: <span class="mono">${orch.cadence || "10m"}</span>`;
-  }
-  if (diagEl) {
-    diagEl.innerText = orch.diagnostic || "No cycle diagnostics recorded.";
+  // 5. Sentiment Tier Badge
+  if (tierBadge) {
+    const isFallback = activeEval.isFallbackSentiment;
+    const provider = (activeEval.assessmentProvider || "").toLowerCase();
+    if (isFallback) {
+      tierBadge.innerText = "⚠️ TIER 4: FALLBACK (0.40x)";
+      tierBadge.className = "badge badge-tier-fallback";
+      tierBadge.title = "Tier 4 Exhaustion Fallback active: score discounted 60%, max confidence 40%, confluence capped at 60.0";
+    } else if (provider.includes("copilot")) {
+      tierBadge.innerText = "TIER 1: COPILOT (1.00x)";
+      tierBadge.className = "badge badge-tier-copilot";
+      tierBadge.title = "Full AI sentiment fidelity via GitHub Copilot Models";
+    } else if (provider.includes("antigravity")) {
+      tierBadge.innerText = "TIER 2: ANTIGRAVITY (1.00x)";
+      tierBadge.className = "badge badge-tier-antigravity";
+      tierBadge.title = "Full AI sentiment fidelity via Antigravity SDK inference";
+    } else if (provider.includes("gemini")) {
+      tierBadge.innerText = "TIER 3: GEMINI API (1.00x)";
+      tierBadge.className = "badge badge-tier-gemini";
+      tierBadge.title = "Full AI sentiment fidelity via direct Gemini API reserve";
+    } else {
+      tierBadge.innerText = "TIER 1: AI SENTIMENT";
+      tierBadge.className = "badge badge-tier-copilot";
+      tierBadge.title = "Standard AI sentiment";
+    }
   }
 
-  // Breakdown Pillars
-  const bd = orch.confluenceBreakdown || {};
+  // 6. Status & Diagnostic
+  if (statusEl) {
+    const stat = activeEval.status || orch.status || "UNKNOWN";
+    statusEl.innerHTML = `Focus: <strong>${targetSymbol}</strong> · Status: <strong>${stat}</strong> · Cadence: <span class="mono">${orch.cadence || "9m"}</span>`;
+  }
+  if (diagEl) {
+    const diag = activeEval.diagnostic || orch.diagnostic || "No cycle diagnostics recorded.";
+    const vetoes = activeEval.hardVetoes && activeEval.hardVetoes.length > 0
+      ? `Active Veto: ${activeEval.hardVetoes.join(" · ")}`
+      : diag;
+    diagEl.innerText = vetoes;
+  }
+
+  // 7. Breakdown Pillars
+  const bd = activeEval.confluenceBreakdown || orch.confluenceBreakdown || {};
   renderPillar("pillar-regime-bar", "pillar-regime-val", bd.regimeAndNews);
   renderPillar("pillar-htf-bar", "pillar-htf-val", bd.windowAndHtf);
   renderPillar("pillar-mom-bar", "pillar-mom-val", bd.momentum);
@@ -265,35 +383,104 @@ function renderPillar(barId, valId, data) {
   }
 }
 
-function renderMarketAndTechnicals(market) {
+function renderMarketAndTechnicals(market, selTicker, activeFilter = "all") {
   if (!market) return;
+  setupMatrixFilters();
 
-  const quote = market.quote || {};
-  document.getElementById("mkt-oil-quote").innerText = `$${Number(quote.mid || 100.48).toFixed(2)}`;
-  document.getElementById("mkt-oil-spread").innerText = `Spread: $${Number(quote.spread || 0.02).toFixed(2)} (${Number(quote.spreadPct || 0.02).toFixed(2)}%)`;
-  document.getElementById("mkt-oil-chg").innerText = formatPct(quote.dailyChangePercent);
-  document.getElementById("mkt-oil-chg").className = `mono ${quote.dailyChangePercent >= 0 ? "val-green" : "val-red"}`;
+  const container = document.getElementById("market-matrix-table-body");
+  const countBadge = document.getElementById("market-ticker-count");
+  if (!container) return;
 
-  const bench = market.benchmarks || {};
-  document.getElementById("mkt-wti-price").innerText = `$${Number(bench.wti?.price || 101.09).toFixed(2)}`;
-  document.getElementById("mkt-brent-price").innerText = `$${Number(bench.brent?.price || 109.70).toFixed(2)}`;
-  
-  if (typeof renderDivergenceGauge === "function") {
-    renderDivergenceGauge("divergence-gauge-box", bench.priceDivergencePct || 0.6);
+  const tickersMap = market.tickers || (market.instrument ? { [market.instrument.symbol || "OIL"]: market } : {});
+  const symbols = Object.keys(tickersMap);
+
+  if (countBadge) {
+    countBadge.innerText = `${symbols.length} Tickers`;
   }
 
-  const tech = market.technicals || {};
-  document.getElementById("tech-ema20").innerText = tech.ema20 ? Number(tech.ema20).toFixed(2) : "--";
-  document.getElementById("tech-ema50").innerText = tech.ema50 ? Number(tech.ema50).toFixed(2) : "--";
-  document.getElementById("tech-sma200").innerText = tech.sma200 ? Number(tech.sma200).toFixed(2) : "--";
-  document.getElementById("tech-rsi").innerText = tech.rsi14 ? Number(tech.rsi14).toFixed(1) : "--";
-  document.getElementById("tech-adx").innerText = tech.adx14 ? Number(tech.adx14).toFixed(1) : "--";
-  document.getElementById("tech-atr").innerText = tech.atrPct ? `${Number(tech.atrPct).toFixed(2)}%` : "--";
-  document.getElementById("tech-rvol").innerText = tech.rvol ? `${Number(tech.rvol).toFixed(2)}x` : "--";
+  if (symbols.length === 0) {
+    container.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--text-dim); padding:20px;">No ticker snapshots available.</td></tr>`;
+    return;
+  }
 
-  const sent = market.sentiment || {};
-  document.getElementById("sent-score").innerText = sent.netSentimentScore !== undefined ? `${sent.netSentimentScore >= 0 ? "+" : ""}${Number(sent.netSentimentScore).toFixed(2)}` : "--";
-  document.getElementById("sent-dir").innerText = (sent.dominantDirection || "neutral").toUpperCase();
+  const activeSym = (selTicker || market.defaultSelectedTicker || symbols[0]).toUpperCase();
+
+  let filtered = symbols;
+  if (activeFilter === "stocks") {
+    filtered = symbols.filter(s => tickersMap[s].instrument?.assetClass === "stocks");
+  } else if (activeFilter === "commodities") {
+    filtered = symbols.filter(s => tickersMap[s].instrument?.assetClass === "commodities");
+  } else if (activeFilter === "top") {
+    filtered = symbols.filter(s => (tickersMap[s].confluenceScore || 0) >= 70);
+  }
+
+  filtered.sort((a, b) => {
+    const scA = tickersMap[a].confluenceScore || 0;
+    const scB = tickersMap[b].confluenceScore || 0;
+    return scB - scA;
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--text-dim); padding:20px;">No tickers match the active filter "${activeFilter}".</td></tr>`;
+    return;
+  }
+
+  container.innerHTML = filtered.map(sym => {
+    const item = tickersMap[sym] || {};
+    const inst = item.instrument || {};
+    const q = item.quote || {};
+    const tech = item.technicals || {};
+    const sent = item.sentiment || {};
+    const cfl = item.confluenceScore !== undefined ? item.confluenceScore : 0;
+    const sugg = item.upstreamSignal || item.suggestion || {};
+    const action = (sugg.action || "hold").toUpperCase();
+
+    const isSelected = sym === activeSym;
+    const rowClass = isSelected ? "active-row" : "";
+    const chgVal = q.dailyChangePercent || 0;
+    const chgClass = chgVal >= 0 ? "val-green" : "val-red";
+
+    const spVal = q.spreadPct || 0;
+    const spWarn = spVal > 0.20 ? ' <span title="Wide spread" style="color:var(--amber);">⚠️</span>' : '';
+
+    const sentDir = (sent.dominantDirection || "neutral").toUpperCase();
+    const sentScore = sent.netSentimentScore !== undefined ? (sent.netSentimentScore >= 0 ? `+${sent.netSentimentScore.toFixed(2)}` : sent.netSentimentScore.toFixed(2)) : "--";
+    const sentCounts = sent.recent24h ? `${sent.recent24h.bullish || 0}B/${sent.recent24h.bearish || 0}b` : "";
+    const sentBadgeClass = sentDir === "BULLISH" ? "val-green" : (sentDir === "BEARISH" ? "val-red" : "val-amber");
+
+    const trendIcon = tech.trendAlignment === "bullish" ? "🟢" : (tech.trendAlignment === "bearish" ? "🔴" : "⚪");
+    const htfTrendIcon = tech.htfTrendAlignment === "bullish" ? "🟢" : (tech.htfTrendAlignment === "bearish" ? "🔴" : "⚪");
+    const rsiVal = tech.rsi14 ? Number(tech.rsi14).toFixed(0) : "--";
+    const rvolVal = tech.rvol ? `${Number(tech.rvol).toFixed(1)}x` : "--";
+
+    const cflBadgeClass = cfl >= 75 ? "badge-safe" : (cfl >= 60 ? "badge-demo" : "badge-short");
+
+    return `
+      <tr class="${rowClass}" onclick="selectTicker('${sym}')">
+        <td class="mono">
+          <strong>${sym}</strong> <span style="font-size:10px; color:var(--text-dim);">${inst.instrumentId || ""}</span>
+        </td>
+        <td class="mono"><strong>$${Number(q.mid || 0).toFixed(2)}</strong></td>
+        <td class="mono ${chgClass}"><strong>${formatPct(chgVal)}</strong></td>
+        <td class="mono">${Number(spVal).toFixed(2)}%${spWarn}</td>
+        <td>
+          <span class="${sentBadgeClass}" style="font-weight:600; font-size:11px;">${sentDir}</span>
+          <span class="mono" style="font-size:10px; color:var(--text-muted);">${sentScore} (${sentCounts})</span>
+        </td>
+        <td style="font-size:11px;">
+          <span title="Trend (15m/4h)">${trendIcon}/${htfTrendIcon}</span>
+          <span class="mono" style="color:var(--text-muted); margin-left:4px;">RSI:${rsiVal}</span>
+          <span class="mono" style="color:var(--text-dim); margin-left:4px;">${rvolVal}</span>
+        </td>
+        <td>
+          <span class="badge ${cflBadgeClass}">${cfl.toFixed(0)} · ${action}</span>
+        </td>
+        <td style="text-align:center;">
+          <button class="btn-action" style="padding:2px 6px; font-size:10px;" onclick="event.stopPropagation(); selectTicker('${sym}')">🔍 Focus</button>
+        </td>
+      </tr>
+    `;
+  }).join("");
 }
 
 function renderPerformanceAndJournal(hist) {

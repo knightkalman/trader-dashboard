@@ -111,8 +111,20 @@
         <div class="section-header">
           <div class="section-title">
             <span>🧠 Orchestrator Decision Funnel</span>
+            <select id="funnel-ticker-select" class="ticker-select-compact" title="Select instrument to inspect"></select>
           </div>
           <span id="orchestrator-status-text" class="mono" style="font-size:12px; color:var(--text-muted);">Cycle: --</span>
+        </div>
+
+        <!-- Funnel Horizontal Pipeline Summary Bar -->
+        <div class="funnel-pipeline-bar" id="funnel-pipeline-bar">
+          <div class="funnel-stage"><span>Watched</span> <strong id="fn-stage-watched">--</strong></div>
+          <div class="funnel-arrow">&rarr;</div>
+          <div class="funnel-stage"><span>Parity Pass</span> <strong id="fn-stage-parity">--</strong></div>
+          <div class="funnel-arrow">&rarr;</div>
+          <div class="funnel-stage"><span>Score &ge; 75</span> <strong id="fn-stage-confluence">--</strong></div>
+          <div class="funnel-arrow">&rarr;</div>
+          <div class="funnel-stage highlight"><span>Actionable</span> <strong id="fn-stage-actionable">--</strong></div>
         </div>
 
         <div class="confluence-box">
@@ -120,6 +132,7 @@
             <div>
               <div style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:600;">100-Point Confluence Score</div>
               <div style="font-size:12px; color:var(--text-dim);" id="confluence-threshold-val">--</div>
+              <div id="sentiment-tier-badge" class="badge badge-demo" style="margin-top:4px; font-size:10px;">TIER 1: COPILOT</div>
             </div>
             <div id="confluence-score-val" class="confluence-score-big">--</div>
           </div>
@@ -166,7 +179,7 @@
           <strong>Diagnostic:</strong> <span id="orchestrator-diag-text">--</span>
         </div>
 
-        <div style="margin-top:16px;">
+        <div style="margin-top:14px;">
           <div style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-bottom:6px;">6-Block Data Parity Gate</div>
           <div class="parity-grid">
             <div class="parity-item"><span class="icon-check">✓</span> 1. Upstream Signal</div>
@@ -179,45 +192,39 @@
         </div>
       </div>
 
-      <!-- PANEL 3: Live Oil Market & Institutional Technicals -->
+      <!-- PANEL 3: Multi-Ticker Market & Technical Matrix -->
       <div class="section-card">
         <div class="section-header">
           <div class="section-title">
-            <span>🛢️ Oil (ID 17) Market &amp; Technicals</span>
+            <span>📊 Multi-Ticker Market Matrix</span>
+            <span id="market-ticker-count" class="badge badge-safe">-- Tickers</span>
           </div>
-          <div style="display:flex; gap:10px; align-items:center;">
-            <span id="mkt-oil-quote" class="mono" style="font-size:18px; font-weight:800; color:var(--text);">--</span>
-            <span id="mkt-oil-chg" class="mono">--</span>
+          <div class="matrix-filter-bar" id="matrix-filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="stocks">Stocks</button>
+            <button class="filter-btn" data-filter="commodities">Cmdty</button>
+            <button class="filter-btn" data-filter="top">Top Confluence</button>
           </div>
         </div>
 
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-size:12px;">
-          <span id="mkt-oil-spread" style="color:var(--text-muted);">Spread: --</span>
-          <span style="color:var(--text-muted);">Physical: WTI <strong id="mkt-wti-price" class="mono" style="color:var(--text);">--</strong> · Brent <strong id="mkt-brent-price" class="mono" style="color:var(--text);">--</strong></span>
-        </div>
-
-        <div id="divergence-gauge-box" style="margin-bottom:16px;"></div>
-
-        <div style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-top:8px;">Technicals (15m &amp; 4h HTF)</div>
-        <div class="tech-grid">
-          <div class="tech-cell"><div class="tech-cell-label">EMA 20</div><div id="tech-ema20" class="tech-cell-val">--</div></div>
-          <div class="tech-cell"><div class="tech-cell-label">EMA 50</div><div id="tech-ema50" class="tech-cell-val">--</div></div>
-          <div class="tech-cell"><div class="tech-cell-label">SMA 200</div><div id="tech-sma200" class="tech-cell-val">--</div></div>
-          <div class="tech-cell"><div class="tech-cell-label">RSI (14)</div><div id="tech-rsi" class="tech-cell-val val-blue">--</div></div>
-          <div class="tech-cell"><div class="tech-cell-label">ADX (14)</div><div id="tech-adx" class="tech-cell-val">--</div></div>
-          <div class="tech-cell"><div class="tech-cell-label">ATR %</div><div id="tech-atr" class="tech-cell-val">--</div></div>
-          <div class="tech-cell"><div class="tech-cell-label">RVOL</div><div id="tech-rvol" class="tech-cell-val">--</div></div>
-        </div>
-
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; padding:10px 14px; background:var(--panel-light); border-radius:6px; border:1px solid var(--border);">
-          <div style="font-size:12px;">
-            <span style="color:var(--text-muted);">AI News Sentiment:</span> 
-            <strong id="sent-dir" class="mono" style="color:var(--amber);">--</strong>
-          </div>
-          <div style="font-size:12px;">
-            <span style="color:var(--text-muted);">Score:</span>
-            <strong id="sent-score" class="mono">--</strong>
-          </div>
+        <div class="table-responsive table-scrollable-10" style="max-height: 400px;">
+          <table class="table-compact market-matrix-table">
+            <thead>
+              <tr>
+                <th>Ticker</th>
+                <th>Quote</th>
+                <th>24h Chg</th>
+                <th>Spread %</th>
+                <th>24h News Sentiment</th>
+                <th>Technicals</th>
+                <th>Confluence</th>
+                <th style="text-align:center;">Focus</th>
+              </tr>
+            </thead>
+            <tbody id="market-matrix-table-body">
+              <tr><td colspan="8" style="text-align:center; color:var(--text-dim); padding:20px;">Loading multi-ticker market data...</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

@@ -624,3 +624,135 @@ footer {
   font-size: 12px;
 }
 
+/* Multi-Ticker Funnel Pipeline Horizontal Counter */
+.funnel-pipeline-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+}
+
+.funnel-stage {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.funnel-stage strong {
+  font-size: 14px;
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+.funnel-stage.highlight strong {
+  color: var(--green);
+}
+
+.funnel-arrow {
+  color: var(--text-dim);
+  font-size: 13px;
+  user-select: none;
+}
+
+/* Compact Ticker Select */
+.ticker-select-compact {
+  background: var(--panel-light);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.ticker-select-compact:hover,
+.ticker-select-compact:focus {
+  border-color: var(--blue);
+}
+
+/* Market Matrix Table Enhancements */
+.market-matrix-table tr {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.market-matrix-table tr:hover td {
+  background: var(--panel-hover);
+}
+
+.market-matrix-table tr.active-row td {
+  background: rgba(79, 193, 233, 0.12);
+  border-bottom-color: var(--blue-border);
+}
+
+.market-matrix-table td {
+  vertical-align: middle;
+}
+
+.matrix-filter-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+  background: var(--border-light);
+  color: var(--text);
+  border-color: var(--border-light);
+}
+
+.filter-btn.active {
+  background: var(--blue-bg);
+  color: var(--blue);
+  border-color: var(--blue-border);
+}
+
+/* Sentiment Tier Badges */
+.badge-tier-copilot {
+  background: var(--blue-bg);
+  color: var(--blue);
+  border: 1px solid var(--blue-border);
+}
+
+.badge-tier-antigravity {
+  background: var(--purple-bg);
+  color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.badge-tier-gemini {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid var(--green-border);
+}
+
+.badge-tier-fallback {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid var(--red-border);
+}
+
+

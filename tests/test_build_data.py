@@ -40,6 +40,75 @@ class TestDashboardDataBuilder(unittest.TestCase):
         self.assertEqual(parsed["confluenceBreakdown"]["spreadEfficiency"]["score"], 15.0)
         self.assertTrue(parsed["parityChecks"]["allPassed"])
 
+    def test_parse_multi_ticker_orchestrator_report(self):
+        multi_md = """# 🧠 10-Minute Trading Orchestrator Cycle Report (`DEMO`)
+
+- **Cycle Timestamp (UTC)**: `2026-11-08T06:10:58Z`
+- **Orchestrator Enabled**: `True` · **Cadence**: `10m` · **Execution Mode**: `auto_execute_all` (`channel=inline_prepare`)
+- **Allowed Watchlist**: `OIL, NVDA, QCOM`
+
+## 📊 Active Trading Suggestions Summary (`OIL` & `NVDA`)
+
+| Ticker (`ID`) | eToro Live Quote (`Ask / Bid / Mid`) | Upstream Signal Benchmark | Synthesized Suggestion (`Dir · Conv`) | Suggested Sizing & `SL / TP` | Confluence (`0–100`) | Cycle Status & Execution Gate |
+|---------------|--------------------------------------|---------------------------|---------------------------------------|------------------------------|----------------------|-------------------------------|
+| **`OIL`** (`ID: 17`) | Ask `$90.000` / Bid `$89.540` (Mid `$89.770`, Sp `0.5111%`) | `CL=F` `$90.830` (`+0.34%`, `bullish`) | **`neutral`** (`action=hold`, `conv=0.0869`) | `$200` @ `5x` · `SL=88.33` · `TP=92.64` | **`43.00 / 100.0`** | **`NO_ACTION`** (Market is closed for the weekend (isWeekendClosed=true).) |
+| **`NVDA`** (`ID: 1137`) | Ask `$186.760` / Bid `$186.750` (Mid `$186.755`, Sp `0.0054%`) | `NVDA` `$186.640` (`+2.78%`, `bullish`) | **`buy`** (`action=open`, `conv=0.5793`) | `$350` @ `5x` · `SL=180.08` · `TP=200.13` | **`74.00 / 100.0`** | **`NO_ACTION`** (Market is closed for the weekend (isWeekendClosed=true).) |
+| **`QCOM`** (`ID: 1485`) | Ask `$165.570` / Bid `$165.530` (Mid `$165.550`, Sp `0.0242%`) | `QCOM` `$165.410` (`+5.52%`, `bullish`) | **`buy`** (`action=open`, `conv=0.6102`) | `$350` @ `5x` · `SL=160.2` · `TP=176.3` | **`89.00 / 100.0`** | **`NO_ACTION`** (Market is closed for the weekend (isWeekendClosed=true).) |
+
+## 1. Instrument Evaluation: `OIL` (`ID: 17`) — Status: **`NO_ACTION`**
+
+- **Step 3 Snapshot ID**: `snap_oil_17_20261108T061043Z`
+- **100-Point Confluence Score**: **`43.00 / 100.0`** (Entry Threshold: `75.0`)
+  - *Oil Signal Regime & News*: `24.0 / 35` · *Window & HTF*: `5.0 / 20` · *Momentum (RSI/ADX)*: `10.0 / 15` · *Volatility/RVOL*: `4.0 / 15` · *Spread Efficiency*: `0.0 / 15`
+- **Active Hard Vetoes**: `Market is closed for the weekend (isWeekendClosed=true).`
+- **Diagnostic**: New OIL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']
+
+## 2. Instrument Evaluation: `QCOM` (`ID: 1485`) — Status: **`NO_ACTION`**
+
+- **Step 3 Snapshot ID**: `snap_qcom_1485_20261108T061044Z`
+- **100-Point Confluence Score**: **`89.00 / 100.0`** (Entry Threshold: `75.0`)
+  - *QCOM Signal Regime & News*: `24.0 / 35` · *Window & HTF*: `15.0 / 20` · *Momentum (RSI/ADX)*: `10.0 / 15` · *Volatility/RVOL*: `20.0 / 15` · *Spread Efficiency*: `20.0 / 15`
+- **Active Hard Vetoes**: `Market is closed for the weekend (isWeekendClosed=true).`
+- **Diagnostic**: New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']
+"""
+        parsed = parse_orchestrator_report(multi_md)
+        self.assertEqual(parsed["topCandidate"], "QCOM")
+        self.assertEqual(parsed["confluenceScore"], 89.0)
+        self.assertEqual(parsed["confluenceThreshold"], 75.0)
+        self.assertEqual(parsed["funnelMetrics"]["totalWatched"], 3)
+        self.assertEqual(parsed["funnelMetrics"]["confluenceEligible"], 1)
+        self.assertEqual(len(parsed["rankedCandidates"]), 3)
+        self.assertEqual(parsed["rankedCandidates"][0]["symbol"], "QCOM")
+        self.assertEqual(parsed["rankedCandidates"][1]["symbol"], "NVDA")
+        self.assertEqual(parsed["rankedCandidates"][2]["symbol"], "OIL")
+        self.assertIn("QCOM", parsed["evaluations"])
+        self.assertEqual(parsed["evaluations"]["QCOM"]["confluenceBreakdown"]["spreadEfficiency"]["score"], 20.0)
+
+    def test_build_multi_ticker_market_payload(self):
+        snapshots = {
+            "OIL": {
+                "snapshotId": "snap_oil_17",
+                "instrument": {"symbol": "OIL", "instrumentId": 17, "assetClass": "commodities"},
+                "etoroInstrument": {"quote": {"mid": 89.77, "spreadPct": 0.51}, "performance": {"dailyChangePercent": 0.34}},
+                "technicals": {"rsi14": 45.7, "rvol": 0.8},
+                "oilSignalFeed": {"newsSentiment": {"netSentimentScore": 0.12, "dominantDirection": "neutral"}},
+            },
+            "NVDA": {
+                "snapshotId": "snap_nvda_1137",
+                "instrument": {"symbol": "NVDA", "instrumentId": 1137, "assetClass": "stocks"},
+                "etoroInstrument": {"quote": {"mid": 186.75, "spreadPct": 0.005}, "performance": {"dailyChangePercent": 2.78}},
+                "technicals": {"rsi14": 62.4, "rvol": 2.8},
+                "oilSignalFeed": {"newsSentiment": {"netSentimentScore": 0.22, "dominantDirection": "bullish"}},
+            },
+        }
+        payload = build_market_payload(snapshots, default_selected="NVDA")
+        self.assertEqual(payload["totalTickers"], 2)
+        self.assertEqual(payload["defaultSelectedTicker"], "NVDA")
+        self.assertIn("OIL", payload["tickers"])
+        self.assertIn("NVDA", payload["tickers"])
+        self.assertEqual(payload["tickers"]["NVDA"]["quote"]["mid"], 186.75)
+        self.assertEqual(payload["quote"]["mid"], 186.75)  # backward compatible top-level
+
     def test_build_position_action_links(self):
         pos = {
             "positionId": 3625442511,
