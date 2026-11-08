@@ -681,6 +681,29 @@ footer {
   border-color: var(--blue);
 }
 
+/* Market Matrix Panel Container matching Panel 2 height */
+.market-matrix-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.market-matrix-card .section-header {
+  flex-shrink: 0;
+}
+
+.market-matrix-scroll {
+  flex: 1 1 0;
+  min-height: 450px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+@media (min-width: 1025px) {
+  .market-matrix-scroll {
+    min-height: 0;
+  }
+}
+
 /* Market Matrix Table Enhancements */
 .market-matrix-table tr {
   cursor: pointer;
