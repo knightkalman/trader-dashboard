@@ -24,8 +24,8 @@
   },
   "confluenceScore": 89.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-08T14:47:01Z",
-  "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+  "cycleTimestamp": "2026-11-08T15:21:04Z",
+  "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
@@ -50,12 +50,12 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 86.0,
+      "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7706,
+      "convictionScore": 0.7274,
       "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -73,12 +73,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261108T144644Z",
+      "snapshotId": "snap_amd_1832_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
     "AMZN": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -99,15 +99,16 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 86.0,
+      "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1787,
-      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "sellShort",
+      "convictionScore": 0.1375,
+      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "neutral",
       "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
@@ -122,7 +123,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261108T144644Z",
+      "snapshotId": "snap_amzn_1005_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -153,7 +154,7 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2642,
+      "convictionScore": 0.1723,
       "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -171,7 +172,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261108T144644Z",
+      "snapshotId": "snap_arm_1365_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -202,7 +203,7 @@
       },
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3308,
+      "convictionScore": 0.3298,
       "diagnostic": "New ASML entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -220,7 +221,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261108T144644Z",
+      "snapshotId": "snap_asml_4244_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -251,7 +252,7 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3002,
+      "convictionScore": 0.3006,
       "diagnostic": "New CAT entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -269,12 +270,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261108T144644Z",
+      "snapshotId": "snap_cat_1012_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
     "COP": {
-      "action": "hold",
+      "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -295,16 +296,15 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 76.0,
+      "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1451,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "neutral",
+      "convictionScore": 0.1508,
+      "diagnostic": "New COP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "buy",
       "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
@@ -319,7 +319,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261108T144644Z",
+      "snapshotId": "snap_cop_1510_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -350,7 +350,7 @@
       },
       "confluenceScore": 86.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1805,
+      "convictionScore": 0.2031,
       "diagnostic": "New CRWD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "sellShort",
       "hardVetoes": [
@@ -368,7 +368,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261108T144644Z",
+      "snapshotId": "snap_crwd_5506_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -399,7 +399,7 @@
       },
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.61,
+      "convictionScore": 0.2619,
       "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -417,7 +417,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261108T144644Z",
+      "snapshotId": "snap_googl_6434_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -448,7 +448,7 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2822,
+      "convictionScore": 0.2798,
       "diagnostic": "New GS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "sellShort",
       "hardVetoes": [
@@ -466,7 +466,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261108T144644Z",
+      "snapshotId": "snap_gs_1467_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -497,7 +497,7 @@
       },
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2247,
+      "convictionScore": 0.2241,
       "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -515,17 +515,17 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261108T144644Z",
+      "snapshotId": "snap_hood_9272_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
     "INTC": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 10.0
         },
         "regimeAndNews": {
           "max": 35.0,
@@ -541,15 +541,16 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 86.0,
+      "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2118,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "buy",
+      "convictionScore": 0.0885,
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "neutral",
       "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
@@ -564,7 +565,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261108T144644Z",
+      "snapshotId": "snap_intc_1021_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -595,7 +596,7 @@
       },
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.0387,
+      "convictionScore": 0.0514,
       "diagnostic": "New META entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -614,7 +615,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261108T144644Z",
+      "snapshotId": "snap_meta_1003_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -645,7 +646,7 @@
       },
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1172,
+      "convictionScore": 0.1207,
       "diagnostic": "New MRK entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -664,12 +665,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261108T144644Z",
+      "snapshotId": "snap_mrk_1027_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
     "MS": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -690,15 +691,16 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 89.0,
+      "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1666,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "sellShort",
+      "convictionScore": 0.0773,
+      "diagnostic": "New MS entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "neutral",
       "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
@@ -713,7 +715,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261108T144644Z",
+      "snapshotId": "snap_ms_1976_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -744,7 +746,7 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2963,
+      "convictionScore": 0.2807,
       "diagnostic": "New MU entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -762,12 +764,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261108T144644Z",
+      "snapshotId": "snap_mu_1130_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
     "NVDA": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -788,15 +790,16 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 89.0,
+      "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1949,
-      "diagnostic": "Open NVDA position 3638495099 (buy, P/L=-2.12%, R=-0.37) is healthy; holding.",
-      "direction": "buy",
+      "convictionScore": 0.0,
+      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
+      "direction": "neutral",
       "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
@@ -811,8 +814,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261108T144643Z",
-      "status": "NO_ACTION",
+      "snapshotId": "snap_nvda_1137_20261108T152046Z",
+      "status": "DECISION_EMITTED",
       "symbol": "NVDA"
     },
     "OIL": {
@@ -842,14 +845,14 @@
       },
       "confluenceScore": 43.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.148,
-      "diagnostic": "New OIL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', 'eToro spread (0.521%) exceeds 20% of expected 3xATR target (2.40%).', 'Post-headline spread stabilization guard: spread (0.521%) exceeds threshold (0.15%) following surprise catalyst.']",
+      "convictionScore": 0.1483,
+      "diagnostic": "New OIL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', 'eToro spread (0.509%) exceeds 20% of expected 3xATR target (2.40%).', 'Post-headline spread stabilization guard: spread (0.509%) exceeds threshold (0.15%) following surprise catalyst.']",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "eToro spread (0.521%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Post-headline spread stabilization guard: spread (0.521%) exceeds threshold (0.15%) following surprise catalyst."
+        "eToro spread (0.509%) exceeds 20% of expected 3xATR target (2.40%).",
+        "Post-headline spread stabilization guard: spread (0.509%) exceeds threshold (0.15%) following surprise catalyst."
       ],
       "hasHardVetoes": true,
       "instrumentId": 17,
@@ -863,12 +866,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261108T144643Z",
+      "snapshotId": "snap_oil_17_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
     "ORCL": {
-      "action": "hold",
+      "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -889,16 +892,15 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 15.0
         }
       },
-      "confluenceScore": 76.0,
+      "confluenceScore": 86.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1057,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "neutral",
+      "convictionScore": 0.1867,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "sellShort",
       "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
@@ -913,7 +915,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261108T144644Z",
+      "snapshotId": "snap_orcl_1135_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -944,7 +946,7 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2469,
+      "convictionScore": 0.2609,
       "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -962,7 +964,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261108T144644Z",
+      "snapshotId": "snap_pltr_7991_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -993,7 +995,7 @@
       },
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5908,
+      "convictionScore": 0.5905,
       "diagnostic": "New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -1011,7 +1013,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261108T144644Z",
+      "snapshotId": "snap_qcom_1485_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1042,7 +1044,7 @@
       },
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2841,
+      "convictionScore": 0.2934,
       "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -1060,7 +1062,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261108T144644Z",
+      "snapshotId": "snap_shop_4148_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1109,7 +1111,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261108T144644Z",
+      "snapshotId": "snap_txn_1634_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
@@ -1122,8 +1124,8 @@
     "parityPassed": 22,
     "totalWatched": 22
   },
-  "instrument": "GOOGL",
-  "instrumentId": 6434,
+  "instrument": "SHOP",
+  "instrumentId": 4148,
   "orchestratorEnabled": true,
   "parityChecks": {
     "allPassed": true,
@@ -1162,56 +1164,7 @@
       },
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.61,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261108T144644Z",
-      "status": "NO_ACTION",
-      "symbol": "GOOGL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 89.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2841,
+      "convictionScore": 0.2934,
       "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -1229,7 +1182,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261108T144644Z",
+      "snapshotId": "snap_shop_4148_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1260,7 +1213,56 @@
       },
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2247,
+      "convictionScore": 0.2619,
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 6434,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_googl_6434_20261108T152046Z",
+      "status": "NO_ACTION",
+      "symbol": "GOOGL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 89.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.2241,
       "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -1278,7 +1280,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261108T144644Z",
+      "snapshotId": "snap_hood_9272_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -1288,104 +1290,6 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 89.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.1949,
-      "diagnostic": "Open NVDA position 3638495099 (buy, P/L=-2.12%, R=-0.37) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1137,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_nvda_1137_20261108T144643Z",
-      "status": "NO_ACTION",
-      "symbol": "NVDA"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 89.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.1666,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1976,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_ms_1976_20261108T144644Z",
-      "status": "NO_ACTION",
-      "symbol": "MS"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
           "score": 7.0
         },
         "regimeAndNews": {
@@ -1407,105 +1311,7 @@
       },
       "confluenceScore": 86.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7706,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261108T144644Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 86.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2118,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1021,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_intc_1021_20261108T144644Z",
-      "status": "NO_ACTION",
-      "symbol": "INTC"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 86.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.1805,
+      "convictionScore": 0.2031,
       "diagnostic": "New CRWD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "sellShort",
       "hardVetoes": [
@@ -1523,7 +1329,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261108T144644Z",
+      "snapshotId": "snap_crwd_5506_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -1554,14 +1360,14 @@
       },
       "confluenceScore": 86.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1787,
-      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+      "convictionScore": 0.1867,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1005,
+      "instrumentId": 1135,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1572,9 +1378,257 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261108T144644Z",
+      "snapshotId": "snap_orcl_1135_20261108T152046Z",
       "status": "NO_ACTION",
-      "symbol": "AMZN"
+      "symbol": "ORCL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 10.0
+        }
+      },
+      "confluenceScore": 81.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7274,
+      "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261108T152046Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 10.0
+        }
+      },
+      "confluenceScore": 81.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.1508,
+      "diagnostic": "New COP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1510,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cop_1510_20261108T152046Z",
+      "status": "NO_ACTION",
+      "symbol": "COP"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 79.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0885,
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "Market is closed for the weekend (isWeekendClosed=true)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1021,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_intc_1021_20261108T152046Z",
+      "status": "NO_ACTION",
+      "symbol": "INTC"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 79.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0773,
+      "diagnostic": "New MS entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "Market is closed for the weekend (isWeekendClosed=true)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1976,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_ms_1976_20261108T152046Z",
+      "status": "NO_ACTION",
+      "symbol": "MS"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 79.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0,
+      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "Market is closed for the weekend (isWeekendClosed=true)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1137,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_nvda_1137_20261108T152046Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "NVDA"
     },
     {
       "action": "open",
@@ -1603,7 +1657,7 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3002,
+      "convictionScore": 0.3006,
       "diagnostic": "New CAT entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -1621,7 +1675,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261108T144644Z",
+      "snapshotId": "snap_cat_1012_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -1652,7 +1706,7 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2963,
+      "convictionScore": 0.2807,
       "diagnostic": "New MU entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -1670,7 +1724,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261108T144644Z",
+      "snapshotId": "snap_mu_1130_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -1701,7 +1755,7 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2822,
+      "convictionScore": 0.2798,
       "diagnostic": "New GS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "sellShort",
       "hardVetoes": [
@@ -1719,7 +1773,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261108T144644Z",
+      "snapshotId": "snap_gs_1467_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -1750,14 +1804,14 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2642,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+      "convictionScore": 0.2609,
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1365,
+      "instrumentId": 7991,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1768,9 +1822,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261108T144644Z",
+      "snapshotId": "snap_pltr_7991_20261108T152046Z",
       "status": "NO_ACTION",
-      "symbol": "ARM"
+      "symbol": "PLTR"
     },
     {
       "action": "open",
@@ -1799,14 +1853,14 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2469,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
+      "convictionScore": 0.1723,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 7991,
+      "instrumentId": 1365,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1817,9 +1871,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261108T144644Z",
+      "snapshotId": "snap_arm_1365_20261108T152046Z",
       "status": "NO_ACTION",
-      "symbol": "PLTR"
+      "symbol": "ARM"
     },
     {
       "action": "open",
@@ -1848,7 +1902,7 @@
       },
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3308,
+      "convictionScore": 0.3298,
       "diagnostic": "New ASML entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -1866,7 +1920,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261108T144644Z",
+      "snapshotId": "snap_asml_4244_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -1915,7 +1969,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261108T144644Z",
+      "snapshotId": "snap_txn_1634_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     },
@@ -1946,15 +2000,15 @@
       },
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1451,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
+      "convictionScore": 0.1375,
+      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1510,
+      "instrumentId": 1005,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1965,9 +2019,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261108T144644Z",
+      "snapshotId": "snap_amzn_1005_20261108T152046Z",
       "status": "NO_ACTION",
-      "symbol": "COP"
+      "symbol": "AMZN"
     },
     {
       "action": "hold",
@@ -1996,7 +2050,7 @@
       },
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1172,
+      "convictionScore": 0.1207,
       "diagnostic": "New MRK entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -2015,7 +2069,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261108T144644Z",
+      "snapshotId": "snap_mrk_1027_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -2046,57 +2100,7 @@
       },
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1057,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15).",
-        "Market is closed for the weekend (isWeekendClosed=true)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1135,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_orcl_1135_20261108T144644Z",
-      "status": "NO_ACTION",
-      "symbol": "ORCL"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0387,
+      "convictionScore": 0.0514,
       "diagnostic": "New META entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -2115,7 +2119,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261108T144644Z",
+      "snapshotId": "snap_meta_1003_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -2146,7 +2150,7 @@
       },
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5908,
+      "convictionScore": 0.5905,
       "diagnostic": "New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).']",
       "direction": "buy",
       "hardVetoes": [
@@ -2164,7 +2168,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261108T144644Z",
+      "snapshotId": "snap_qcom_1485_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -2195,14 +2199,14 @@
       },
       "confluenceScore": 43.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.148,
-      "diagnostic": "New OIL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', 'eToro spread (0.521%) exceeds 20% of expected 3xATR target (2.40%).', 'Post-headline spread stabilization guard: spread (0.521%) exceeds threshold (0.15%) following surprise catalyst.']",
+      "convictionScore": 0.1483,
+      "diagnostic": "New OIL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', 'eToro spread (0.509%) exceeds 20% of expected 3xATR target (2.40%).', 'Post-headline spread stabilization guard: spread (0.509%) exceeds threshold (0.15%) following surprise catalyst.']",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "eToro spread (0.521%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Post-headline spread stabilization guard: spread (0.521%) exceeds threshold (0.15%) following surprise catalyst."
+        "eToro spread (0.509%) exceeds 20% of expected 3xATR target (2.40%).",
+        "Post-headline spread stabilization guard: spread (0.509%) exceeds threshold (0.15%) following surprise catalyst."
       ],
       "hasHardVetoes": true,
       "instrumentId": 17,
@@ -2216,14 +2220,14 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261108T144643Z",
+      "snapshotId": "snap_oil_17_20261108T152046Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     }
   ],
-  "snapshotId": "snap_googl_6434_20261108T144644Z",
+  "snapshotId": "snap_shop_4148_20261108T152046Z",
   "status": "NO_ACTION",
-  "topCandidate": "GOOGL",
+  "topCandidate": "SHOP",
   "watchlist": [
     "OIL",
     "NVDA",
