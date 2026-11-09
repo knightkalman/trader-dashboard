@@ -3,11 +3,11 @@
   "confluenceBreakdown": {
     "momentum": {
       "max": 15.0,
-      "score": 7.0
+      "score": 10.0
     },
     "regimeAndNews": {
       "max": 35.0,
-      "score": 24.0
+      "score": 35.0
     },
     "spreadEfficiency": {
       "max": 15.0,
@@ -15,17 +15,17 @@
     },
     "volatilityRvol": {
       "max": 15.0,
-      "score": 20.0
+      "score": 4.0
     },
     "windowAndHtf": {
       "max": 20.0,
-      "score": 3.0
+      "score": 15.0
     }
   },
-  "confluenceScore": 74.0,
+  "confluenceScore": 84.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-09T17:32:48Z",
-  "diagnostic": "Open OIL position 3639499558 (sellShort, P/L=-7.17%, R=-0.57) is healthy; holding.",
+  "cycleTimestamp": "2026-11-09T19:18:45Z",
+  "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
@@ -55,7 +55,7 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3187,
+      "convictionScore": 0.3449,
       "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -71,7 +71,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261109T173227Z",
+      "snapshotId": "snap_amd_1832_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
@@ -102,7 +102,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7041,
+      "convictionScore": 0.6771,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -118,7 +118,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261109T173227Z",
+      "snapshotId": "snap_amzn_1005_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -149,7 +149,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5899,
+      "convictionScore": 0.5929,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -165,7 +165,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261109T173227Z",
+      "snapshotId": "snap_arm_1365_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -196,7 +196,7 @@
       },
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.0105,
+      "convictionScore": 0.0132,
       "diagnostic": "New ASML entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -214,7 +214,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261109T173227Z",
+      "snapshotId": "snap_asml_4244_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -224,7 +224,7 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
@@ -240,13 +240,13 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 61.0,
+      "confluenceScore": 65.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.239,
-      "diagnostic": "Confluence score 61.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.6916,
+      "diagnostic": "Confluence score 65.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -261,12 +261,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261109T173226Z",
+      "snapshotId": "snap_cat_1012_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
     "COP": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -292,11 +292,13 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3234,
-      "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "convictionScore": 0.149,
+      "diagnostic": "New COP entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1510,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -308,7 +310,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261109T173227Z",
+      "snapshotId": "snap_cop_1510_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -339,7 +341,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3239,
+      "convictionScore": 0.3225,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -355,7 +357,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261109T173227Z",
+      "snapshotId": "snap_crwd_5506_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -386,7 +388,7 @@
       },
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7458,
+      "convictionScore": 0.7391,
       "diagnostic": "Confluence score 63.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -402,7 +404,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261109T173227Z",
+      "snapshotId": "snap_googl_6434_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -433,7 +435,7 @@
       },
       "confluenceScore": 73.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2371,
+      "convictionScore": 0.6197,
       "diagnostic": "Confluence score 73.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -449,7 +451,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261109T173227Z",
+      "snapshotId": "snap_gs_1467_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -480,7 +482,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.0236,
+      "convictionScore": 0.0241,
       "diagnostic": "New HOOD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -498,7 +500,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261109T173227Z",
+      "snapshotId": "snap_hood_9272_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -529,7 +531,7 @@
       },
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.078,
+      "convictionScore": 0.1319,
       "diagnostic": "New INTC entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -547,7 +549,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261109T173227Z",
+      "snapshotId": "snap_intc_1021_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -578,7 +580,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7522,
+      "convictionScore": 0.7349,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -594,7 +596,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261109T173227Z",
+      "snapshotId": "snap_meta_1003_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -625,7 +627,7 @@
       },
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.6881,
+      "convictionScore": 0.7489,
       "diagnostic": "Confluence score 63.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -641,7 +643,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261109T173227Z",
+      "snapshotId": "snap_mrk_1027_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -667,13 +669,13 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 70.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7816,
-      "diagnostic": "Confluence score 70.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.1701,
+      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -688,58 +690,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261109T173227Z",
+      "snapshotId": "snap_ms_1976_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
     "MU": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 73.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.6541,
-      "diagnostic": "Open MU position 3639850997 (buy, P/L=+1.34%, R=+0.04) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1130,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mu_1130_20261109T173226Z",
-      "status": "NO_ACTION",
-      "symbol": "MU"
-    },
-    "NVDA": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -766,8 +721,55 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7358,
-      "diagnostic": "Confluence score 61.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.2524,
+      "diagnostic": "Open MU position 3639850997 (buy, P/L=-7.52%, R=-0.22) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1130,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mu_1130_20261109T191823Z",
+      "status": "NO_ACTION",
+      "symbol": "MU"
+    },
+    "NVDA": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 84.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8345,
+      "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -782,12 +784,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261109T173226Z",
-      "status": "NO_ACTION",
+      "snapshotId": "snap_nvda_1137_20261109T191822Z",
+      "status": "DECISION_EMITTED",
       "symbol": "NVDA"
     },
     "OIL": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -808,14 +810,14 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 74.0,
+      "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2427,
-      "diagnostic": "Open OIL position 3639499558 (sellShort, P/L=-7.17%, R=-0.57) is healthy; holding.",
-      "direction": "sellShort",
+      "convictionScore": 0.0,
+      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
+      "direction": "neutral",
       "hardVetoes": [],
       "hasHardVetoes": false,
       "instrumentId": 17,
@@ -829,12 +831,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261109T173226Z",
-      "status": "NO_ACTION",
+      "snapshotId": "snap_oil_17_20261109T191822Z",
+      "status": "DECISION_EMITTED",
       "symbol": "OIL"
     },
     "ORCL": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -855,16 +857,18 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 70.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.253,
-      "diagnostic": "Confluence score 70.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "convictionScore": 0.0366,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1135,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -876,7 +880,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261109T173226Z",
+      "snapshotId": "snap_orcl_1135_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -902,13 +906,13 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 70.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7588,
-      "diagnostic": "Open PLTR position 3639722661 (buy, P/L=+9.17%, R=+0.61) is healthy; holding.",
+      "convictionScore": 0.6361,
+      "diagnostic": "Open PLTR position 3639722661 (buy, P/L=+2.80%, R=+0.19) is healthy; holding.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -923,7 +927,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261109T173227Z",
+      "snapshotId": "snap_pltr_7991_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -954,7 +958,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7523,
+      "convictionScore": 0.7733,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -970,7 +974,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261109T173227Z",
+      "snapshotId": "snap_qcom_1485_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1001,7 +1005,7 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2589,
+      "convictionScore": 0.203,
       "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1017,7 +1021,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261109T173227Z",
+      "snapshotId": "snap_shop_4148_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1048,7 +1052,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2915,
+      "convictionScore": 0.25,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1064,21 +1068,21 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261109T173227Z",
+      "snapshotId": "snap_txn_1634_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
   },
   "executionMode": "auto_execute_all",
   "funnelMetrics": {
-    "actionableEntries": 19,
+    "actionableEntries": 16,
     "activeProtectiveActions": 0,
-    "confluenceEligible": 0,
+    "confluenceEligible": 2,
     "parityPassed": 22,
     "totalWatched": 22
   },
-  "instrument": "OIL",
-  "instrumentId": 17,
+  "instrument": "NVDA",
+  "instrumentId": 1137,
   "orchestratorEnabled": true,
   "parityChecks": {
     "allPassed": true,
@@ -1092,6 +1096,53 @@
   "rankedCandidates": [
     {
       "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 84.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8345,
+      "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
+      "direction": "sellShort",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1137,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_nvda_1137_20261109T191822Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "NVDA"
+    },
+    {
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -1112,14 +1163,14 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 74.0,
+      "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2427,
-      "diagnostic": "Open OIL position 3639499558 (sellShort, P/L=-7.17%, R=-0.57) is healthy; holding.",
-      "direction": "sellShort",
+      "convictionScore": 0.0,
+      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
+      "direction": "neutral",
       "hardVetoes": [],
       "hasHardVetoes": false,
       "instrumentId": 17,
@@ -1133,8 +1184,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261109T173226Z",
-      "status": "NO_ACTION",
+      "snapshotId": "snap_oil_17_20261109T191822Z",
+      "status": "DECISION_EMITTED",
       "symbol": "OIL"
     },
     {
@@ -1164,54 +1215,7 @@
       },
       "confluenceScore": 73.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.6541,
-      "diagnostic": "Open MU position 3639850997 (buy, P/L=+1.34%, R=+0.04) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1130,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mu_1130_20261109T173226Z",
-      "status": "NO_ACTION",
-      "symbol": "MU"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 73.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2371,
+      "convictionScore": 0.6197,
       "diagnostic": "Confluence score 73.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1227,7 +1231,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261109T173227Z",
+      "snapshotId": "snap_gs_1467_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -1253,17 +1257,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 70.0,
+      "confluenceScore": 65.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7816,
-      "diagnostic": "Confluence score 70.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.6916,
+      "diagnostic": "Confluence score 65.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
-      "instrumentId": 1976,
+      "instrumentId": 1012,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1274,103 +1278,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261109T173227Z",
+      "snapshotId": "snap_cat_1012_20261109T191823Z",
       "status": "NO_ACTION",
-      "symbol": "MS"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 70.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.7588,
-      "diagnostic": "Open PLTR position 3639722661 (buy, P/L=+9.17%, R=+0.61) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 7991,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_pltr_7991_20261109T173227Z",
-      "status": "NO_ACTION",
-      "symbol": "PLTR"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 70.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.253,
-      "diagnostic": "Confluence score 70.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1135,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_orcl_1135_20261109T173226Z",
-      "status": "NO_ACTION",
-      "symbol": "ORCL"
+      "symbol": "CAT"
     },
     {
       "action": "open",
@@ -1399,54 +1309,7 @@
       },
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7458,
-      "diagnostic": "Confluence score 63.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261109T173227Z",
-      "status": "NO_ACTION",
-      "symbol": "GOOGL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 63.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.6881,
+      "convictionScore": 0.7489,
       "diagnostic": "Confluence score 63.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1462,9 +1325,56 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261109T173227Z",
+      "snapshotId": "snap_mrk_1027_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 63.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7391,
+      "diagnostic": "Confluence score 63.00 < threshold 75.00; no new trade.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 6434,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_googl_6434_20261109T191823Z",
+      "status": "NO_ACTION",
+      "symbol": "GOOGL"
     },
     {
       "action": "hold",
@@ -1493,7 +1403,7 @@
       },
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.078,
+      "convictionScore": 0.1319,
       "diagnostic": "New INTC entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -1511,7 +1421,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261109T173227Z",
+      "snapshotId": "snap_intc_1021_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -1542,7 +1452,7 @@
       },
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.0105,
+      "convictionScore": 0.0132,
       "diagnostic": "New ASML entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -1560,7 +1470,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261109T173227Z",
+      "snapshotId": "snap_asml_4244_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -1591,59 +1501,12 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7358,
-      "diagnostic": "Confluence score 61.00 < threshold 75.00; no new trade.",
-      "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1137,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_nvda_1137_20261109T173226Z",
-      "status": "NO_ACTION",
-      "symbol": "NVDA"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 61.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.239,
-      "diagnostic": "Confluence score 61.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.2524,
+      "diagnostic": "Open MU position 3639850997 (buy, P/L=-7.52%, R=-0.22) is healthy; holding.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
-      "instrumentId": 1012,
+      "instrumentId": 1130,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1654,9 +1517,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261109T173226Z",
+      "snapshotId": "snap_mu_1130_20261109T191823Z",
       "status": "NO_ACTION",
-      "symbol": "CAT"
+      "symbol": "MU"
     },
     {
       "action": "open",
@@ -1685,7 +1548,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7523,
+      "convictionScore": 0.7733,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1701,7 +1564,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261109T173227Z",
+      "snapshotId": "snap_qcom_1485_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1732,7 +1595,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7522,
+      "convictionScore": 0.7349,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1748,7 +1611,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261109T173227Z",
+      "snapshotId": "snap_meta_1003_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -1779,7 +1642,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7041,
+      "convictionScore": 0.6771,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1795,7 +1658,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261109T173227Z",
+      "snapshotId": "snap_amzn_1005_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -1826,7 +1689,54 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5899,
+      "convictionScore": 0.6361,
+      "diagnostic": "Open PLTR position 3639722661 (buy, P/L=+2.80%, R=+0.19) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 7991,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_pltr_7991_20261109T191823Z",
+      "status": "NO_ACTION",
+      "symbol": "PLTR"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.5929,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1842,7 +1752,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261109T173227Z",
+      "snapshotId": "snap_arm_1365_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -1873,7 +1783,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3239,
+      "convictionScore": 0.3225,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1889,7 +1799,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261109T173227Z",
+      "snapshotId": "snap_crwd_5506_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -1920,54 +1830,7 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3234,
-      "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1510,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cop_1510_20261109T173227Z",
-      "status": "NO_ACTION",
-      "symbol": "COP"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 60.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2915,
+      "convictionScore": 0.25,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -1983,7 +1846,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261109T173227Z",
+      "snapshotId": "snap_txn_1634_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     },
@@ -2014,7 +1877,105 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.0236,
+      "convictionScore": 0.149,
+      "diagnostic": "New COP entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1510,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cop_1510_20261109T191823Z",
+      "status": "NO_ACTION",
+      "symbol": "COP"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0366,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1135,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_orcl_1135_20261109T191823Z",
+      "status": "NO_ACTION",
+      "symbol": "ORCL"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0241,
       "diagnostic": "New HOOD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
       "direction": "neutral",
       "hardVetoes": [
@@ -2032,7 +1993,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261109T173227Z",
+      "snapshotId": "snap_hood_9272_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -2063,7 +2024,7 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3187,
+      "convictionScore": 0.3449,
       "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -2079,7 +2040,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261109T173227Z",
+      "snapshotId": "snap_amd_1832_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
@@ -2110,7 +2071,7 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2589,
+      "convictionScore": 0.203,
       "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
@@ -2126,14 +2087,61 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261109T173227Z",
+      "snapshotId": "snap_shop_4148_20261109T191823Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.1701,
+      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1976,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_ms_1976_20261109T191823Z",
+      "status": "NO_ACTION",
+      "symbol": "MS"
     }
   ],
-  "snapshotId": "snap_oil_17_20261109T173226Z",
-  "status": "NO_ACTION",
-  "topCandidate": "OIL",
+  "snapshotId": "snap_nvda_1137_20261109T191822Z",
+  "status": "DECISION_EMITTED",
+  "topCandidate": "NVDA",
   "watchlist": [
     "OIL",
     "NVDA",
