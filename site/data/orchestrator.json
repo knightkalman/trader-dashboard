@@ -24,11 +24,105 @@
   },
   "confluenceScore": 89.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-10T09:20:09Z",
-  "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
+  "cycleTimestamp": "2026-11-10T10:13:27Z",
+  "diagnostic": "Open GOOGL position 3639995923 (buy, P/L=-0.98%, R=-0.12) is healthy; holding.",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 79.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7468,
+      "diagnostic": "Open AMD position 3639936024 (buy, P/L=-4.73%, R=-0.11) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    "AMZN": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 76.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.3191,
+      "diagnostic": "Ranked #3 open candidate (confluence=76.00); deferred behind #1 INTC (confluence=81.00) for this cycle.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1005,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amzn_1005_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "AMZN"
+    },
+    "ARM": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -55,102 +149,8 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.6873,
-      "diagnostic": "Open AMD position 3639936024 (buy, P/L=-7.41%, R=-0.17) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    "AMZN": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.3311,
-      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1005,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amzn_1005_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "AMZN"
-    },
-    "ARM": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 63.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.6667,
-      "diagnostic": "Confluence score 63.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.5846,
+      "diagnostic": "Confluence score 61.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -165,396 +165,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261110T091935Z",
+      "snapshotId": "snap_arm_1365_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
     "ASML": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 60.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.3289,
-      "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 4244,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_asml_4244_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "ASML"
-    },
-    "CAT": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 64.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8476,
-      "diagnostic": "New CAT entry blocked by hard veto(es): ['eToro spread (2.459%) exceeds 20% of expected 3xATR target (3.22%).', 'Post-headline spread stabilization guard: spread (2.459%) exceeds threshold (0.10%) following surprise catalyst.']",
-      "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (2.459%) exceeds 20% of expected 3xATR target (3.22%).",
-        "Post-headline spread stabilization guard: spread (2.459%) exceeds threshold (0.10%) following surprise catalyst."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1012,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cat_1012_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "CAT"
-    },
-    "COP": {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 52.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.1495,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1510,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cop_1510_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "COP"
-    },
-    "CRWD": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 52.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.7384,
-      "diagnostic": "Confluence score 52.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 5506,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_crwd_5506_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "CRWD"
-    },
-    "GOOGL": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 73.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.655,
-      "diagnostic": "Open GOOGL position 3639995923 (buy, P/L=-1.79%, R=-0.22) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "GOOGL"
-    },
-    "GS": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 38.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2918,
-      "diagnostic": "New GS entry blocked by hard veto(es): ['eToro spread (1.089%) exceeds 20% of expected 3xATR target (2.91%).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (1.089%) exceeds 20% of expected 3xATR target (2.91%)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1467,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_gs_1467_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "GS"
-    },
-    "HOOD": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2465,
-      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 9272,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_hood_9272_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "HOOD"
-    },
-    "INTC": {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 63.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0975,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1021,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_intc_1021_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "INTC"
-    },
-    "META": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -581,12 +196,12 @@
       },
       "confluenceScore": 70.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3462,
+      "convictionScore": 0.7799,
       "diagnostic": "Confluence score 70.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
-      "instrumentId": 1003,
+      "instrumentId": 4244,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -597,11 +212,60 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261110T091935Z",
+      "snapshotId": "snap_asml_4244_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "META"
+      "symbol": "ASML"
     },
-    "MRK": {
+    "CAT": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 65.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7636,
+      "diagnostic": "New CAT entry blocked by hard veto(es): ['Post-headline spread stabilization guard: spread (0.390%) exceeds threshold (0.10%) following surprise catalyst.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Post-headline spread stabilization guard: spread (0.390%) exceeds threshold (0.10%) following surprise catalyst."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1012,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cat_1012_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "CAT"
+    },
+    "COP": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -615,7 +279,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 5.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -626,16 +290,14 @@
           "score": 5.0
         }
       },
-      "confluenceScore": 40.0,
+      "confluenceScore": 45.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7226,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (1.659%) exceeds 20% of expected 3xATR target (2.40%).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (1.659%) exceeds 20% of expected 3xATR target (2.40%)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1027,
+      "convictionScore": 0.1536,
+      "diagnostic": "Confluence score 45.00 < threshold 75.00; no new trade.",
+      "direction": "sellShort",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1510,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -646,60 +308,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261110T091935Z",
+      "snapshotId": "snap_cop_1510_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "MRK"
+      "symbol": "COP"
     },
-    "MS": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 48.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.6958,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (2.540%) exceeds 20% of expected 3xATR target (2.40%).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (2.540%) exceeds 20% of expected 3xATR target (2.40%)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1976,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_ms_1976_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "MS"
-    },
-    "MU": {
+    "CRWD": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -721,17 +334,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 58.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2761,
-      "diagnostic": "Open MU position 3639850997 (buy, P/L=+1.50%, R=+0.04) is healthy; holding.",
+      "convictionScore": 0.7402,
+      "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
-      "instrumentId": 1130,
+      "instrumentId": 5506,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -742,58 +355,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261110T091935Z",
+      "snapshotId": "snap_crwd_5506_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "MU"
+      "symbol": "CRWD"
     },
-    "NVDA": {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 61.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0,
-      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
-      "direction": "neutral",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1137,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_nvda_1137_20261110T091935Z",
-      "status": "DECISION_EMITTED",
-      "symbol": "NVDA"
-    },
-    "OIL": {
+    "GOOGL": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -820,12 +386,12 @@
       },
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.6557,
-      "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
-      "direction": "sellShort",
+      "convictionScore": 0.6374,
+      "diagnostic": "Open GOOGL position 3639995923 (buy, P/L=-0.98%, R=-0.12) is healthy; holding.",
+      "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
-      "instrumentId": 17,
+      "instrumentId": 6434,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -836,12 +402,251 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261110T091935Z",
-      "status": "DECISION_EMITTED",
-      "symbol": "OIL"
+      "snapshotId": "snap_googl_6434_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "GOOGL"
     },
-    "ORCL": {
+    "GS": {
       "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 0.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 66.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7415,
+      "diagnostic": "New GS entry blocked by hard veto(es): ['eToro spread (1.089%) exceeds 20% of expected 3xATR target (2.91%).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "eToro spread (1.089%) exceeds 20% of expected 3xATR target (2.91%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1467,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_gs_1467_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "GS"
+    },
+    "HOOD": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.2466,
+      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 9272,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_hood_9272_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "HOOD"
+    },
+    "INTC": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 81.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.6262,
+      "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1021,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_intc_1021_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "INTC"
+    },
+    "META": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 78.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.2159,
+      "diagnostic": "Ranked #2 open candidate (confluence=78.00); deferred behind #1 INTC (confluence=81.00) for this cycle.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1003,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_meta_1003_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "META"
+    },
+    "MRK": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 0.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 61.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8236,
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (1.470%) exceeds 20% of expected 3xATR target (2.40%).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "eToro spread (1.470%) exceeds 20% of expected 3xATR target (2.40%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1027,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mrk_1027_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "MRK"
+    },
+    "MS": {
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -862,16 +667,212 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 50.0,
+      "confluenceScore": 40.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2483,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['eToro spread (0.832%) exceeds 20% of expected 3xATR target (3.18%).']",
-      "direction": "buy",
+      "convictionScore": 0.1389,
+      "diagnostic": "New MS entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'eToro spread (2.540%) exceeds 20% of expected 3xATR target (2.40%).']",
+      "direction": "neutral",
       "hardVetoes": [
-        "eToro spread (0.832%) exceeds 20% of expected 3xATR target (3.18%)."
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "eToro spread (2.540%) exceeds 20% of expected 3xATR target (2.40%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1976,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_ms_1976_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "MS"
+    },
+    "MU": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 74.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.2767,
+      "diagnostic": "Open MU position 3639850997 (buy, P/L=+7.90%, R=+0.23) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1130,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mu_1130_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "MU"
+    },
+    "NVDA": {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 71.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0,
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Instrument NVDA is in post-exit cooldown (53.2m < 60m; 6.8m remaining).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Instrument NVDA is in post-exit cooldown (53.2m < 60m",
+        "6.8m remaining)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1137,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_nvda_1137_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "NVDA"
+    },
+    "OIL": {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 79.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0,
+      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 17,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_oil_17_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "OIL"
+    },
+    "ORCL": {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0176,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1135,
@@ -885,12 +886,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261110T091935Z",
+      "snapshotId": "snap_orcl_1135_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
     "PLTR": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -907,20 +908,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 61.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1973,
-      "diagnostic": "Open PLTR position 3639722661 (buy, P/L=+3.45%, R=+0.23) is healthy; holding.",
-      "direction": "buy",
+      "convictionScore": 0.0,
+      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
+      "direction": "neutral",
       "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.190%) exceeds threshold (0.10%) following surprise catalyst."
+        "Post-headline spread stabilization guard: spread (0.189%) exceeds threshold (0.10%) following surprise catalyst."
       ],
       "hasHardVetoes": true,
       "instrumentId": 7991,
@@ -934,12 +935,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261110T091935Z",
-      "status": "NO_ACTION",
+      "snapshotId": "snap_pltr_7991_20261110T101253Z",
+      "status": "DECISION_EMITTED",
       "symbol": "PLTR"
     },
     "QCOM": {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -960,16 +961,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 73.0,
+      "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1819,
-      "diagnostic": "Open QCOM position 3639966140 (buy, P/L=-15.64%, R=-0.44) is healthy; holding.",
-      "direction": "buy",
+      "convictionScore": 0.1353,
+      "diagnostic": "Open QCOM position 3639966140 (buy, P/L=-15.52%, R=-0.43) is healthy; holding.",
+      "direction": "neutral",
       "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.353%) exceeds threshold (0.10%) following surprise catalyst."
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "Post-headline spread stabilization guard: spread (0.283%) exceeds threshold (0.10%) following surprise catalyst."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1485,
@@ -983,7 +985,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261110T091935Z",
+      "snapshotId": "snap_qcom_1485_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1005,20 +1007,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 64.0,
+      "confluenceScore": 80.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.929,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['eToro spread (1.512%) exceeds 20% of expected 3xATR target (2.40%).']",
+      "convictionScore": 0.9334,
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['eToro spread (1.460%) exceeds 20% of expected 3xATR target (2.40%).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (1.512%) exceeds 20% of expected 3xATR target (2.40%)."
+        "eToro spread (1.460%) exceeds 20% of expected 3xATR target (2.40%)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 4148,
@@ -1032,7 +1034,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261110T091935Z",
+      "snapshotId": "snap_shop_4148_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1063,11 +1065,11 @@
       },
       "confluenceScore": 38.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3148,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.475%) exceeds 20% of expected 3xATR target (4.14%).']",
+      "convictionScore": 0.3144,
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (0.891%) exceeds 20% of expected 3xATR target (4.14%).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (1.475%) exceeds 20% of expected 3xATR target (4.14%)."
+        "eToro spread (0.891%) exceeds 20% of expected 3xATR target (4.14%)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1081,21 +1083,21 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261110T091935Z",
+      "snapshotId": "snap_txn_1634_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
   },
   "executionMode": "auto_execute_all",
   "funnelMetrics": {
-    "actionableEntries": 10,
+    "actionableEntries": 11,
     "activeProtectiveActions": 0,
-    "confluenceEligible": 1,
+    "confluenceEligible": 7,
     "parityPassed": 22,
     "totalWatched": 22
   },
-  "instrument": "OIL",
-  "instrumentId": 17,
+  "instrument": "GOOGL",
+  "instrumentId": 6434,
   "orchestratorEnabled": true,
   "parityChecks": {
     "allPassed": true,
@@ -1134,55 +1136,8 @@
       },
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.6557,
-      "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
-      "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 17,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_oil_17_20261110T091935Z",
-      "status": "DECISION_EMITTED",
-      "symbol": "OIL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 73.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.655,
-      "diagnostic": "Open GOOGL position 3639995923 (buy, P/L=-1.79%, R=-0.22) is healthy; holding.",
+      "convictionScore": 0.6374,
+      "diagnostic": "Open GOOGL position 3639995923 (buy, P/L=-0.98%, R=-0.12) is healthy; holding.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1197,7 +1152,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261110T091935Z",
+      "snapshotId": "snap_googl_6434_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -1219,23 +1174,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 73.0,
+      "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1819,
-      "diagnostic": "Open QCOM position 3639966140 (buy, P/L=-15.64%, R=-0.44) is healthy; holding.",
+      "convictionScore": 0.6262,
+      "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
       "direction": "buy",
-      "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.353%) exceeds threshold (0.10%) following surprise catalyst."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1485,
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1021,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1246,9 +1199,345 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261110T091935Z",
+      "snapshotId": "snap_intc_1021_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "INTC"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 0.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 80.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9334,
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['eToro spread (1.460%) exceeds 20% of expected 3xATR target (2.40%).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "eToro spread (1.460%) exceeds 20% of expected 3xATR target (2.40%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4148,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_shop_4148_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "QCOM"
+      "symbol": "SHOP"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 79.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7468,
+      "diagnostic": "Open AMD position 3639936024 (buy, P/L=-4.73%, R=-0.11) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 79.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0,
+      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 17,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_oil_17_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "OIL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 78.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.2159,
+      "diagnostic": "Ranked #2 open candidate (confluence=78.00); deferred behind #1 INTC (confluence=81.00) for this cycle.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1003,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_meta_1003_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "META"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 76.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.3191,
+      "diagnostic": "Ranked #3 open candidate (confluence=76.00); deferred behind #1 INTC (confluence=81.00) for this cycle.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1005,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amzn_1005_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "AMZN"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 74.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.2767,
+      "diagnostic": "Open MU position 3639850997 (buy, P/L=+7.90%, R=+0.23) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1130,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mu_1130_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "MU"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 71.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0,
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Instrument NVDA is in post-exit cooldown (53.2m < 60m; 6.8m remaining).']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Instrument NVDA is in post-exit cooldown (53.2m < 60m",
+        "6.8m remaining)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1137,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_nvda_1137_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "NVDA"
     },
     {
       "action": "open",
@@ -1277,12 +1566,12 @@
       },
       "confluenceScore": 70.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3462,
+      "convictionScore": 0.7799,
       "diagnostic": "Confluence score 70.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
-      "instrumentId": 1003,
+      "instrumentId": 4244,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1293,12 +1582,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261110T091935Z",
+      "snapshotId": "snap_asml_4244_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "META"
+      "symbol": "ASML"
     },
     {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -1307,31 +1596,31 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 64.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.929,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['eToro spread (1.512%) exceeds 20% of expected 3xATR target (2.40%).']",
-      "direction": "buy",
+      "convictionScore": 0.0,
+      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
+      "direction": "neutral",
       "hardVetoes": [
-        "eToro spread (1.512%) exceeds 20% of expected 3xATR target (2.40%)."
+        "Post-headline spread stabilization guard: spread (0.189%) exceeds threshold (0.10%) following surprise catalyst."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 4148,
+      "instrumentId": 7991,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1342,9 +1631,58 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261110T091935Z",
+      "snapshotId": "snap_pltr_7991_20261110T101253Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "PLTR"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 0.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 66.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7415,
+      "diagnostic": "New GS entry blocked by hard veto(es): ['eToro spread (1.089%) exceeds 20% of expected 3xATR target (2.91%).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "eToro spread (1.089%) exceeds 20% of expected 3xATR target (2.91%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1467,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_gs_1467_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "SHOP"
+      "symbol": "GS"
     },
     {
       "action": "open",
@@ -1356,11 +1694,11 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -1371,14 +1709,13 @@
           "score": 15.0
         }
       },
-      "confluenceScore": 64.0,
+      "confluenceScore": 65.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8476,
-      "diagnostic": "New CAT entry blocked by hard veto(es): ['eToro spread (2.459%) exceeds 20% of expected 3xATR target (3.22%).', 'Post-headline spread stabilization guard: spread (2.459%) exceeds threshold (0.10%) following surprise catalyst.']",
+      "convictionScore": 0.7636,
+      "diagnostic": "New CAT entry blocked by hard veto(es): ['Post-headline spread stabilization guard: spread (0.390%) exceeds threshold (0.10%) following surprise catalyst.']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (2.459%) exceeds 20% of expected 3xATR target (3.22%).",
-        "Post-headline spread stabilization guard: spread (2.459%) exceeds threshold (0.10%) following surprise catalyst."
+        "Post-headline spread stabilization guard: spread (0.390%) exceeds threshold (0.10%) following surprise catalyst."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1012,
@@ -1392,12 +1729,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261110T091935Z",
+      "snapshotId": "snap_cat_1012_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
     {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -1423,8 +1760,107 @@
       },
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.6667,
-      "diagnostic": "Confluence score 63.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.1353,
+      "diagnostic": "Open QCOM position 3639966140 (buy, P/L=-15.52%, R=-0.43) is healthy; holding.",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "Post-headline spread stabilization guard: spread (0.283%) exceeds threshold (0.10%) following surprise catalyst."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1485,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_qcom_1485_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "QCOM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 0.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 61.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8236,
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (1.470%) exceeds 20% of expected 3xATR target (2.40%).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "eToro spread (1.470%) exceeds 20% of expected 3xATR target (2.40%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1027,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mrk_1027_20261110T101253Z",
+      "status": "NO_ACTION",
+      "symbol": "MRK"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 61.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.5846,
+      "diagnostic": "Confluence score 61.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1439,201 +1875,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261110T091935Z",
+      "snapshotId": "snap_arm_1365_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 63.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0975,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1021,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_intc_1021_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "INTC"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 61.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.6873,
-      "diagnostic": "Open AMD position 3639936024 (buy, P/L=-7.41%, R=-0.17) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 61.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.1973,
-      "diagnostic": "Open PLTR position 3639722661 (buy, P/L=+3.45%, R=+0.23) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.190%) exceeds threshold (0.10%) following surprise catalyst."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 7991,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_pltr_7991_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "PLTR"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 61.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0,
-      "diagnostic": "**`DECISION_EMITTED`** (`CLOSE`)",
-      "direction": "neutral",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1137,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_nvda_1137_20261110T091935Z",
-      "status": "DECISION_EMITTED",
-      "symbol": "NVDA"
     },
     {
       "action": "open",
@@ -1662,196 +1906,8 @@
       },
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3289,
+      "convictionScore": 0.7402,
       "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 4244,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_asml_4244_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "ASML"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.3311,
-      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1005,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amzn_1005_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "AMZN"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2761,
-      "diagnostic": "Open MU position 3639850997 (buy, P/L=+1.50%, R=+0.04) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1130,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mu_1130_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "MU"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2465,
-      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 9272,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_hood_9272_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "HOOD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 52.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.7384,
-      "diagnostic": "Confluence score 52.00 < threshold 75.00; no new trade.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1866,7 +1922,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261110T091935Z",
+      "snapshotId": "snap_crwd_5506_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -1884,7 +1940,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -1895,16 +1951,16 @@
           "score": 5.0
         }
       },
-      "confluenceScore": 52.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.1495,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
+      "convictionScore": 0.0176,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).']",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1510,
+      "instrumentId": 1135,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1915,9 +1971,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261110T091935Z",
+      "snapshotId": "snap_orcl_1135_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "COP"
+      "symbol": "ORCL"
     },
     {
       "action": "open",
@@ -1933,27 +1989,25 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 50.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.2483,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['eToro spread (0.832%) exceeds 20% of expected 3xATR target (3.18%).']",
+      "convictionScore": 0.2466,
+      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
       "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (0.832%) exceeds 20% of expected 3xATR target (3.18%)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1135,
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 9272,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1964,9 +2018,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261110T091935Z",
+      "snapshotId": "snap_hood_9272_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "ORCL"
+      "symbol": "HOOD"
     },
     {
       "action": "open",
@@ -1974,7 +2028,7 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
@@ -1982,7 +2036,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 5.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -1990,19 +2044,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 10.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 48.0,
+      "confluenceScore": 45.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.6958,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (2.540%) exceeds 20% of expected 3xATR target (2.40%).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (2.540%) exceeds 20% of expected 3xATR target (2.40%)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1976,
+      "convictionScore": 0.1536,
+      "diagnostic": "Confluence score 45.00 < threshold 75.00; no new trade.",
+      "direction": "sellShort",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1510,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2013,12 +2065,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261110T091935Z",
+      "snapshotId": "snap_cop_1510_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "MS"
+      "symbol": "COP"
     },
     {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -2044,14 +2096,15 @@
       },
       "confluenceScore": 40.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7226,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (1.659%) exceeds 20% of expected 3xATR target (2.40%).']",
-      "direction": "buy",
+      "convictionScore": 0.1389,
+      "diagnostic": "New MS entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'eToro spread (2.540%) exceeds 20% of expected 3xATR target (2.40%).']",
+      "direction": "neutral",
       "hardVetoes": [
-        "eToro spread (1.659%) exceeds 20% of expected 3xATR target (2.40%)."
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "eToro spread (2.540%) exceeds 20% of expected 3xATR target (2.40%)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1027,
+      "instrumentId": 1976,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2062,9 +2115,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261110T091935Z",
+      "snapshotId": "snap_ms_1976_20261110T101253Z",
       "status": "NO_ACTION",
-      "symbol": "MRK"
+      "symbol": "MS"
     },
     {
       "action": "open",
@@ -2093,11 +2146,11 @@
       },
       "confluenceScore": 38.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.3148,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.475%) exceeds 20% of expected 3xATR target (4.14%).']",
+      "convictionScore": 0.3144,
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (0.891%) exceeds 20% of expected 3xATR target (4.14%).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (1.475%) exceeds 20% of expected 3xATR target (4.14%)."
+        "eToro spread (0.891%) exceeds 20% of expected 3xATR target (4.14%)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -2111,63 +2164,14 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261110T091935Z",
+      "snapshotId": "snap_txn_1634_20261110T101253Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 38.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.2918,
-      "diagnostic": "New GS entry blocked by hard veto(es): ['eToro spread (1.089%) exceeds 20% of expected 3xATR target (2.91%).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (1.089%) exceeds 20% of expected 3xATR target (2.91%)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1467,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_gs_1467_20261110T091935Z",
-      "status": "NO_ACTION",
-      "symbol": "GS"
     }
   ],
-  "snapshotId": "snap_oil_17_20261110T091935Z",
-  "status": "DECISION_EMITTED",
-  "topCandidate": "OIL",
+  "snapshotId": "snap_googl_6434_20261110T101253Z",
+  "status": "NO_ACTION",
+  "topCandidate": "GOOGL",
   "watchlist": [
     "OIL",
     "NVDA",
