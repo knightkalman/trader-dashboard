@@ -3,7 +3,34 @@
  * Pure lightweight JavaScript with zero external chart library dependencies.
  */
 
-function renderEquityCurve(canvasId, equityPoints) {
+const UTC_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function formatUtcTickLabel(ms, windowKey) {
+  const d = new Date(ms);
+  const mon = UTC_MONTHS[d.getUTCMonth()];
+  const day = d.getUTCDate();
+  if (windowKey === "24h") {
+    const hh = String(d.getUTCHours()).padStart(2, "0");
+    return hh === "00" ? `${mon} ${day}` : `${hh}:00`;
+  }
+  return `${mon} ${day}`;
+}
+
+function buildTimeTicks(startMs, endMs, windowKey) {
+  const hourMs = 3600 * 1000;
+  const dayMs = 24 * hourMs;
+  const stepMs = windowKey === "24h" ? 4 * hourMs : (windowKey === "7d" ? dayMs : 7 * dayMs);
+  const alignMs = windowKey === "24h" ? 4 * hourMs : dayMs;
+
+  const firstTick = Math.ceil(startMs / alignMs) * alignMs;
+  const ticks = [];
+  for (let t = firstTick; t <= endMs; t += stepMs) {
+    ticks.push({ ms: t, label: formatUtcTickLabel(t, windowKey) });
+  }
+  return ticks;
+}
+
+function renderEquityCurve(canvasId, equityPoints, options = {}) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
 
@@ -30,7 +57,23 @@ function renderEquityCurve(canvasId, equityPoints) {
   const maxVal = Math.max(...values) * 1.0005;
   const range = maxVal - minVal || 1;
 
-  // Grid Lines
+  const parsedTimes = equityPoints
+    .map((p) => (p.timestamp ? Date.parse(p.timestamp) : NaN))
+    .filter((ms) => !Number.isNaN(ms));
+  const hasTimeBounds =
+    typeof options.startMs === "number" &&
+    typeof options.endMs === "number" &&
+    options.endMs > options.startMs;
+  const startMs = hasTimeBounds
+    ? options.startMs
+    : (parsedTimes.length > 0 ? Math.min(...parsedTimes) : 0);
+  const endMs = hasTimeBounds
+    ? options.endMs
+    : (parsedTimes.length > 0 ? Math.max(...parsedTimes) : 1);
+  const timeSpan = endMs - startMs || 1;
+  const windowKey = options.windowKey || "30d";
+
+  // Horizontal Grid Lines
   ctx.strokeStyle = "#243844";
   ctx.lineWidth = 1;
   ctx.beginPath();
@@ -47,9 +90,40 @@ function renderEquityCurve(canvasId, equityPoints) {
   }
   ctx.stroke();
 
-  // Plot Curve
+  // Vertical Time Grid Lines & Timestamp Labels
+  if (parsedTimes.length > 0) {
+    const ticks = buildTimeTicks(startMs, endMs, windowKey);
+    ctx.strokeStyle = "rgba(36, 56, 68, 0.7)";
+    ctx.lineWidth = 1;
+    ctx.fillStyle = "#8d9fa6";
+    ctx.font = "10px ui-monospace, monospace";
+
+    ticks.forEach((tick) => {
+      const ratio = (tick.ms - startMs) / timeSpan;
+      const x = padding.left + Math.min(Math.max(ratio, 0), 1) * plotWidth;
+
+      ctx.beginPath();
+      ctx.moveTo(x, padding.top);
+      ctx.lineTo(x, height - padding.bottom);
+      ctx.stroke();
+
+      if (x - padding.left < 18) {
+        ctx.textAlign = "left";
+      } else if (width - padding.right - x < 18) {
+        ctx.textAlign = "right";
+      } else {
+        ctx.textAlign = "center";
+      }
+      ctx.fillText(tick.label, x, height - padding.bottom + 16);
+    });
+  }
+
+  // Plot Curve (positioned by timestamp when available)
   const points = equityPoints.map((p, idx) => {
-    const x = padding.left + (plotWidth / (equityPoints.length - 1 || 1)) * idx;
+    const tMs = p.timestamp ? Date.parse(p.timestamp) : NaN;
+    const x = !Number.isNaN(tMs)
+      ? padding.left + Math.min(Math.max((tMs - startMs) / timeSpan, 0), 1) * plotWidth
+      : padding.left + (plotWidth / (equityPoints.length - 1 || 1)) * idx;
     const y = padding.top + plotHeight - ((p.equity - minVal) / range) * plotHeight;
     return { x, y, ...p };
   });

@@ -605,6 +605,9 @@ function filterHistoryByWindow(hist, windowKey) {
   }
 
   return {
+    windowKey,
+    startMs: cutoffMs,
+    endMs: refMs,
     metrics: computeTradeMetrics(filteredTrades),
     trades: filteredTrades,
     equityProgression: filteredEquityProgression,
@@ -623,7 +626,11 @@ function renderPerformanceAndJournal(hist) {
 
   // Render Equity Canvas Curve
   if (typeof renderEquityCurve === "function") {
-    renderEquityCurve("equity-curve-canvas", view.equityProgression);
+    renderEquityCurve("equity-curve-canvas", view.equityProgression, {
+      windowKey: view.windowKey,
+      startMs: view.startMs,
+      endMs: view.endMs,
+    });
   }
 
   // Closed Trades Table
@@ -712,7 +719,11 @@ document.addEventListener("DOMContentLoaded", () => {
     updateClosedTradesScroll();
     if (currentHistory && typeof renderEquityCurve === "function") {
       const view = filterHistoryByWindow(currentHistory, activeHistoryWindow);
-      renderEquityCurve("equity-curve-canvas", view.equityProgression);
+      renderEquityCurve("equity-curve-canvas", view.equityProgression, {
+        windowKey: view.windowKey,
+        startMs: view.startMs,
+        endMs: view.endMs,
+      });
     }
   });
 });
