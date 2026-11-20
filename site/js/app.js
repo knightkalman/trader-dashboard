@@ -7,8 +7,17 @@ let refreshCountdown = 60;
 let refreshTimerInterval = null;
 let currentOrchestrator = null;
 let currentMarket = null;
+let currentSummary = null;
+let currentHistory = null;
 let selectedTicker = null;
 let activeMatrixFilter = "all";
+let activeHistoryWindow = "30d";
+
+const HISTORY_WINDOW_HOURS = {
+  "24h": 24,
+  "7d": 24 * 7,
+  "30d": 24 * 30,
+};
 
 async function fetchJson(endpoint) {
   try {
@@ -83,6 +92,29 @@ function setupMatrixFilters() {
   });
 }
 
+function setupHistoryWindowSwitches() {
+  const switches = document.querySelectorAll(".history-window-switch");
+  switches.forEach(sw => {
+    if (sw.dataset.initialized) return;
+    sw.dataset.initialized = "true";
+    sw.addEventListener("click", (e) => {
+      const btn = e.target.closest(".filter-btn[data-window]");
+      if (!btn) return;
+      const nextWindow = btn.dataset.window;
+      if (!HISTORY_WINDOW_HOURS[nextWindow] || nextWindow === activeHistoryWindow) return;
+
+      activeHistoryWindow = nextWindow;
+      document.querySelectorAll(".history-window-switch .filter-btn[data-window]").forEach(b => {
+        b.classList.toggle("active", b.dataset.window === activeHistoryWindow);
+      });
+
+      if (currentHistory) {
+        renderPerformanceAndJournal(currentHistory);
+      }
+    });
+  });
+}
+
 async function loadDashboardData() {
   const [summary, positions, orchestrator, market, history] = await Promise.all([
     fetchJson("data/summary.json"),
@@ -92,12 +124,15 @@ async function loadDashboardData() {
     fetchJson("data/history.json"),
   ]);
 
+  currentSummary = summary;
   currentOrchestrator = orchestrator;
   currentMarket = market;
+  currentHistory = history;
   if (!selectedTicker) {
     selectedTicker = orchestrator?.topCandidate || market?.defaultSelectedTicker || "OIL";
   }
 
+  setupHistoryWindowSwitches();
   renderHeaderAndKpis(summary);
   renderActiveTrades(positions, summary);
   renderOrchestratorFunnel(orchestrator, selectedTicker);
@@ -483,24 +518,118 @@ function renderMarketAndTechnicals(market, selTicker, activeFilter = "all") {
   }).join("");
 }
 
+function getHistoryReferenceTimeMs(hist) {
+  let maxMs = NaN;
+  const points = hist?.equityProgression || [];
+  for (const pt of points) {
+    const ms = Date.parse(pt.timestamp);
+    if (!Number.isNaN(ms) && (Number.isNaN(maxMs) || ms > maxMs)) {
+      maxMs = ms;
+    }
+  }
+  const summaryMs = currentSummary?.generatedAt ? Date.parse(currentSummary.generatedAt) : NaN;
+  if (!Number.isNaN(summaryMs) && (Number.isNaN(maxMs) || summaryMs > maxMs)) {
+    maxMs = summaryMs;
+  }
+  return Number.isNaN(maxMs) ? Date.now() : maxMs;
+}
+
+function computeTradeMetrics(trades) {
+  const totalClosed = trades.length;
+  if (totalClosed === 0) {
+    return { winRate: 0, profitFactor: 0, expectancy: 0, totalFees: 0 };
+  }
+
+  const winningTrades = trades.filter(t => Number(t.realizedNetPnL || 0) > 0);
+  const losingTrades = trades.filter(t => Number(t.realizedNetPnL || 0) <= 0);
+  const winRate = (winningTrades.length / totalClosed) * 100;
+
+  const grossWins = winningTrades.reduce((sum, t) => sum + Number(t.realizedNetPnL || 0), 0);
+  const grossLosses = Math.abs(losingTrades.reduce((sum, t) => sum + Number(t.realizedNetPnL || 0), 0));
+  const profitFactor = grossLosses > 0 ? grossWins / grossLosses : (grossWins > 0 ? 1.0 : 0.0);
+
+  const avgWin = winningTrades.length > 0 ? grossWins / winningTrades.length : 0.0;
+  const avgLoss = losingTrades.length > 0 ? grossLosses / losingTrades.length : 0.0;
+  const expectancy = ((winRate / 100.0) * avgWin) - ((1.0 - (winRate / 100.0)) * avgLoss);
+  const totalFees = trades.reduce((sum, t) => sum + Number(t.fees || 0), 0);
+
+  return {
+    winRate: Math.round(winRate * 100) / 100,
+    profitFactor: Math.round(profitFactor * 100) / 100,
+    expectancy: Math.round(expectancy * 100) / 100,
+    totalFees: Math.round(totalFees * 100) / 100,
+  };
+}
+
+function filterHistoryByWindow(hist, windowKey) {
+  const hours = HISTORY_WINDOW_HOURS[windowKey] || HISTORY_WINDOW_HOURS["30d"];
+  const refMs = getHistoryReferenceTimeMs(hist);
+  const cutoffMs = refMs - hours * 3600 * 1000;
+
+  const allTrades = hist.trades || [];
+  const filteredTrades = allTrades.filter(t => {
+    const closeMs = t.closeDateTime ? Date.parse(t.closeDateTime) : NaN;
+    return !Number.isNaN(closeMs) && closeMs >= cutoffMs;
+  });
+
+  const allPoints = hist.equityProgression || [];
+  let lastBeforeCutoff = null;
+  const inWindowPoints = [];
+  for (const pt of allPoints) {
+    const ptMs = pt.timestamp ? Date.parse(pt.timestamp) : NaN;
+    if (Number.isNaN(ptMs)) continue;
+    if (ptMs < cutoffMs) {
+      lastBeforeCutoff = pt;
+    } else {
+      inWindowPoints.push(pt);
+    }
+  }
+
+  let filteredEquityProgression = inWindowPoints;
+  if (lastBeforeCutoff) {
+    const cutoffIso = new Date(cutoffMs).toISOString();
+    const firstInWindowMs = inWindowPoints.length > 0 ? Date.parse(inWindowPoints[0].timestamp) : NaN;
+    if (Number.isNaN(firstInWindowMs) || firstInWindowMs > cutoffMs) {
+      filteredEquityProgression = [
+        { ...lastBeforeCutoff, timestamp: cutoffIso },
+        ...inWindowPoints,
+      ];
+    }
+  }
+
+  if (filteredEquityProgression.length === 1) {
+    filteredEquityProgression = [
+      filteredEquityProgression[0],
+      { ...filteredEquityProgression[0] },
+    ];
+  }
+
+  return {
+    metrics: computeTradeMetrics(filteredTrades),
+    trades: filteredTrades,
+    equityProgression: filteredEquityProgression,
+  };
+}
+
 function renderPerformanceAndJournal(hist) {
   if (!hist) return;
 
-  const metrics = hist.metrics || {};
+  const view = filterHistoryByWindow(hist, activeHistoryWindow);
+  const metrics = view.metrics || {};
   document.getElementById("hist-winrate").innerText = `${metrics.winRate || 0}%`;
   document.getElementById("hist-profitfactor").innerText = `${metrics.profitFactor || 0}`;
   document.getElementById("hist-expectancy").innerText = formatCurrency(metrics.expectancy || 0);
   document.getElementById("hist-fees").innerText = formatCurrency(metrics.totalFees || 0);
 
   // Render Equity Canvas Curve
-  if (typeof renderEquityCurve === "function" && hist.equityProgression) {
-    renderEquityCurve("equity-curve-canvas", hist.equityProgression);
+  if (typeof renderEquityCurve === "function") {
+    renderEquityCurve("equity-curve-canvas", view.equityProgression);
   }
 
   // Closed Trades Table
   const tbody = document.getElementById("closed-trades-table-body");
   if (tbody) {
-    const trades = hist.trades || [];
+    const trades = view.trades || [];
     const countBadge = document.getElementById("closed-trades-count");
     if (countBadge) {
       countBadge.innerText = `${trades.length} ${trades.length === 1 ? 'trade' : 'trades'}`;
@@ -508,7 +637,7 @@ function renderPerformanceAndJournal(hist) {
     }
 
     if (trades.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--text-dim); padding:16px;">No closed trades recorded in reporting period.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--text-dim); padding:16px;">No closed trades recorded in the ${activeHistoryWindow} window.</td></tr>`;
       updateClosedTradesScroll();
       return;
     }
@@ -581,11 +710,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", () => {
     updateClosedTradesScroll();
-    fetchJson("data/history.json").then(hist => {
-      if (hist && typeof renderEquityCurve === "function") {
-        renderEquityCurve("equity-curve-canvas", hist.equityProgression);
-      }
-    });
+    if (currentHistory && typeof renderEquityCurve === "function") {
+      const view = filterHistoryByWindow(currentHistory, activeHistoryWindow);
+      renderEquityCurve("equity-curve-canvas", view.equityProgression);
+    }
   });
 });
 

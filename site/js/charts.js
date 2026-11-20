@@ -5,7 +5,7 @@
 
 function renderEquityCurve(canvasId, equityPoints) {
   const canvas = document.getElementById(canvasId);
-  if (!canvas || !equityPoints || equityPoints.length === 0) return;
+  if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
   const dpr = window.devicePixelRatio || 1;
@@ -17,12 +17,13 @@ function renderEquityCurve(canvasId, equityPoints) {
 
   const width = rect.width;
   const height = rect.height;
+  ctx.clearRect(0, 0, width, height);
+
+  if (!equityPoints || equityPoints.length === 0) return;
   const padding = { top: 20, right: 30, bottom: 30, left: 60 };
 
   const plotWidth = width - padding.left - padding.right;
   const plotHeight = height - padding.top - padding.bottom;
-
-  ctx.clearRect(0, 0, width, height);
 
   const values = equityPoints.map((p) => p.equity);
   const minVal = Math.min(...values) * 0.9995;

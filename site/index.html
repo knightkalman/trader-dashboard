@@ -237,7 +237,14 @@
           <div class="section-title">
             <span>📈 Reconciled Performance &amp; Equity Curve</span>
           </div>
-          <span style="font-size:11px; color:var(--text-muted);">Net of all CFD overnight fees &amp; spreads</span>
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <span style="font-size:11px; color:var(--text-muted);">Net of all CFD overnight fees &amp; spreads</span>
+            <div class="matrix-filter-bar history-window-switch" role="group" aria-label="Reconciled performance timeframe">
+              <button class="filter-btn" data-window="24h" type="button">24h</button>
+              <button class="filter-btn" data-window="7d" type="button">7d</button>
+              <button class="filter-btn active" data-window="30d" type="button">30d</button>
+            </div>
+          </div>
         </div>
 
         <div style="height:190px; width:100%; position:relative; margin-bottom:14px;">
@@ -259,7 +266,14 @@
             <span>📜 Closed Trade Audit Journal</span>
             <span id="closed-trades-count" class="badge badge-safe" style="font-size:10px; font-weight:600; display:none;">0 trades</span>
           </div>
-          <span style="font-size:11px; color:var(--text-muted);">Source: get-my-trading-history</span>
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <span style="font-size:11px; color:var(--text-muted);">Source: get-my-trading-history</span>
+            <div class="matrix-filter-bar history-window-switch" role="group" aria-label="Closed trade journal timeframe">
+              <button class="filter-btn" data-window="24h" type="button">24h</button>
+              <button class="filter-btn" data-window="7d" type="button">7d</button>
+              <button class="filter-btn active" data-window="30d" type="button">30d</button>
+            </div>
+          </div>
         </div>
 
         <div class="table-responsive table-scrollable-10" id="closed-trades-container">
