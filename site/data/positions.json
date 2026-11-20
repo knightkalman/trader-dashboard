@@ -1,32 +1,104 @@
 {
   "account": "demo",
   "controlPanelIssueUrl": "https://github.com/knightkalman/trader-agent/issues/1",
-  "generatedAt": "2026-11-20T13:16:07.609926+00:00",
+  "generatedAt": "2026-11-20T14:05:40.847864+00:00",
   "orders": [],
   "positions": [
     {
       "actionLinks": {
+        "cliClose": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=close -f position_id=3647694229",
+        "cliModify": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=modify -f position_id=3647694229 -f stop_loss_rate=\"851.26\"",
+        "closeFullUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+CLOSE+100%25+Position+3647694229+%28GS%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+CLOSE+100%25+Position+3647694229+%28GS%29%60%0A%0AFully+terminate+%28100%25+%3D+%600.719338%60+units%29+running+%2A%2AGS%2A%2A+position+%603647694229%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22close%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647694229%2C%0A++%22unitsToDeduct%22%3A+null%0A%7D%0A%60%60%60%0A",
+        "closeHalfUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+CLOSE+50%25+%280.3597u%29+Position+3647694229+%28GS%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+CLOSE+50%25+%280.3597u%29+Position+3647694229+%28GS%29%60%0A%0APartially+terminate+%2A%2A0.3597+units%2A%2A+%28of+%600.719338%60+units%29+on+%2A%2AGS%2A%2A+position+%603647694229%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22close%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647694229%2C%0A++%22unitsToDeduct%22%3A+0.3597%0A%7D%0A%60%60%60%0A",
+        "modifyUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+MODIFY+Position+3647694229+%28GS%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+MODIFY+Position+3647694229+%28GS%29%60%0A%0AAlter+Stop-Loss+%2F+Take-Profit+on+running+%2A%2AGS%2A%2A+%60short%60+position+%603647694229%60+%28Current+Rate%3A+%60839.92%60%2C+Current+SL%3A+%60851.26%60%2C+Current+TP%3A+%60800.98%60%29.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22clearStopLoss%22%3A+false%2C%0A++%22clearTakeProfit%22%3A+false%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647694229%2C%0A++%22stopLossRate%22%3A+851.26%2C%0A++%22stopLossType%22%3A+%22fixed%22%2C%0A++%22takeProfitRate%22%3A+800.98%0A%7D%0A%60%60%60%0A",
+        "trailingSlUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3647694229+%28GS%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3647694229+%28GS%29%60%0A%0ASwitch+Stop-Loss+mode+to+%60trailing%60+on+running+%2A%2AGS%2A%2A+position+%603647694229%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647694229%2C%0A++%22stopLossRate%22%3A+851.26%2C%0A++%22stopLossType%22%3A+%22trailing%22%0A%7D%0A%60%60%60%0A"
+      },
+      "currentRate": 839.92,
+      "direction": "short",
+      "displayName": "Goldman Sachs Group Inc",
+      "invested": 300.0,
+      "leverage": "2x",
+      "openRate": 834.1,
+      "positionId": 3647694229,
+      "stopLossRate": 851.26,
+      "stopLossType": "fixed",
+      "symbol": "GS",
+      "takeProfitRate": 800.98,
+      "units": 0.719338,
+      "unrealizedPnL": -4.19,
+      "unrealizedPnLPct": -1.4
+    },
+    {
+      "actionLinks": {
+        "cliClose": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=close -f position_id=3647715852",
+        "cliModify": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=modify -f position_id=3647715852 -f stop_loss_rate=\"1370.45\"",
+        "closeFullUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+CLOSE+100%25+Position+3647715852+%28ASML%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+CLOSE+100%25+Position+3647715852+%28ASML%29%60%0A%0AFully+terminate+%28100%25+%3D+%600.452192%60+units%29+running+%2A%2AASML%2A%2A+position+%603647715852%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22close%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647715852%2C%0A++%22unitsToDeduct%22%3A+null%0A%7D%0A%60%60%60%0A",
+        "closeHalfUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+CLOSE+50%25+%280.2261u%29+Position+3647715852+%28ASML%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+CLOSE+50%25+%280.2261u%29+Position+3647715852+%28ASML%29%60%0A%0APartially+terminate+%2A%2A0.2261+units%2A%2A+%28of+%600.452192%60+units%29+on+%2A%2AASML%2A%2A+position+%603647715852%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22close%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647715852%2C%0A++%22unitsToDeduct%22%3A+0.2261%0A%7D%0A%60%60%60%0A",
+        "modifyUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+MODIFY+Position+3647715852+%28ASML%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+MODIFY+Position+3647715852+%28ASML%29%60%0A%0AAlter+Stop-Loss+%2F+Take-Profit+on+running+%2A%2AASML%2A%2A+%60short%60+position+%603647715852%60+%28Current+Rate%3A+%601327.69%60%2C+Current+SL%3A+%601370.45%60%2C+Current+TP%3A+%601245.58%60%29.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22clearStopLoss%22%3A+false%2C%0A++%22clearTakeProfit%22%3A+false%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647715852%2C%0A++%22stopLossRate%22%3A+1370.45%2C%0A++%22stopLossType%22%3A+%22fixed%22%2C%0A++%22takeProfitRate%22%3A+1245.58%0A%7D%0A%60%60%60%0A",
+        "trailingSlUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3647715852+%28ASML%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3647715852+%28ASML%29%60%0A%0ASwitch+Stop-Loss+mode+to+%60trailing%60+on+running+%2A%2AASML%2A%2A+position+%603647715852%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647715852%2C%0A++%22stopLossRate%22%3A+1370.45%2C%0A++%22stopLossType%22%3A+%22trailing%22%0A%7D%0A%60%60%60%0A"
+      },
+      "currentRate": 1327.69,
+      "direction": "short",
+      "displayName": "ASML Holding NV",
+      "invested": 300.0,
+      "leverage": "2x",
+      "openRate": 1326.87,
+      "positionId": 3647715852,
+      "stopLossRate": 1370.45,
+      "stopLossType": "fixed",
+      "symbol": "ASML",
+      "takeProfitRate": 1245.58,
+      "units": 0.452192,
+      "unrealizedPnL": -0.37,
+      "unrealizedPnLPct": -0.12
+    },
+    {
+      "actionLinks": {
+        "cliClose": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=close -f position_id=3647688564",
+        "cliModify": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=modify -f position_id=3647688564 -f stop_loss_rate=\"281.52\"",
+        "closeFullUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+CLOSE+100%25+Position+3647688564+%28GOOGL%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+CLOSE+100%25+Position+3647688564+%28GOOGL%29%60%0A%0AFully+terminate+%28100%25+%3D+%601.816398%60+units%29+running+%2A%2AGOOGL%2A%2A+position+%603647688564%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22close%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647688564%2C%0A++%22unitsToDeduct%22%3A+null%0A%7D%0A%60%60%60%0A",
+        "closeHalfUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+CLOSE+50%25+%280.9082u%29+Position+3647688564+%28GOOGL%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+CLOSE+50%25+%280.9082u%29+Position+3647688564+%28GOOGL%29%60%0A%0APartially+terminate+%2A%2A0.9082+units%2A%2A+%28of+%601.816398%60+units%29+on+%2A%2AGOOGL%2A%2A+position+%603647688564%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22close%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647688564%2C%0A++%22unitsToDeduct%22%3A+0.9082%0A%7D%0A%60%60%60%0A",
+        "modifyUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+MODIFY+Position+3647688564+%28GOOGL%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+MODIFY+Position+3647688564+%28GOOGL%29%60%0A%0AAlter+Stop-Loss+%2F+Take-Profit+on+running+%2A%2AGOOGL%2A%2A+%60short%60+position+%603647688564%60+%28Current+Rate%3A+%60270.81%60%2C+Current+SL%3A+%60281.52%60%2C+Current+TP%3A+%60248.31%60%29.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22clearStopLoss%22%3A+false%2C%0A++%22clearTakeProfit%22%3A+false%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647688564%2C%0A++%22stopLossRate%22%3A+281.52%2C%0A++%22stopLossType%22%3A+%22fixed%22%2C%0A++%22takeProfitRate%22%3A+248.31%0A%7D%0A%60%60%60%0A",
+        "trailingSlUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3647688564+%28GOOGL%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3647688564+%28GOOGL%29%60%0A%0ASwitch+Stop-Loss+mode+to+%60trailing%60+on+running+%2A%2AGOOGL%2A%2A+position+%603647688564%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3647688564%2C%0A++%22stopLossRate%22%3A+281.52%2C%0A++%22stopLossType%22%3A+%22trailing%22%0A%7D%0A%60%60%60%0A"
+      },
+      "currentRate": 270.81,
+      "direction": "short",
+      "displayName": "Alphabet Inc Class A",
+      "invested": 245.35,
+      "leverage": "2x",
+      "openRate": 270.15,
+      "positionId": 3647688564,
+      "stopLossRate": 281.52,
+      "stopLossType": "fixed",
+      "symbol": "GOOGL",
+      "takeProfitRate": 248.31,
+      "units": 1.816398,
+      "unrealizedPnL": -1.2,
+      "unrealizedPnLPct": -0.49
+    },
+    {
+      "actionLinks": {
         "cliClose": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=close -f position_id=3646590125",
-        "cliModify": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=modify -f position_id=3646590125 -f stop_loss_rate=\"254.68\"",
+        "cliModify": "gh workflow run trading-agent-pipeline.yml -R knightkalman/trader-agent -f account=demo -f action=modify -f position_id=3646590125 -f stop_loss_rate=\"253.82\"",
         "closeFullUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+CLOSE+100%25+Position+3646590125+%28AMZN%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+CLOSE+100%25+Position+3646590125+%28AMZN%29%60%0A%0AFully+terminate+%28100%25+%3D+%601.343752%60+units%29+running+%2A%2AAMZN%2A%2A+position+%603646590125%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22close%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3646590125%2C%0A++%22unitsToDeduct%22%3A+null%0A%7D%0A%60%60%60%0A",
         "closeHalfUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+CLOSE+50%25+%280.6719u%29+Position+3646590125+%28AMZN%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+CLOSE+50%25+%280.6719u%29+Position+3646590125+%28AMZN%29%60%0A%0APartially+terminate+%2A%2A0.6719+units%2A%2A+%28of+%601.343752%60+units%29+on+%2A%2AAMZN%2A%2A+position+%603646590125%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22close%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3646590125%2C%0A++%22unitsToDeduct%22%3A+0.6719%0A%7D%0A%60%60%60%0A",
-        "modifyUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+MODIFY+Position+3646590125+%28AMZN%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+MODIFY+Position+3646590125+%28AMZN%29%60%0A%0AAlter+Stop-Loss+%2F+Take-Profit+on+running+%2A%2AAMZN%2A%2A+%60short%60+position+%603646590125%60+%28Current+Rate%3A+%60251.05%60%2C+Current+SL%3A+%60254.68%60%2C+Current+TP%3A+%60247.62%60%29.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22clearStopLoss%22%3A+false%2C%0A++%22clearTakeProfit%22%3A+false%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3646590125%2C%0A++%22stopLossRate%22%3A+254.68%2C%0A++%22stopLossType%22%3A+%22fixed%22%2C%0A++%22takeProfitRate%22%3A+247.62%0A%7D%0A%60%60%60%0A",
-        "trailingSlUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3646590125+%28AMZN%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3646590125+%28AMZN%29%60%0A%0ASwitch+Stop-Loss+mode+to+%60trailing%60+on+running+%2A%2AAMZN%2A%2A+position+%603646590125%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3646590125%2C%0A++%22stopLossRate%22%3A+254.68%2C%0A++%22stopLossType%22%3A+%22trailing%22%0A%7D%0A%60%60%60%0A"
+        "modifyUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+MODIFY+Position+3646590125+%28AMZN%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+MODIFY+Position+3646590125+%28AMZN%29%60%0A%0AAlter+Stop-Loss+%2F+Take-Profit+on+running+%2A%2AAMZN%2A%2A+%60short%60+position+%603646590125%60+%28Current+Rate%3A+%60252.96%60%2C+Current+SL%3A+%60253.82%60%2C+Current+TP%3A+%60247.62%60%29.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22clearStopLoss%22%3A+false%2C%0A++%22clearTakeProfit%22%3A+false%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3646590125%2C%0A++%22stopLossRate%22%3A+253.82%2C%0A++%22stopLossType%22%3A+%22fixed%22%2C%0A++%22takeProfitRate%22%3A+247.62%0A%7D%0A%60%60%60%0A",
+        "trailingSlUrl": "https://github.com/knightkalman/trader-agent/issues/new?labels=trade-control&title=%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3646590125+%28AMZN%29&body=%23%23%23+%F0%9F%8E%9B%EF%B8%8F+Interactive+Trade+Control+Request+%E2%80%94+%60%5BTRADE-CONTROL%5D+TRAILING-SL+Position+3646590125+%28AMZN%29%60%0A%0ASwitch+Stop-Loss+mode+to+%60trailing%60+on+running+%2A%2AAMZN%2A%2A+position+%603646590125%60.%0A%0A%3E+%2A%2AInstructions%2A%2A%3A+Review+or+edit+the+JSON+parameters+below%2C+then+click+%2A%2ACreate%2A%2A+%28or+%2A%2ASubmit+new+issue%2A%2A%29+to+trigger+GitHub+Actions.%0A%0A%60%60%60json%0A%7B%0A++%22account%22%3A+%22demo%22%2C%0A++%22action%22%3A+%22modify%22%2C%0A++%22executeImmediately%22%3A+false%2C%0A++%22positionId%22%3A+3646590125%2C%0A++%22stopLossRate%22%3A+253.82%2C%0A++%22stopLossType%22%3A+%22trailing%22%0A%7D%0A%60%60%60%0A"
       },
-      "currentRate": 251.05,
+      "currentRate": 252.96,
       "direction": "short",
       "displayName": "Amazon.com Inc",
       "invested": 175.0,
       "leverage": "2x",
       "openRate": 260.46,
       "positionId": 3646590125,
-      "stopLossRate": 254.68,
+      "stopLossRate": 253.82,
       "stopLossType": "fixed",
       "symbol": "AMZN",
       "takeProfitRate": 247.62,
       "units": 1.343752,
-      "unrealizedPnL": 12.64,
-      "unrealizedPnLPct": 7.22
+      "unrealizedPnL": 10.08,
+      "unrealizedPnLPct": 5.76
     }
   ],
   "preparations": []
