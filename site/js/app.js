@@ -585,37 +585,53 @@ function filterHistoryByWindow(hist, windowKey) {
     }
   }
 
-  let filteredEquityProgression = inWindowPoints;
+  const chronologicalTrades = [...filteredTrades].sort(
+    (a, b) => Date.parse(a.closeDateTime) - Date.parse(b.closeDateTime)
+  );
+  const tradeByCloseTs = new Map();
+  for (const t of chronologicalTrades) {
+    if (t.closeDateTime) {
+      tradeByCloseTs.set(t.closeDateTime, t);
+    }
+  }
+
+  let filteredEquityProgression = inWindowPoints.map(pt => {
+    const matchedTrade = pt.timestamp ? tradeByCloseTs.get(pt.timestamp) : null;
+    return matchedTrade ? { ...pt, trade: matchedTrade } : { ...pt };
+  });
   if (lastBeforeCutoff) {
     const cutoffIso = new Date(cutoffMs).toISOString();
     const firstInWindowMs = inWindowPoints.length > 0 ? Date.parse(inWindowPoints[0].timestamp) : NaN;
     if (Number.isNaN(firstInWindowMs) || firstInWindowMs > cutoffMs) {
       filteredEquityProgression = [
-        { ...lastBeforeCutoff, timestamp: cutoffIso },
-        ...inWindowPoints,
+        { ...lastBeforeCutoff, timestamp: cutoffIso, label: "Window Start" },
+        ...filteredEquityProgression,
       ];
     }
   }
 
   if (filteredEquityProgression.length === 1) {
     filteredEquityProgression = [
-      filteredEquityProgression[0],
-      { ...filteredEquityProgression[0] },
+      { ...filteredEquityProgression[0], label: filteredEquityProgression[0].label || "Window Start" },
+      { ...filteredEquityProgression[0], label: "Latest Snapshot" },
     ];
+  } else if (filteredEquityProgression.length > 1) {
+    const lastEq = filteredEquityProgression[filteredEquityProgression.length - 1];
+    if (!lastEq.trade && !lastEq.label) {
+      lastEq.label = "Latest Snapshot";
+    }
   }
 
-  const chronologicalTrades = [...filteredTrades].sort(
-    (a, b) => Date.parse(a.closeDateTime) - Date.parse(b.closeDateTime)
-  );
   const cutoffIso = new Date(cutoffMs).toISOString();
   const refIso = new Date(refMs).toISOString();
   let runningPnl = 0;
-  const realizedPnlProgression = [{ timestamp: cutoffIso, realizedNetPnL: 0 }];
+  const realizedPnlProgression = [{ timestamp: cutoffIso, realizedNetPnL: 0, label: "Window Start" }];
   for (const t of chronologicalTrades) {
     runningPnl = Math.round((runningPnl + Number(t.realizedNetPnL || 0)) * 100) / 100;
     realizedPnlProgression.push({
       timestamp: t.closeDateTime,
       realizedNetPnL: runningPnl,
+      trade: t,
     });
   }
   const lastPnlPoint = realizedPnlProgression[realizedPnlProgression.length - 1];
@@ -623,6 +639,7 @@ function filterHistoryByWindow(hist, windowKey) {
     realizedPnlProgression.push({
       timestamp: refIso,
       realizedNetPnL: runningPnl,
+      label: "Latest Snapshot",
     });
   }
 
