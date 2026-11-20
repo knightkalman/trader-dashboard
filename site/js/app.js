@@ -11,7 +11,7 @@ let currentSummary = null;
 let currentHistory = null;
 let selectedTicker = null;
 let activeMatrixFilter = "all";
-let activeHistoryWindow = "30d";
+let activeHistoryWindow = "24h";
 
 const HISTORY_WINDOW_HOURS = {
   "24h": 24,
