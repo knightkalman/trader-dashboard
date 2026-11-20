@@ -604,6 +604,28 @@ function filterHistoryByWindow(hist, windowKey) {
     ];
   }
 
+  const chronologicalTrades = [...filteredTrades].sort(
+    (a, b) => Date.parse(a.closeDateTime) - Date.parse(b.closeDateTime)
+  );
+  const cutoffIso = new Date(cutoffMs).toISOString();
+  const refIso = new Date(refMs).toISOString();
+  let runningPnl = 0;
+  const realizedPnlProgression = [{ timestamp: cutoffIso, realizedNetPnL: 0 }];
+  for (const t of chronologicalTrades) {
+    runningPnl = Math.round((runningPnl + Number(t.realizedNetPnL || 0)) * 100) / 100;
+    realizedPnlProgression.push({
+      timestamp: t.closeDateTime,
+      realizedNetPnL: runningPnl,
+    });
+  }
+  const lastPnlPoint = realizedPnlProgression[realizedPnlProgression.length - 1];
+  if (Date.parse(lastPnlPoint.timestamp) < refMs) {
+    realizedPnlProgression.push({
+      timestamp: refIso,
+      realizedNetPnL: runningPnl,
+    });
+  }
+
   return {
     windowKey,
     startMs: cutoffMs,
@@ -611,6 +633,8 @@ function filterHistoryByWindow(hist, windowKey) {
     metrics: computeTradeMetrics(filteredTrades),
     trades: filteredTrades,
     equityProgression: filteredEquityProgression,
+    realizedPnlProgression,
+    periodRealizedNetPnL: runningPnl,
   };
 }
 
@@ -624,13 +648,28 @@ function renderPerformanceAndJournal(hist) {
   document.getElementById("hist-expectancy").innerText = formatCurrency(metrics.expectancy || 0);
   document.getElementById("hist-fees").innerText = formatCurrency(metrics.totalFees || 0);
 
+  const chartOptions = {
+    windowKey: view.windowKey,
+    startMs: view.startMs,
+    endMs: view.endMs,
+  };
+
   // Render Equity Canvas Curve
   if (typeof renderEquityCurve === "function") {
-    renderEquityCurve("equity-curve-canvas", view.equityProgression, {
-      windowKey: view.windowKey,
-      startMs: view.startMs,
-      endMs: view.endMs,
-    });
+    renderEquityCurve("equity-curve-canvas", view.equityProgression, chartOptions);
+  }
+
+  // Render Realized Net P&L Curve & Badge
+  const pnlBadge = document.getElementById("realized-pnl-period-badge");
+  if (pnlBadge) {
+    const netVal = Number(view.periodRealizedNetPnL || 0);
+    const prefix = netVal > 0 ? "+" : "";
+    pnlBadge.innerText = `${prefix}${formatCurrency(netVal)}`;
+    pnlBadge.className = `badge mono ${netVal >= 0 ? "badge-safe" : "badge-danger"}`;
+    pnlBadge.style.display = "inline-flex";
+  }
+  if (typeof renderRealizedPnlCurve === "function") {
+    renderRealizedPnlCurve("realized-pnl-canvas", view.realizedPnlProgression, chartOptions);
   }
 
   // Closed Trades Table
@@ -717,13 +756,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", () => {
     updateClosedTradesScroll();
-    if (currentHistory && typeof renderEquityCurve === "function") {
+    if (currentHistory) {
       const view = filterHistoryByWindow(currentHistory, activeHistoryWindow);
-      renderEquityCurve("equity-curve-canvas", view.equityProgression, {
+      const chartOptions = {
         windowKey: view.windowKey,
         startMs: view.startMs,
         endMs: view.endMs,
-      });
+      };
+      if (typeof renderEquityCurve === "function") {
+        renderEquityCurve("equity-curve-canvas", view.equityProgression, chartOptions);
+      }
+      if (typeof renderRealizedPnlCurve === "function") {
+        renderRealizedPnlCurve("realized-pnl-canvas", view.realizedPnlProgression, chartOptions);
+      }
     }
   });
 });

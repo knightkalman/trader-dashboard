@@ -30,7 +30,15 @@ function buildTimeTicks(startMs, endMs, windowKey) {
   return ticks;
 }
 
-function renderEquityCurve(canvasId, equityPoints, options = {}) {
+function formatAxisCurrency(val, signed = false) {
+  const num = Number(val || 0);
+  const absFormatted = `$${Math.abs(num).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
+  if (num < 0) return `-${absFormatted}`;
+  if (signed && num > 0) return `+${absFormatted}`;
+  return absFormatted;
+}
+
+function renderTimeSeriesChart(canvasId, seriesPoints, options = {}) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
 
@@ -46,18 +54,40 @@ function renderEquityCurve(canvasId, equityPoints, options = {}) {
   const height = rect.height;
   ctx.clearRect(0, 0, width, height);
 
-  if (!equityPoints || equityPoints.length === 0) return;
-  const padding = { top: 20, right: 30, bottom: 30, left: 60 };
+  if (!seriesPoints || seriesPoints.length === 0) return;
+
+  const valueKey = options.valueKey || "equity";
+  const signedLabels = Boolean(options.signedLabels);
+  const zeroBaseline = Boolean(options.zeroBaseline);
+  const strokeColor = options.strokeColor || "#48cfad";
+  const fillRgb = options.fillRgb || "72, 207, 173";
+  const padding = { top: 20, right: 30, bottom: 30, left: 64 };
 
   const plotWidth = width - padding.left - padding.right;
   const plotHeight = height - padding.top - padding.bottom;
 
-  const values = equityPoints.map((p) => p.equity);
-  const minVal = Math.min(...values) * 0.9995;
-  const maxVal = Math.max(...values) * 1.0005;
+  const values = seriesPoints.map((p) => Number(p[valueKey] || 0));
+  let rawMin = Math.min(...values);
+  let rawMax = Math.max(...values);
+  if (zeroBaseline) {
+    rawMin = Math.min(rawMin, 0);
+    rawMax = Math.max(rawMax, 0);
+  }
+
+  let minVal;
+  let maxVal;
+  if (options.relativePadding) {
+    minVal = rawMin * (1 - options.relativePadding);
+    maxVal = rawMax * (1 + options.relativePadding);
+  } else {
+    const span = rawMax - rawMin;
+    const pad = span > 0 ? span * 0.1 : 10;
+    minVal = rawMin - pad;
+    maxVal = rawMax + pad;
+  }
   const range = maxVal - minVal || 1;
 
-  const parsedTimes = equityPoints
+  const parsedTimes = seriesPoints
     .map((p) => (p.timestamp ? Date.parse(p.timestamp) : NaN))
     .filter((ms) => !Number.isNaN(ms));
   const hasTimeBounds =
@@ -86,9 +116,23 @@ function renderEquityCurve(canvasId, equityPoints, options = {}) {
     ctx.fillStyle = "#8d9fa6";
     ctx.font = "10px ui-monospace, monospace";
     ctx.textAlign = "right";
-    ctx.fillText(`$${labelVal.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`, padding.left - 8, y + 3);
+    ctx.fillText(formatAxisCurrency(labelVal, signedLabels), padding.left - 8, y + 3);
   }
   ctx.stroke();
+
+  // Optional $0.00 Baseline
+  if (zeroBaseline && minVal <= 0 && maxVal >= 0) {
+    const zeroY = padding.top + plotHeight - ((0 - minVal) / range) * plotHeight;
+    ctx.save();
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = "rgba(141, 159, 166, 0.45)";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(padding.left, zeroY);
+    ctx.lineTo(width - padding.right, zeroY);
+    ctx.stroke();
+    ctx.restore();
+  }
 
   // Vertical Time Grid Lines & Timestamp Labels
   if (parsedTimes.length > 0) {
@@ -119,24 +163,28 @@ function renderEquityCurve(canvasId, equityPoints, options = {}) {
   }
 
   // Plot Curve (positioned by timestamp when available)
-  const points = equityPoints.map((p, idx) => {
+  const points = seriesPoints.map((p, idx) => {
     const tMs = p.timestamp ? Date.parse(p.timestamp) : NaN;
     const x = !Number.isNaN(tMs)
       ? padding.left + Math.min(Math.max((tMs - startMs) / timeSpan, 0), 1) * plotWidth
-      : padding.left + (plotWidth / (equityPoints.length - 1 || 1)) * idx;
-    const y = padding.top + plotHeight - ((p.equity - minVal) / range) * plotHeight;
+      : padding.left + (plotWidth / (seriesPoints.length - 1 || 1)) * idx;
+    const val = Number(p[valueKey] || 0);
+    const y = padding.top + plotHeight - ((val - minVal) / range) * plotHeight;
     return { x, y, ...p };
   });
 
-  // Gradient area fill
+  // Area fill anchored to zero baseline (if enabled) or bottom
+  const baselineY = zeroBaseline && minVal <= 0 && maxVal >= 0
+    ? padding.top + plotHeight - ((0 - minVal) / range) * plotHeight
+    : height - padding.bottom;
   const gradient = ctx.createLinearGradient(0, padding.top, 0, height - padding.bottom);
-  gradient.addColorStop(0, "rgba(72, 207, 173, 0.25)");
-  gradient.addColorStop(1, "rgba(72, 207, 173, 0.0)");
+  gradient.addColorStop(0, `rgba(${fillRgb}, 0.25)`);
+  gradient.addColorStop(1, `rgba(${fillRgb}, 0.03)`);
 
   ctx.beginPath();
-  ctx.moveTo(points[0].x, height - padding.bottom);
+  ctx.moveTo(points[0].x, baselineY);
   points.forEach((pt) => ctx.lineTo(pt.x, pt.y));
-  ctx.lineTo(points[points.length - 1].x, height - padding.bottom);
+  ctx.lineTo(points[points.length - 1].x, baselineY);
   ctx.closePath();
   ctx.fillStyle = gradient;
   ctx.fill();
@@ -145,7 +193,7 @@ function renderEquityCurve(canvasId, equityPoints, options = {}) {
   ctx.beginPath();
   ctx.moveTo(points[0].x, points[0].y);
   points.forEach((pt) => ctx.lineTo(pt.x, pt.y));
-  ctx.strokeStyle = "#48cfad";
+  ctx.strokeStyle = strokeColor;
   ctx.lineWidth = 2.5;
   ctx.lineJoin = "round";
   ctx.stroke();
@@ -156,9 +204,35 @@ function renderEquityCurve(canvasId, equityPoints, options = {}) {
     ctx.arc(pt.x, pt.y, 4, 0, Math.PI * 2);
     ctx.fillStyle = "#131f26";
     ctx.fill();
-    ctx.strokeStyle = "#48cfad";
+    ctx.strokeStyle = strokeColor;
     ctx.lineWidth = 2;
     ctx.stroke();
+  });
+}
+
+function renderEquityCurve(canvasId, equityPoints, options = {}) {
+  renderTimeSeriesChart(canvasId, equityPoints, {
+    ...options,
+    valueKey: "equity",
+    relativePadding: 0.0005,
+    strokeColor: "#48cfad",
+    fillRgb: "72, 207, 173",
+  });
+}
+
+function renderRealizedPnlCurve(canvasId, pnlPoints, options = {}) {
+  const lastVal = pnlPoints && pnlPoints.length > 0
+    ? Number(pnlPoints[pnlPoints.length - 1].realizedNetPnL || 0)
+    : 0;
+  const isPositive = lastVal >= 0;
+
+  renderTimeSeriesChart(canvasId, pnlPoints, {
+    ...options,
+    valueKey: "realizedNetPnL",
+    zeroBaseline: true,
+    signedLabels: true,
+    strokeColor: isPositive ? "#48cfad" : "#ff6b6b",
+    fillRgb: isPositive ? "72, 207, 173" : "255, 107, 107",
   });
 }
 

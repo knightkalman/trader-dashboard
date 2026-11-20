@@ -297,6 +297,28 @@
       </div>
     </div>
 
+    <!-- PANEL 6: Realized Net P&L Curve -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>💵 Realized Net P&amp;L</span>
+          <span id="realized-pnl-period-badge" class="badge badge-safe mono" style="font-size:11px; font-weight:700; display:none;">$0.00</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span style="font-size:11px; color:var(--text-muted);">Cumulative closed-trade net P&amp;L in selected window</span>
+          <div class="matrix-filter-bar history-window-switch" role="group" aria-label="Realized Net P&amp;L timeframe">
+            <button class="filter-btn" data-window="24h" type="button">24h</button>
+            <button class="filter-btn" data-window="7d" type="button">7d</button>
+            <button class="filter-btn active" data-window="30d" type="button">30d</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:210px; width:100%; position:relative;">
+        <canvas id="realized-pnl-canvas" style="width:100%; height:100%;"></canvas>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer>
       <div>
@@ -311,8 +333,8 @@
 
   <div id="toast">Command copied!</div>
 
-  <script src="js/charts.js?v=4"></script>
-  <script src="js/app.js?v=6"></script>
+  <script src="js/charts.js?v=5"></script>
+  <script src="js/app.js?v=7"></script>
 </body>
 </html>
 
