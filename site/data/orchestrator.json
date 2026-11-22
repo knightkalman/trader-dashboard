@@ -24,11 +24,64 @@
   },
   "confluenceScore": 97.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-22T11:31:47Z",
-  "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: HOOD extended 1.39x ATR beyond EMA20 on high RVOL (3.00x) & ADX (45.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+  "cycleTimestamp": "2026-11-22T18:31:31Z",
+  "diagnostic": "New NVDA entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 88.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9451,
+      "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: AMD extended 1.26x ATR beyond EMA20 on high RVOL (2.82x) & ADX (33.8); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Pullback proximity guard: AMD extended 1.26x ATR beyond EMA20 on high RVOL (2.82x) & ADX (33.8)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261122T183111Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    "AMZN": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -56,17 +109,15 @@
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: AMD extended 1.26x ATR beyond EMA20 on high RVOL (2.82x) & ADX (33.8); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: AMD extended 1.26x ATR beyond EMA20 on high RVOL (2.82x) & ADX (33.8)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1832,
+      "instrumentId": 1005,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -77,11 +128,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261122T113130Z",
+      "snapshotId": "snap_amzn_1005_20261122T183112Z",
       "status": "NO_ACTION",
-      "symbol": "AMD"
+      "symbol": "AMZN"
     },
-    "AMZN": {
+    "ARM": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -108,16 +159,18 @@
       },
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5511,
-      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.5755,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ARM extended 1.96x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Pullback proximity guard: ARM extended 1.96x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.7)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1005,
+      "instrumentId": 1365,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -128,11 +181,64 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261122T113130Z",
+      "snapshotId": "snap_arm_1365_20261122T183112Z",
       "status": "NO_ACTION",
-      "symbol": "AMZN"
+      "symbol": "ARM"
     },
-    "ARM": {
+    "ASML": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 79.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New ASML entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ASML extended 1.01x ATR beyond EMA20 on high RVOL (2.98x) & ADX (40.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Pullback proximity guard: ASML extended 1.01x ATR beyond EMA20 on high RVOL (2.98x) & ADX (40.0)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4244,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_asml_4244_20261122T183111Z",
+      "status": "NO_ACTION",
+      "symbol": "ASML"
+    },
+    "CAT": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -154,124 +260,18 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 90.0,
+      "confluenceScore": 95.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8968,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ARM extended 1.96x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: ARM extended 1.96x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.7)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1365,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_arm_1365_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "ARM"
-    },
-    "ASML": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 97.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8793,
-      "diagnostic": "New ASML entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ASML extended 1.01x ATR beyond EMA20 on high RVOL (2.98x) & ADX (40.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: ASML extended 1.01x ATR beyond EMA20 on high RVOL (2.98x) & ADX (40.0)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 4244,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_asml_4244_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "ASML"
-    },
-    "CAT": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 87.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9109,
-      "diagnostic": "New CAT entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.948,
+      "diagnostic": "New CAT entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1012,
@@ -285,7 +285,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261122T113130Z",
+      "snapshotId": "snap_cat_1012_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -295,7 +295,7 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 10.0
         },
         "regimeAndNews": {
           "max": 35.0,
@@ -311,18 +311,18 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 15.0
         }
       },
-      "confluenceScore": 76.0,
+      "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.736,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.7458,
+      "diagnostic": "New COP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "buy",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1510,
@@ -336,7 +336,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261122T113130Z",
+      "snapshotId": "snap_cop_1510_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -368,13 +368,13 @@
       "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -388,7 +388,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261122T113130Z",
+      "snapshotId": "snap_crwd_5506_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -402,7 +402,7 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -417,17 +417,17 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 88.0,
+      "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9052,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: GOOGL extended 1.48x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.4,
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: GOOGL extended 1.48x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: GOOGL extended 1.48x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 6434,
@@ -441,7 +441,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261122T113130Z",
+      "snapshotId": "snap_googl_6434_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -472,15 +472,15 @@
       },
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8877,
-      "diagnostic": "New GS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: GS extended 1.46x ATR beyond EMA20 on high RVOL (2.86x) & ADX (55.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.8842,
+      "diagnostic": "New GS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: GS extended 1.46x ATR beyond EMA20 on high RVOL (2.86x) & ADX (55.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: GS extended 1.46x ATR beyond EMA20 on high RVOL (2.86x) & ADX (55.0)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1467,
@@ -494,7 +494,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261122T113130Z",
+      "snapshotId": "snap_gs_1467_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -520,20 +520,20 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 97.0,
+      "confluenceScore": 87.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9728,
-      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: HOOD extended 1.39x ATR beyond EMA20 on high RVOL (3.00x) & ADX (45.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.9163,
+      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: HOOD extended 1.39x ATR beyond EMA20 on high RVOL (3.00x) & ADX (45.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: HOOD extended 1.39x ATR beyond EMA20 on high RVOL (3.00x) & ADX (45.7)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 9272,
@@ -547,7 +547,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261122T113131Z",
+      "snapshotId": "snap_hood_9272_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -578,13 +578,13 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4667,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.4724,
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1021,
@@ -598,7 +598,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261122T113130Z",
+      "snapshotId": "snap_intc_1021_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -612,7 +612,7 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -624,20 +624,20 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 15.0
         }
       },
-      "confluenceScore": 74.0,
+      "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New META entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: META extended 1.19x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.6); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.8735,
+      "diagnostic": "New META entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: META extended 1.19x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.6); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: META extended 1.19x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.6)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1003,
@@ -651,7 +651,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261122T113130Z",
+      "snapshotId": "snap_meta_1003_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -677,18 +677,18 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 87.0,
+      "confluenceScore": 92.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8208,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.8415,
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "buy",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1027,
@@ -702,7 +702,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261122T113130Z",
+      "snapshotId": "snap_mrk_1027_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -733,15 +733,15 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8841,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: MS extended 1.62x ATR beyond EMA20 on high RVOL (3.00x) & ADX (43.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.9083,
+      "diagnostic": "New MS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: MS extended 1.62x ATR beyond EMA20 on high RVOL (3.00x) & ADX (43.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: MS extended 1.62x ATR beyond EMA20 on high RVOL (3.00x) & ADX (43.0)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1976,
@@ -755,7 +755,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261122T113130Z",
+      "snapshotId": "snap_ms_1976_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -765,64 +765,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
           "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 79.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New MU entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: MU extended 1.33x ATR beyond EMA20 on high RVOL (2.47x) & ADX (39.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: MU extended 1.33x ATR beyond EMA20 on high RVOL (2.47x) & ADX (39.0)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1130,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mu_1130_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "MU"
-    },
-    "NVDA": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -837,20 +784,20 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 88.0,
+      "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9321,
-      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.5436,
+      "diagnostic": "New MU entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: MU extended 1.33x ATR beyond EMA20 on high RVOL (2.47x) & ADX (39.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3)",
+        "Pullback proximity guard: MU extended 1.33x ATR beyond EMA20 on high RVOL (2.47x) & ADX (39.0)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1137,
+      "instrumentId": 1130,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -861,166 +808,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261122T113130Z",
+      "snapshotId": "snap_mu_1130_20261122T183111Z",
       "status": "NO_ACTION",
-      "symbol": "NVDA"
+      "symbol": "MU"
     },
-    "OIL": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 67.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9061,
-      "diagnostic": "New OIL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'eToro spread (0.523%) exceeds 20% of expected 3xATR target (2.40%).', 'Macro-bearish long gating: RSI(14) 65.0 >= 60.0 while 91% of watchlist is 4h-bearish.']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "eToro spread (0.523%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Macro-bearish long gating: RSI(14) 65.0 >= 60.0 while 91% of watchlist is 4h-bearish."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 17,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_oil_17_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "OIL"
-    },
-    "ORCL": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 81.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ORCL extended 1.24x ATR beyond EMA20 on high RVOL (3.00x) & ADX (42.8); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: ORCL extended 1.24x ATR beyond EMA20 on high RVOL (3.00x) & ADX (42.8)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1135,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_orcl_1135_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "ORCL"
-    },
-    "PLTR": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 87.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8962,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 7991,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_pltr_7991_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "PLTR"
-    },
-    "QCOM": {
+    "NVDA": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -1047,20 +839,18 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8704,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Oversold momentum veto: RSI(14) is 19.5 <= 30.0 without tier-1 catalyst; blocking new short entry at depressed levels.', 'Pullback proximity guard: QCOM extended 1.86x ATR beyond EMA20 on high RVOL (3.00x) & ADX (26.9); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.989,
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oversold momentum veto: RSI(14) is 19.5 <= 30.0 without tier-1 catalyst",
-        "blocking new short entry at depressed levels.",
-        "Pullback proximity guard: QCOM extended 1.86x ATR beyond EMA20 on high RVOL (3.00x) & ADX (26.9)",
+        "Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1485,
+      "instrumentId": 1137,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1071,11 +861,61 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261122T113130Z",
+      "snapshotId": "snap_nvda_1137_20261122T183111Z",
       "status": "NO_ACTION",
-      "symbol": "QCOM"
+      "symbol": "NVDA"
     },
-    "SHOP": {
+    "OIL": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 0.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 54.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.559,
+      "diagnostic": "New OIL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'eToro spread (0.523%) exceeds 20% of expected 3xATR target (2.40%).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "eToro spread (0.523%) exceeds 20% of expected 3xATR target (2.40%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 17,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_oil_17_20261122T183111Z",
+      "status": "NO_ACTION",
+      "symbol": "OIL"
+    },
+    "ORCL": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -1102,15 +942,174 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
+      "convictionScore": 0.5009,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ORCL extended 1.24x ATR beyond EMA20 on high RVOL (3.00x) & ADX (42.8); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Pullback proximity guard: ORCL extended 1.24x ATR beyond EMA20 on high RVOL (3.00x) & ADX (42.8)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1135,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_orcl_1135_20261122T183111Z",
+      "status": "NO_ACTION",
+      "symbol": "ORCL"
+    },
+    "PLTR": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 97.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8892,
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 7991,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_pltr_7991_20261122T183111Z",
+      "status": "NO_ACTION",
+      "symbol": "PLTR"
+    },
+    "QCOM": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 76.0,
+      "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: SHOP extended 1.14x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.5); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Oversold momentum veto: RSI(14) is 19.5 <= 30.0 without tier-1 catalyst; blocking new short entry at depressed levels.', 'Pullback proximity guard: QCOM extended 1.86x ATR beyond EMA20 on high RVOL (3.00x) & ADX (26.9); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Oversold momentum veto: RSI(14) is 19.5 <= 30.0 without tier-1 catalyst",
+        "blocking new short entry at depressed levels.",
+        "Pullback proximity guard: QCOM extended 1.86x ATR beyond EMA20 on high RVOL (3.00x) & ADX (26.9)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1485,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_qcom_1485_20261122T183112Z",
+      "status": "NO_ACTION",
+      "symbol": "QCOM"
+    },
+    "SHOP": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 10.0
+        }
+      },
+      "confluenceScore": 95.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9404,
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: SHOP extended 1.14x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.5); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: SHOP extended 1.14x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.5)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 4148,
@@ -1124,7 +1123,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261122T113130Z",
+      "snapshotId": "snap_shop_4148_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1156,14 +1155,14 @@
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: TXN extended 1.78x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: TXN extended 1.78x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: TXN extended 1.78x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.1)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1177,7 +1176,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261122T113130Z",
+      "snapshotId": "snap_txn_1634_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
@@ -1190,8 +1189,8 @@
     "parityPassed": 22,
     "totalWatched": 22
   },
-  "instrument": "HOOD",
-  "instrumentId": 9272,
+  "instrument": "NVDA",
+  "instrumentId": 1137,
   "orchestratorEnabled": true,
   "parityChecks": {
     "allPassed": true,
@@ -1230,18 +1229,18 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9728,
-      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: HOOD extended 1.39x ATR beyond EMA20 on high RVOL (3.00x) & ADX (45.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.989,
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: HOOD extended 1.39x ATR beyond EMA20 on high RVOL (3.00x) & ADX (45.7)",
+        "Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 9272,
+      "instrumentId": 1137,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1252,9 +1251,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261122T113131Z",
+      "snapshotId": "snap_nvda_1137_20261122T183111Z",
       "status": "NO_ACTION",
-      "symbol": "HOOD"
+      "symbol": "NVDA"
     },
     {
       "action": "open",
@@ -1283,15 +1282,15 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8841,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: MS extended 1.62x ATR beyond EMA20 on high RVOL (3.00x) & ADX (43.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.9083,
+      "diagnostic": "New MS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: MS extended 1.62x ATR beyond EMA20 on high RVOL (3.00x) & ADX (43.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: MS extended 1.62x ATR beyond EMA20 on high RVOL (3.00x) & ADX (43.0)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1976,
@@ -1305,7 +1304,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261122T113130Z",
+      "snapshotId": "snap_ms_1976_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -1336,18 +1335,16 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8793,
-      "diagnostic": "New ASML entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ASML extended 1.01x ATR beyond EMA20 on high RVOL (2.98x) & ADX (40.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.8892,
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: ASML extended 1.01x ATR beyond EMA20 on high RVOL (2.98x) & ADX (40.0)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 4244,
+      "instrumentId": 7991,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1358,9 +1355,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261122T113130Z",
+      "snapshotId": "snap_pltr_7991_20261122T183111Z",
       "status": "NO_ACTION",
-      "symbol": "ASML"
+      "symbol": "PLTR"
     },
     {
       "action": "open",
@@ -1389,20 +1386,18 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8704,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Oversold momentum veto: RSI(14) is 19.5 <= 30.0 without tier-1 catalyst; blocking new short entry at depressed levels.', 'Pullback proximity guard: QCOM extended 1.86x ATR beyond EMA20 on high RVOL (3.00x) & ADX (26.9); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.8735,
+      "diagnostic": "New META entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: META extended 1.19x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.6); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oversold momentum veto: RSI(14) is 19.5 <= 30.0 without tier-1 catalyst",
-        "blocking new short entry at depressed levels.",
-        "Pullback proximity guard: QCOM extended 1.86x ATR beyond EMA20 on high RVOL (3.00x) & ADX (26.9)",
+        "Pullback proximity guard: META extended 1.19x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.6)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1485,
+      "instrumentId": 1003,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1413,9 +1408,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261122T113130Z",
+      "snapshotId": "snap_meta_1003_20261122T183112Z",
       "status": "NO_ACTION",
-      "symbol": "QCOM"
+      "symbol": "META"
     },
     {
       "action": "open",
@@ -1439,23 +1434,21 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 90.0,
+      "confluenceScore": 95.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8968,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ARM extended 1.96x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.948,
+      "diagnostic": "New CAT entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: ARM extended 1.96x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.7)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1365,
+      "instrumentId": 1012,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1466,9 +1459,164 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261122T113130Z",
+      "snapshotId": "snap_cat_1012_20261122T183111Z",
       "status": "NO_ACTION",
-      "symbol": "ARM"
+      "symbol": "CAT"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 10.0
+        }
+      },
+      "confluenceScore": 95.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9404,
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: SHOP extended 1.14x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.5); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Pullback proximity guard: SHOP extended 1.14x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.5)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4148,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_shop_4148_20261122T183111Z",
+      "status": "NO_ACTION",
+      "symbol": "SHOP"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 10.0
+        }
+      },
+      "confluenceScore": 92.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8415,
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1027,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mrk_1027_20261122T183112Z",
+      "status": "NO_ACTION",
+      "symbol": "MRK"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 89.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7458,
+      "diagnostic": "New COP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1510,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cop_1510_20261122T183112Z",
+      "status": "NO_ACTION",
+      "symbol": "COP"
     },
     {
       "action": "open",
@@ -1497,18 +1645,18 @@
       },
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9321,
-      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.9451,
+      "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: AMD extended 1.26x ATR beyond EMA20 on high RVOL (2.82x) & ADX (33.8); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: NVDA extended 2.02x ATR beyond EMA20 on high RVOL (2.71x) & ADX (49.3)",
+        "Pullback proximity guard: AMD extended 1.26x ATR beyond EMA20 on high RVOL (2.82x) & ADX (33.8)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1137,
+      "instrumentId": 1832,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1519,9 +1667,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261122T113130Z",
+      "snapshotId": "snap_amd_1832_20261122T183111Z",
       "status": "NO_ACTION",
-      "symbol": "NVDA"
+      "symbol": "AMD"
     },
     {
       "action": "open",
@@ -1550,68 +1698,15 @@
       },
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9052,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: GOOGL extended 1.48x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: GOOGL extended 1.48x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "GOOGL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 88.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8877,
-      "diagnostic": "New GS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: GS extended 1.46x ATR beyond EMA20 on high RVOL (2.86x) & ADX (55.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.8842,
+      "diagnostic": "New GS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: GS extended 1.46x ATR beyond EMA20 on high RVOL (2.86x) & ADX (55.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Pullback proximity guard: GS extended 1.46x ATR beyond EMA20 on high RVOL (2.86x) & ADX (55.0)",
         "wait for pullback <= 1.0x ATR.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1467,
@@ -1625,7 +1720,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261122T113130Z",
+      "snapshotId": "snap_gs_1467_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -1656,171 +1751,18 @@
       },
       "confluenceScore": 87.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9109,
-      "diagnostic": "New CAT entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.9163,
+      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: HOOD extended 1.39x ATR beyond EMA20 on high RVOL (3.00x) & ADX (45.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1012,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cat_1012_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "CAT"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 87.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8962,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 7991,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_pltr_7991_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "PLTR"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 87.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8208,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1027,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mrk_1027_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "MRK"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 81.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ORCL extended 1.24x ATR beyond EMA20 on high RVOL (3.00x) & ADX (42.8); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: ORCL extended 1.24x ATR beyond EMA20 on high RVOL (3.00x) & ADX (42.8)",
+        "Pullback proximity guard: HOOD extended 1.39x ATR beyond EMA20 on high RVOL (3.00x) & ADX (45.7)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1135,
+      "instrumentId": 9272,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1831,9 +1773,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261122T113130Z",
+      "snapshotId": "snap_hood_9272_20261122T183112Z",
       "status": "NO_ACTION",
-      "symbol": "ORCL"
+      "symbol": "HOOD"
     },
     {
       "action": "open",
@@ -1863,17 +1805,17 @@
       "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New MU entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: MU extended 1.33x ATR beyond EMA20 on high RVOL (2.47x) & ADX (39.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New ASML entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ASML extended 1.01x ATR beyond EMA20 on high RVOL (2.98x) & ADX (40.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: MU extended 1.33x ATR beyond EMA20 on high RVOL (2.47x) & ADX (39.0)",
+        "Pullback proximity guard: ASML extended 1.01x ATR beyond EMA20 on high RVOL (2.98x) & ADX (40.0)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1130,
+      "instrumentId": 4244,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1884,9 +1826,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261122T113130Z",
+      "snapshotId": "snap_asml_4244_20261122T183111Z",
       "status": "NO_ACTION",
-      "symbol": "MU"
+      "symbol": "ASML"
     },
     {
       "action": "hold",
@@ -1916,13 +1858,13 @@
       "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -1936,7 +1878,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261122T113130Z",
+      "snapshotId": "snap_crwd_5506_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -1967,13 +1909,66 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4667,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "convictionScore": 0.5009,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ORCL extended 1.24x ATR beyond EMA20 on high RVOL (3.00x) & ADX (42.8); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Pullback proximity guard: ORCL extended 1.24x ATR beyond EMA20 on high RVOL (3.00x) & ADX (42.8)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1135,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_orcl_1135_20261122T183111Z",
+      "status": "NO_ACTION",
+      "symbol": "ORCL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4724,
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1021,
@@ -1987,7 +1982,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261122T113130Z",
+      "snapshotId": "snap_intc_1021_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -2019,17 +2014,17 @@
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: SHOP extended 1.14x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.5); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: GOOGL extended 1.48x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: SHOP extended 1.14x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.5)",
+        "Pullback proximity guard: GOOGL extended 1.48x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 4148,
+      "instrumentId": 6434,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2040,9 +2035,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261122T113130Z",
+      "snapshotId": "snap_googl_6434_20261122T183112Z",
       "status": "NO_ACTION",
-      "symbol": "SHOP"
+      "symbol": "GOOGL"
     },
     {
       "action": "open",
@@ -2072,169 +2067,12 @@
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: AMD extended 1.26x ATR beyond EMA20 on high RVOL (2.82x) & ADX (33.8); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: AMD extended 1.26x ATR beyond EMA20 on high RVOL (2.82x) & ADX (33.8)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.736,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1510,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cop_1510_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "COP"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: TXN extended 1.78x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: TXN extended 1.78x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.1)",
-        "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1634,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_txn_1634_20261122T113130Z",
-      "status": "NO_ACTION",
-      "symbol": "TXN"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 74.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.5511,
-      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1005,
@@ -2248,7 +2086,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261122T113130Z",
+      "snapshotId": "snap_amzn_1005_20261122T183112Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -2274,23 +2112,23 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 74.0,
+      "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New META entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: META extended 1.19x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.6); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6).']",
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: TXN extended 1.78x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "Pullback proximity guard: META extended 1.19x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.6)",
+        "Pullback proximity guard: TXN extended 1.78x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.1)",
         "wait for pullback <= 1.0x ATR.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
-        "blocking new entry during illiquid/extended hours (current UTC=11:31, weekday=6)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1003,
+      "instrumentId": 1634,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2301,9 +2139,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261122T113130Z",
+      "snapshotId": "snap_txn_1634_20261122T183112Z",
       "status": "NO_ACTION",
-      "symbol": "META"
+      "symbol": "TXN"
     },
     {
       "action": "open",
@@ -2315,7 +2153,168 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 76.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Oversold momentum veto: RSI(14) is 19.5 <= 30.0 without tier-1 catalyst; blocking new short entry at depressed levels.', 'Pullback proximity guard: QCOM extended 1.86x ATR beyond EMA20 on high RVOL (3.00x) & ADX (26.9); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Oversold momentum veto: RSI(14) is 19.5 <= 30.0 without tier-1 catalyst",
+        "blocking new short entry at depressed levels.",
+        "Pullback proximity guard: QCOM extended 1.86x ATR beyond EMA20 on high RVOL (3.00x) & ADX (26.9)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1485,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_qcom_1485_20261122T183112Z",
+      "status": "NO_ACTION",
+      "symbol": "QCOM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 74.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.5755,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: ARM extended 1.96x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.7); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Pullback proximity guard: ARM extended 1.96x ATR beyond EMA20 on high RVOL (3.00x) & ADX (37.7)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1365,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_arm_1365_20261122T183112Z",
+      "status": "NO_ACTION",
+      "symbol": "ARM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 74.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.5436,
+      "diagnostic": "New MU entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'Pullback proximity guard: MU extended 1.33x ATR beyond EMA20 on high RVOL (2.47x) & ADX (39.0); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Market is closed for the weekend (isWeekendClosed=true).",
+        "Pullback proximity guard: MU extended 1.33x ATR beyond EMA20 on high RVOL (2.47x) & ADX (39.0)",
+        "wait for pullback <= 1.0x ATR.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
+        "blocking new entry during illiquid/extended hours (current UTC=18:31, weekday=6)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1130,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mu_1130_20261122T183111Z",
+      "status": "NO_ACTION",
+      "symbol": "MU"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -2327,18 +2326,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 67.0,
+      "confluenceScore": 54.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9061,
-      "diagnostic": "New OIL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'eToro spread (0.523%) exceeds 20% of expected 3xATR target (2.40%).', 'Macro-bearish long gating: RSI(14) 65.0 >= 60.0 while 91% of watchlist is 4h-bearish.']",
+      "convictionScore": 0.559,
+      "diagnostic": "New OIL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', 'eToro spread (0.523%) exceeds 20% of expected 3xATR target (2.40%).']",
       "direction": "buy",
       "hardVetoes": [
         "Market is closed for the weekend (isWeekendClosed=true).",
-        "eToro spread (0.523%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Macro-bearish long gating: RSI(14) 65.0 >= 60.0 while 91% of watchlist is 4h-bearish."
+        "eToro spread (0.523%) exceeds 20% of expected 3xATR target (2.40%)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 17,
@@ -2352,14 +2350,14 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261122T113130Z",
+      "snapshotId": "snap_oil_17_20261122T183111Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     }
   ],
-  "snapshotId": "snap_hood_9272_20261122T113131Z",
+  "snapshotId": "snap_nvda_1137_20261122T183111Z",
   "status": "NO_ACTION",
-  "topCandidate": "HOOD",
+  "topCandidate": "NVDA",
   "watchlist": [
     "OIL",
     "NVDA",
