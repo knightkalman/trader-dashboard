@@ -41,10 +41,7 @@ env:
   PYTHONUNBUFFERED: "1"
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout trader-dashboard repository
@@ -96,6 +93,16 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Pages artifact registration
+        run: sleep 5
 
       - name: Deploy to GitHub Pages
         id: deployment
