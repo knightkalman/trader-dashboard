@@ -3,7 +3,7 @@
   "confluenceBreakdown": {
     "momentum": {
       "max": 15.0,
-      "score": 10.0
+      "score": 7.0
     },
     "regimeAndNews": {
       "max": 35.0,
@@ -15,17 +15,17 @@
     },
     "volatilityRvol": {
       "max": 15.0,
-      "score": 4.0
+      "score": 20.0
     },
     "windowAndHtf": {
       "max": 20.0,
-      "score": 15.0
+      "score": 3.0
     }
   },
-  "confluenceScore": 84.0,
+  "confluenceScore": 85.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-23T06:12:32Z",
-  "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (5.90% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
+  "cycleTimestamp": "2026-11-23T15:08:00Z",
+  "diagnostic": "New HOOD entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 61.8 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.']",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
@@ -34,11 +34,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -46,26 +46,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (5.90% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (5.90% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
+      "convictionScore": 0.4,
+      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
       "instrumentId": 1832,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -77,11 +71,260 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261123T061214Z",
+      "snapshotId": "snap_amd_1832_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
     "AMZN": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New AMZN entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1005,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amzn_1005_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "AMZN"
+    },
+    "ARM": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 69.4 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: ARM extended 2.03x ATR beyond EMA20 on high RVOL (3.00x) & ADX (44.0); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 69.4 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: ARM extended 2.03x ATR beyond EMA20 on high RVOL (3.00x) & ADX (44.0)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1365,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_arm_1365_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "ARM"
+    },
+    "ASML": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New ASML entry blocked by hard veto(es): ['Pullback proximity guard: ASML extended 2.15x ATR beyond EMA20 on high RVOL (1.96x) & ADX (35.0); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Pullback proximity guard: ASML extended 2.15x ATR beyond EMA20 on high RVOL (1.96x) & ADX (35.0)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4244,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_asml_4244_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "ASML"
+    },
+    "CAT": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 52.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New CAT entry blocked by hard veto(es): ['Post-headline spread stabilization guard: spread (0.262%) exceeds threshold (0.10%) following surprise catalyst.', 'Overbought momentum veto: RSI(14) is 65.7 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Post-headline spread stabilization guard: spread (0.262%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Overbought momentum veto: RSI(14) is 65.7 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1012,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cat_1012_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "CAT"
+    },
+    "COP": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
+      "direction": "sellShort",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1510,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cop_1510_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "COP"
+    },
+    "CRWD": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -108,284 +351,12 @@
       },
       "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.48% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
+      "convictionScore": 0.5755,
+      "diagnostic": "Open CRWD position 3649106412 (sellShort, P/L=+1.93%, R=+0.20) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.48% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1005,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amzn_1005_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "AMZN"
-    },
-    "ARM": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 81.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.972,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (6.34% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (6.34% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1365,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_arm_1365_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "ARM"
-    },
-    "ASML": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 68.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New ASML entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (4.66% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.66% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 4244,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_asml_4244_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "ASML"
-    },
-    "CAT": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 67.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9196,
-      "diagnostic": "New CAT entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.61% > 2.50% limit).', 'eToro spread (1.540%) exceeds 20% of expected 3xATR target (2.48%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.61% > 2.50% limit).",
-        "eToro spread (1.540%) exceeds 20% of expected 3xATR target (2.48%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1012,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cat_1012_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "CAT"
-    },
-    "COP": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 41.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4401,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'eToro spread (1.083%) exceeds 20% of expected 3xATR target (2.40%).', 'Post-headline spread stabilization guard: spread (1.083%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "eToro spread (1.083%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Post-headline spread stabilization guard: spread (1.083%) exceeds threshold (0.10%) following surprise catalyst.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1510,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cop_1510_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "COP"
-    },
-    "CRWD": {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 43.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.12,
-      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (2.69% > 2.50% limit).', 'eToro spread (0.803%) exceeds 20% of expected 3xATR target (2.78%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15).",
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.69% > 2.50% limit).",
-        "eToro spread (0.803%) exceeds 20% of expected 3xATR target (2.78%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Pullback proximity guard: CRWD extended 1.46x ATR beyond EMA20 on high RVOL (1.93x) & ADX (31.1)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -399,7 +370,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261123T061214Z",
+      "snapshotId": "snap_crwd_5506_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -409,11 +380,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -421,24 +392,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9671,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.62% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.4,
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.62% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 6434,
@@ -452,7 +419,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261123T061214Z",
+      "snapshotId": "snap_googl_6434_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -462,37 +429,33 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 61.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "New GS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (2.76% > 2.50% limit).', 'eToro spread (1.829%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.4,
+      "diagnostic": "New GS entry blocked by hard veto(es): ['Pullback proximity guard: GS extended 1.34x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.76% > 2.50% limit).",
-        "eToro spread (1.829%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Pullback proximity guard: GS extended 1.34x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1467,
@@ -506,7 +469,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261123T061214Z",
+      "snapshotId": "snap_gs_1467_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -520,7 +483,7 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -528,24 +491,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 60.0,
+      "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (6.51% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.8552,
+      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 61.8 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (6.51% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Overbought momentum veto: RSI(14) is 61.8 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels."
       ],
       "hasHardVetoes": true,
       "instrumentId": 9272,
@@ -559,7 +519,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261123T061214Z",
+      "snapshotId": "snap_hood_9272_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -569,11 +529,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -585,20 +545,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 10.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5776,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (5.66% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.45,
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Pullback proximity guard: INTC extended 2.75x ATR beyond EMA20 on high RVOL (2.21x) & ADX (28.1); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (5.66% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Pullback proximity guard: INTC extended 2.75x ATR beyond EMA20 on high RVOL (2.21x) & ADX (28.1)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1021,
@@ -612,7 +569,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261123T061214Z",
+      "snapshotId": "snap_intc_1021_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -622,11 +579,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -634,26 +591,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 58.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New META entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.16% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.16% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
+      "convictionScore": 0.45,
+      "diagnostic": "Open META position 3649157373 (buy, P/L=+1.27%, R=+0.31) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
       "instrumentId": 1003,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -665,7 +616,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261123T061214Z",
+      "snapshotId": "snap_meta_1003_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -675,38 +626,32 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 51.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8218,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'eToro spread (1.052%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
+      "convictionScore": 0.45,
+      "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
       "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "eToro spread (1.052%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
+      "hardVetoes": [],
+      "hasHardVetoes": false,
       "instrumentId": 1027,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -718,7 +663,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261123T061214Z",
+      "snapshotId": "snap_mrk_1027_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -728,15 +673,15 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -744,22 +689,16 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 10.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 72.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9155,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'eToro spread (2.945%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "eToro spread (2.945%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
+      "convictionScore": 0.45,
+      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
       "instrumentId": 1976,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -771,7 +710,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261123T061214Z",
+      "snapshotId": "snap_ms_1976_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -781,11 +720,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -793,7 +732,7 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
@@ -803,14 +742,13 @@
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New MU entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (6.70% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "diagnostic": "New MU entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 77.8 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: MU extended 3.85x ATR beyond EMA20 on high RVOL (2.77x) & ADX (35.1); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (6.70% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Overbought momentum veto: RSI(14) is 77.8 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: MU extended 3.85x ATR beyond EMA20 on high RVOL (2.77x) & ADX (35.1)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1130,
@@ -824,7 +762,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261123T061214Z",
+      "snapshotId": "snap_mu_1130_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -834,11 +772,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -846,24 +784,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9787,
-      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"NVDA Signal quote validity is 'stale' (expected 'valid').\", 'Abnormal NVDA Signal vs eToro price divergence (7.11% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.4,
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Pullback proximity guard: NVDA extended 4.34x ATR beyond EMA20 on high RVOL (2.21x) & ADX (36.0); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "NVDA Signal quote validity is 'stale' (expected 'valid').",
-        "Abnormal NVDA Signal vs eToro price divergence (7.11% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Pullback proximity guard: NVDA extended 4.34x ATR beyond EMA20 on high RVOL (2.21x) & ADX (36.0)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1137,
@@ -877,7 +812,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261123T061214Z",
+      "snapshotId": "snap_nvda_1137_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "NVDA"
     },
@@ -887,11 +822,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -906,13 +841,16 @@
           "score": 5.0
         }
       },
-      "confluenceScore": 76.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Confluence score 76.00 < threshold 85.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "diagnostic": "New OIL entry blocked by hard veto(es): ['Oversold momentum veto: RSI(14) is 27.8 <= 30.0 without tier-1 catalyst; blocking new short entry at depressed levels.']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Oversold momentum veto: RSI(14) is 27.8 <= 30.0 without tier-1 catalyst",
+        "blocking new short entry at depressed levels."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 17,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -924,7 +862,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261123T061214Z",
+      "snapshotId": "snap_oil_17_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -934,36 +872,34 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8913,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (4.19% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.4,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Pullback proximity guard: ORCL extended 3.04x ATR beyond EMA20 on high RVOL (1.48x) & ADX (38.0); wait for pullback <= 1.0x ATR.', \"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.19% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Pullback proximity guard: ORCL extended 3.04x ATR beyond EMA20 on high RVOL (1.48x) & ADX (38.0)",
+        "wait for pullback <= 1.0x ATR.",
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1135,
@@ -977,7 +913,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261123T061214Z",
+      "snapshotId": "snap_orcl_1135_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -987,11 +923,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -999,24 +935,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 60.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (4.07% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.45,
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 76.9 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: PLTR extended 1.47x ATR beyond EMA20 on high RVOL (1.69x) & ADX (34.5); wait for pullback <= 1.0x ATR.', \"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.07% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Overbought momentum veto: RSI(14) is 76.9 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: PLTR extended 1.47x ATR beyond EMA20 on high RVOL (1.69x) & ADX (34.5)",
+        "wait for pullback <= 1.0x ATR.",
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 7991,
@@ -1030,7 +966,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261123T061214Z",
+      "snapshotId": "snap_pltr_7991_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -1040,11 +976,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -1052,7 +988,7 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
@@ -1062,14 +998,13 @@
       "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.86% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 66.2 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: QCOM extended 2.01x ATR beyond EMA20 on high RVOL (1.61x) & ADX (28.0); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.86% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Overbought momentum veto: RSI(14) is 66.2 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: QCOM extended 2.01x ATR beyond EMA20 on high RVOL (1.61x) & ADX (28.0)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1485,
@@ -1083,7 +1018,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261123T061214Z",
+      "snapshotId": "snap_qcom_1485_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1093,36 +1028,36 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 10.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 68.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9656,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.77% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.45,
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 62.9 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: SHOP extended 1.61x ATR beyond EMA20 on high RVOL (1.81x) & ADX (29.3); wait for pullback <= 1.0x ATR.', \"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.77% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Overbought momentum veto: RSI(14) is 62.9 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: SHOP extended 1.61x ATR beyond EMA20 on high RVOL (1.81x) & ADX (29.3)",
+        "wait for pullback <= 1.0x ATR.",
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 4148,
@@ -1136,7 +1071,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261123T061214Z",
+      "snapshotId": "snap_shop_4148_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1146,37 +1081,35 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 40.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.05% > 2.50% limit).', 'eToro spread (0.704%) exceeds 20% of expected 3xATR target (3.04%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 77.2 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: TXN extended 3.34x ATR beyond EMA20 on high RVOL (1.91x) & ADX (37.5); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.05% > 2.50% limit).",
-        "eToro spread (0.704%) exceeds 20% of expected 3xATR target (3.04%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Overbought momentum veto: RSI(14) is 77.2 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: TXN extended 3.34x ATR beyond EMA20 on high RVOL (1.91x) & ADX (37.5)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1190,21 +1123,21 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261123T061214Z",
+      "snapshotId": "snap_txn_1634_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
   },
   "executionMode": "auto_execute_all",
   "funnelMetrics": {
-    "actionableEntries": 1,
+    "actionableEntries": 5,
     "activeProtectiveActions": 0,
-    "confluenceEligible": 8,
+    "confluenceEligible": 2,
     "parityPassed": 22,
     "totalWatched": 22
   },
-  "instrument": "AMD",
-  "instrumentId": 1832,
+  "instrument": "HOOD",
+  "instrumentId": 9272,
   "orchestratorEnabled": true,
   "parityChecks": {
     "allPassed": true,
@@ -1222,271 +1155,6 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 84.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (5.90% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (5.90% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 84.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9787,
-      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"NVDA Signal quote validity is 'stale' (expected 'valid').\", 'Abnormal NVDA Signal vs eToro price divergence (7.11% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "NVDA Signal quote validity is 'stale' (expected 'valid').",
-        "Abnormal NVDA Signal vs eToro price divergence (7.11% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1137,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_nvda_1137_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "NVDA"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 84.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9671,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.62% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.62% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "GOOGL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 84.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8913,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (4.19% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.19% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1135,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_orcl_1135_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "ORCL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 84.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.5776,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (5.66% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (5.66% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1021,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_intc_1021_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "INTC"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
           "score": 7.0
         },
         "regimeAndNews": {
@@ -1499,27 +1167,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 81.0,
+      "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.972,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (6.34% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
+      "convictionScore": 0.8552,
+      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 61.8 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (6.34% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Overbought momentum veto: RSI(14) is 61.8 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1365,
+      "instrumentId": 9272,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1530,9 +1195,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261123T061214Z",
+      "snapshotId": "snap_hood_9272_20261123T150740Z",
       "status": "NO_ACTION",
-      "symbol": "ARM"
+      "symbol": "HOOD"
     },
     {
       "action": "open",
@@ -1561,702 +1226,12 @@
       },
       "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.48% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
+      "convictionScore": 0.5755,
+      "diagnostic": "Open CRWD position 3649106412 (sellShort, P/L=+1.93%, R=+0.20) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.48% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1005,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amzn_1005_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "AMZN"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Confluence score 76.00 < threshold 85.00; no new trade.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 17,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_oil_17_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "OIL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 72.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9155,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'eToro spread (2.945%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "eToro spread (2.945%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1976,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_ms_1976_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "MS"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 68.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9656,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.77% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.77% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 4148,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_shop_4148_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "SHOP"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 68.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New ASML entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (4.66% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.66% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 4244,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_asml_4244_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "ASML"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 67.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9196,
-      "diagnostic": "New CAT entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.61% > 2.50% limit).', 'eToro spread (1.540%) exceeds 20% of expected 3xATR target (2.48%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.61% > 2.50% limit).",
-        "eToro spread (1.540%) exceeds 20% of expected 3xATR target (2.48%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1012,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cat_1012_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "CAT"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 61.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "New GS entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (2.76% > 2.50% limit).', 'eToro spread (1.829%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.76% > 2.50% limit).",
-        "eToro spread (1.829%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1467,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_gs_1467_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "GS"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 60.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (4.07% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.07% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 7991,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_pltr_7991_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "PLTR"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 60.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.86% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.86% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1485,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_qcom_1485_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "QCOM"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 60.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (6.51% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (6.51% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 9272,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_hood_9272_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "HOOD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New MU entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (6.70% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (6.70% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1130,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mu_1130_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "MU"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New META entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.16% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.16% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1003,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_meta_1003_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "META"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 51.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8218,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'eToro spread (1.052%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "eToro spread (1.052%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1027,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mrk_1027_20261123T061214Z",
-      "status": "NO_ACTION",
-      "symbol": "MRK"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 43.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.12,
-      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (2.69% > 2.50% limit).', 'eToro spread (0.803%) exceeds 20% of expected 3xATR target (2.78%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15).",
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.69% > 2.50% limit).",
-        "eToro spread (0.803%) exceeds 20% of expected 3xATR target (2.78%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Pullback proximity guard: CRWD extended 1.46x ATR beyond EMA20 on high RVOL (1.93x) & ADX (31.1)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -2270,7 +1245,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261123T061214Z",
+      "snapshotId": "snap_crwd_5506_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -2280,39 +1255,32 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 41.0,
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4401,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'eToro spread (1.083%) exceeds 20% of expected 3xATR target (2.40%).', 'Post-headline spread stabilization guard: spread (1.083%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "eToro spread (1.083%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Post-headline spread stabilization guard: spread (1.083%) exceeds threshold (0.10%) following surprise catalyst.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
-      ],
-      "hasHardVetoes": true,
+      "convictionScore": 0.45,
+      "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
+      "direction": "sellShort",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
       "instrumentId": 1510,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -2324,7 +1292,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261123T061214Z",
+      "snapshotId": "snap_cop_1510_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -2334,37 +1302,279 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 40.0,
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "Confluence score 60.00 < threshold 75.00; no new trade.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1027,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mrk_1027_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "MRK"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "Open META position 3649157373 (buy, P/L=+1.27%, R=+0.31) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1003,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_meta_1003_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "META"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['Market is closed for the weekend (isWeekendClosed=true).', \"Oil Signal WTI quote validity is 'stale' (expected 'valid').\", 'Abnormal Oil Signal WTI vs eToro price divergence (3.05% > 2.50% limit).', 'eToro spread (0.704%) exceeds 20% of expected 3xATR target (3.04%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0).']",
+      "diagnostic": "New OIL entry blocked by hard veto(es): ['Oversold momentum veto: RSI(14) is 27.8 <= 30.0 without tier-1 catalyst; blocking new short entry at depressed levels.']",
       "direction": "sellShort",
       "hardVetoes": [
-        "Market is closed for the weekend (isWeekendClosed=true).",
-        "Oil Signal WTI quote validity is 'stale' (expected 'valid').",
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.05% > 2.50% limit).",
-        "eToro spread (0.704%) exceeds 20% of expected 3xATR target (3.04%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
-        "blocking new entry during illiquid/extended hours (current UTC=06:12, weekday=0)."
+        "Oversold momentum veto: RSI(14) is 27.8 <= 30.0 without tier-1 catalyst",
+        "blocking new short entry at depressed levels."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 17,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_oil_17_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "OIL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Pullback proximity guard: NVDA extended 4.34x ATR beyond EMA20 on high RVOL (2.21x) & ADX (36.0); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Pullback proximity guard: NVDA extended 4.34x ATR beyond EMA20 on high RVOL (2.21x) & ADX (36.0)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1137,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_nvda_1137_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "NVDA"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New GS entry blocked by hard veto(es): ['Pullback proximity guard: GS extended 1.34x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Pullback proximity guard: GS extended 1.34x ATR beyond EMA20 on high RVOL (3.00x) & ADX (30.1)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1467,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_gs_1467_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "GS"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 77.2 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: TXN extended 3.34x ATR beyond EMA20 on high RVOL (1.91x) & ADX (37.5); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 77.2 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: TXN extended 3.34x ATR beyond EMA20 on high RVOL (1.91x) & ADX (37.5)",
+        "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -2378,14 +1588,670 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261123T061214Z",
+      "snapshotId": "snap_txn_1634_20261123T150740Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 6434,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_googl_6434_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "GOOGL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 60.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 66.2 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: QCOM extended 2.01x ATR beyond EMA20 on high RVOL (1.61x) & ADX (28.0); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 66.2 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: QCOM extended 2.01x ATR beyond EMA20 on high RVOL (1.61x) & ADX (28.0)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1485,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_qcom_1485_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "QCOM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Pullback proximity guard: INTC extended 2.75x ATR beyond EMA20 on high RVOL (2.21x) & ADX (28.1); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Pullback proximity guard: INTC extended 2.75x ATR beyond EMA20 on high RVOL (2.21x) & ADX (28.1)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1021,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_intc_1021_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "INTC"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1976,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_ms_1976_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "MS"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 76.9 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: PLTR extended 1.47x ATR beyond EMA20 on high RVOL (1.69x) & ADX (34.5); wait for pullback <= 1.0x ATR.', \"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 76.9 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: PLTR extended 1.47x ATR beyond EMA20 on high RVOL (1.69x) & ADX (34.5)",
+        "wait for pullback <= 1.0x ATR.",
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 7991,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_pltr_7991_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "PLTR"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 62.9 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: SHOP extended 1.61x ATR beyond EMA20 on high RVOL (1.81x) & ADX (29.3); wait for pullback <= 1.0x ATR.', \"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 62.9 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: SHOP extended 1.61x ATR beyond EMA20 on high RVOL (1.81x) & ADX (29.3)",
+        "wait for pullback <= 1.0x ATR.",
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4148,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_shop_4148_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "SHOP"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 69.4 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: ARM extended 2.03x ATR beyond EMA20 on high RVOL (3.00x) & ADX (44.0); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 69.4 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: ARM extended 2.03x ATR beyond EMA20 on high RVOL (3.00x) & ADX (44.0)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1365,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_arm_1365_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "ARM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New MU entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 77.8 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Pullback proximity guard: MU extended 3.85x ATR beyond EMA20 on high RVOL (2.77x) & ADX (35.1); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 77.8 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: MU extended 3.85x ATR beyond EMA20 on high RVOL (2.77x) & ADX (35.1)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1130,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mu_1130_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "MU"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Pullback proximity guard: ORCL extended 3.04x ATR beyond EMA20 on high RVOL (1.48x) & ADX (38.0); wait for pullback <= 1.0x ATR.', \"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
+      "hardVetoes": [
+        "Pullback proximity guard: ORCL extended 3.04x ATR beyond EMA20 on high RVOL (1.48x) & ADX (38.0)",
+        "wait for pullback <= 1.0x ATR.",
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1135,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_orcl_1135_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "ORCL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Confluence score 58.00 < threshold 75.00; no new trade.",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New ASML entry blocked by hard veto(es): ['Pullback proximity guard: ASML extended 2.15x ATR beyond EMA20 on high RVOL (1.96x) & ADX (35.0); wait for pullback <= 1.0x ATR.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Pullback proximity guard: ASML extended 2.15x ATR beyond EMA20 on high RVOL (1.96x) & ADX (35.0)",
+        "wait for pullback <= 1.0x ATR."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4244,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_asml_4244_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "ASML"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New AMZN entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "buy",
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1005,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amzn_1005_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "AMZN"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 52.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New CAT entry blocked by hard veto(es): ['Post-headline spread stabilization guard: spread (0.262%) exceeds threshold (0.10%) following surprise catalyst.', 'Overbought momentum veto: RSI(14) is 65.7 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Post-headline spread stabilization guard: spread (0.262%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Overbought momentum veto: RSI(14) is 65.7 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1012,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cat_1012_20261123T150740Z",
+      "status": "NO_ACTION",
+      "symbol": "CAT"
     }
   ],
-  "snapshotId": "snap_amd_1832_20261123T061214Z",
+  "snapshotId": "snap_hood_9272_20261123T150740Z",
   "status": "NO_ACTION",
-  "topCandidate": "AMD",
+  "topCandidate": "HOOD",
   "watchlist": [
     "OIL",
     "NVDA",
