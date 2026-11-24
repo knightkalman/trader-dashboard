@@ -24,8 +24,8 @@
   },
   "confluenceScore": 97.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-24T06:32:05Z",
-  "diagnostic": "Open OIL position 3649451471 (sellShort, P/L=+1.00%, R=+0.13) is healthy; holding.",
+  "cycleTimestamp": "2026-11-24T06:42:24Z",
+  "diagnostic": "Open OIL position 3649451471 (sellShort, P/L=+1.19%, R=+0.15) is healthy; holding.",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
@@ -56,11 +56,11 @@
       "confluenceScore": 44.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New AMD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1832,
@@ -74,7 +74,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261124T063146Z",
+      "snapshotId": "snap_amd_1832_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
@@ -96,17 +96,17 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 34.0,
+      "confluenceScore": 50.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Open AMZN position 3649211453 (buy, P/L=-0.85%, R=-0.20) is healthy; holding.",
+      "diagnostic": "Open AMZN position 3649211453 (buy, P/L=-0.37%, R=-0.09) is healthy; holding.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -121,61 +121,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261124T063146Z",
+      "snapshotId": "snap_amzn_1005_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
     "ARM": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 5.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 56.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9572,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1365,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_arm_1365_20261124T063146Z",
-      "status": "NO_ACTION",
-      "symbol": "ARM"
-    },
-    "ASML": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -193,6 +143,56 @@
         },
         "volatilityRvol": {
           "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 45.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1365,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_arm_1365_20261124T064206Z",
+      "status": "NO_ACTION",
+      "symbol": "ARM"
+    },
+    "ASML": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
           "score": 4.0
         },
         "windowAndHtf": {
@@ -200,10 +200,10 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 27.0,
+      "confluenceScore": 42.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "Open ASML position 3649295777 (buy, P/L=-0.32%, R=-0.08) is healthy; holding.",
+      "diagnostic": "Open ASML position 3649295777 (buy, P/L=+0.40%, R=+0.10) is healthy; holding.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -218,7 +218,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261124T063146Z",
+      "snapshotId": "snap_asml_4244_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -228,11 +228,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -244,16 +244,16 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 38.0,
+      "confluenceScore": 24.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4785,
+      "convictionScore": 0.4,
       "diagnostic": "Open CAT position 3649309843 (buy, P/L=-2.58%, R=-0.56) is healthy; holding.",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (2.703%) exceeds 20% of expected 3xATR target (2.40%)."
+        "eToro spread (2.305%) exceeds 20% of expected 3xATR target (2.40%)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1012,
@@ -267,7 +267,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261124T063146Z",
+      "snapshotId": "snap_cat_1012_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -299,12 +299,12 @@
       "confluenceScore": 24.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['eToro spread (0.904%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New COP entry blocked by hard veto(es): ['eToro spread (0.904%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "sellShort",
       "hardVetoes": [
         "eToro spread (0.904%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1510,
@@ -318,7 +318,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261124T063146Z",
+      "snapshotId": "snap_cop_1510_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -336,25 +336,25 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 5.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 29.0,
+      "confluenceScore": 52.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -368,7 +368,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261124T063146Z",
+      "snapshotId": "snap_crwd_5506_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -400,11 +400,11 @@
       "confluenceScore": 44.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 6434,
@@ -418,7 +418,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261124T063146Z",
+      "snapshotId": "snap_googl_6434_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -467,7 +467,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261124T063146Z",
+      "snapshotId": "snap_gs_1467_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -489,22 +489,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 36.0,
+      "confluenceScore": 44.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Post-headline spread stabilization guard: spread (0.357%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.45,
+      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Post-headline spread stabilization guard: spread (0.297%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.357%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Post-headline spread stabilization guard: spread (0.297%) exceeds threshold (0.10%) following surprise catalyst.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 9272,
@@ -518,7 +518,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261124T063146Z",
+      "snapshotId": "snap_hood_9272_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -550,12 +550,12 @@
       "confluenceScore": 44.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (2.95% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (2.62% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.95% > 2.50% limit).",
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.62% > 2.50% limit).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1021,
@@ -569,7 +569,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261124T063146Z",
+      "snapshotId": "snap_intc_1021_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -601,11 +601,11 @@
       "confluenceScore": 62.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New META entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New META entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1003,
@@ -619,7 +619,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261124T063146Z",
+      "snapshotId": "snap_meta_1003_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -629,11 +629,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -648,15 +648,15 @@
           "score": 5.0
         }
       },
-      "confluenceScore": 51.0,
+      "confluenceScore": 24.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8674,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (1.071%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.45,
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (1.071%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "eToro spread (1.071%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1027,
@@ -670,7 +670,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261124T063146Z",
+      "snapshotId": "snap_mrk_1027_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -702,14 +702,12 @@
       "confluenceScore": 40.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (2.029%) exceeds 20% of expected 3xATR target (2.40%).', 'Pullback proximity guard: MS extended 1.07x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.4); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (1.843%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (2.029%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Pullback proximity guard: MS extended 1.07x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.4)",
-        "wait for pullback <= 1.0x ATR.",
+        "eToro spread (1.843%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1976,
@@ -723,7 +721,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261124T063146Z",
+      "snapshotId": "snap_ms_1976_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -745,21 +743,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 42.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New MU entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New MU entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1130,
@@ -773,7 +771,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261124T063146Z",
+      "snapshotId": "snap_mu_1130_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -795,21 +793,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 42.0,
+      "confluenceScore": 50.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1137,
@@ -823,7 +821,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261124T063146Z",
+      "snapshotId": "snap_nvda_1137_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "NVDA"
     },
@@ -855,7 +853,7 @@
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 1.0,
-      "diagnostic": "Open OIL position 3649451471 (sellShort, P/L=+1.00%, R=+0.13) is healthy; holding.",
+      "diagnostic": "Open OIL position 3649451471 (sellShort, P/L=+1.19%, R=+0.15) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -870,7 +868,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261124T063146Z",
+      "snapshotId": "snap_oil_17_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -880,11 +878,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 3.0
+          "score": 10.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 12.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -899,14 +897,14 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 34.0,
+      "confluenceScore": 64.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.934,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1135,
@@ -920,7 +918,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261124T063146Z",
+      "snapshotId": "snap_orcl_1135_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -942,21 +940,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 44.0,
+      "confluenceScore": 52.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 7991,
@@ -970,7 +968,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261124T063146Z",
+      "snapshotId": "snap_pltr_7991_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -988,25 +986,25 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 5.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 20.0
+          "score": 4.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 82.0,
+      "confluenceScore": 73.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8746,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.8743,
+      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1485,
@@ -1020,7 +1018,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261124T063146Z",
+      "snapshotId": "snap_qcom_1485_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1052,14 +1050,12 @@
       "confluenceScore": 40.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['eToro spread (2.075%) exceeds 20% of expected 3xATR target (2.40%).', 'Pullback proximity guard: SHOP extended 1.55x ATR beyond EMA20 on high RVOL (3.00x) & ADX (38.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['eToro spread (1.180%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (2.075%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Pullback proximity guard: SHOP extended 1.55x ATR beyond EMA20 on high RVOL (3.00x) & ADX (38.1)",
-        "wait for pullback <= 1.0x ATR.",
+        "eToro spread (1.180%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 4148,
@@ -1073,7 +1069,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261124T063146Z",
+      "snapshotId": "snap_shop_4148_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1104,13 +1100,13 @@
       },
       "confluenceScore": 54.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9577,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.341%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.9579,
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.045%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (1.341%) exceeds 20% of expected 3xATR target (2.40%).",
+        "eToro spread (1.045%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1124,7 +1120,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261124T063146Z",
+      "snapshotId": "snap_txn_1634_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
@@ -1133,7 +1129,7 @@
   "funnelMetrics": {
     "actionableEntries": 3,
     "activeProtectiveActions": 0,
-    "confluenceEligible": 2,
+    "confluenceEligible": 1,
     "parityPassed": 22,
     "totalWatched": 22
   },
@@ -1178,7 +1174,7 @@
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 1.0,
-      "diagnostic": "Open OIL position 3649451471 (sellShort, P/L=+1.00%, R=+0.13) is healthy; holding.",
+      "diagnostic": "Open OIL position 3649451471 (sellShort, P/L=+1.19%, R=+0.15) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1193,7 +1189,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261124T063146Z",
+      "snapshotId": "snap_oil_17_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -1211,25 +1207,25 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 5.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 20.0
+          "score": 4.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 82.0,
+      "confluenceScore": 73.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8746,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.8743,
+      "diagnostic": "New QCOM entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1485,
@@ -1243,9 +1239,59 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261124T063146Z",
+      "snapshotId": "snap_qcom_1485_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 64.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.934,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1135,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_orcl_1135_20261124T064206Z",
+      "status": "NO_ACTION",
+      "symbol": "ORCL"
     },
     {
       "action": "open",
@@ -1275,11 +1321,11 @@
       "confluenceScore": 62.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New META entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New META entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1003,
@@ -1293,7 +1339,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261124T063146Z",
+      "snapshotId": "snap_meta_1003_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -1303,36 +1349,36 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 5.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 56.0,
+      "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9572,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.45,
+      "diagnostic": "New MU entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1365,
+      "instrumentId": 1130,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1343,9 +1389,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261124T063146Z",
+      "snapshotId": "snap_mu_1130_20261124T064206Z",
       "status": "NO_ACTION",
-      "symbol": "ARM"
+      "symbol": "MU"
     },
     {
       "action": "open",
@@ -1374,13 +1420,13 @@
       },
       "confluenceScore": 54.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9577,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.341%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.9579,
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.045%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (1.341%) exceeds 20% of expected 3xATR target (2.40%).",
+        "eToro spread (1.045%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1394,7 +1440,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261124T063146Z",
+      "snapshotId": "snap_txn_1634_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     },
@@ -1404,37 +1450,36 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 51.0,
+      "confluenceScore": 52.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8674,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (1.071%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.45,
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (1.071%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1027,
+      "instrumentId": 7991,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1445,9 +1490,59 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261124T063146Z",
+      "snapshotId": "snap_pltr_7991_20261124T064206Z",
       "status": "NO_ACTION",
-      "symbol": "MRK"
+      "symbol": "PLTR"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 52.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 5506,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_crwd_5506_20261124T064206Z",
+      "status": "NO_ACTION",
+      "symbol": "CRWD"
     },
     {
       "action": "open",
@@ -1494,7 +1589,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261124T063146Z",
+      "snapshotId": "snap_gs_1467_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -1516,25 +1611,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 44.0,
+      "confluenceScore": 50.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (2.95% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.95% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1021,
+      "instrumentId": 1137,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1545,9 +1639,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261124T063146Z",
+      "snapshotId": "snap_nvda_1137_20261124T064206Z",
       "status": "NO_ACTION",
-      "symbol": "INTC"
+      "symbol": "NVDA"
     },
     {
       "action": "open",
@@ -1567,24 +1661,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 44.0,
+      "confluenceScore": 50.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "convictionScore": 0.4,
+      "diagnostic": "Open AMZN position 3649211453 (buy, P/L=-0.37%, R=-0.09) is healthy; holding.",
       "direction": "buy",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 7991,
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1005,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1595,9 +1686,59 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261124T063146Z",
+      "snapshotId": "snap_amzn_1005_20261124T064206Z",
       "status": "NO_ACTION",
-      "symbol": "PLTR"
+      "symbol": "AMZN"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 5.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 45.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1365,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_arm_1365_20261124T064206Z",
+      "status": "NO_ACTION",
+      "symbol": "ARM"
     },
     {
       "action": "open",
@@ -1627,11 +1768,62 @@
       "confluenceScore": 44.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (2.62% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.62% > 2.50% limit).",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1021,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_intc_1021_20261124T064206Z",
+      "status": "NO_ACTION",
+      "symbol": "INTC"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 44.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 6434,
@@ -1645,9 +1837,60 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261124T063146Z",
+      "snapshotId": "snap_googl_6434_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 44.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.45,
+      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Post-headline spread stabilization guard: spread (0.297%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Post-headline spread stabilization guard: spread (0.297%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 9272,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_hood_9272_20261124T064206Z",
+      "status": "NO_ACTION",
+      "symbol": "HOOD"
     },
     {
       "action": "open",
@@ -1677,11 +1920,11 @@
       "confluenceScore": 44.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New AMD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1832,
@@ -1695,7 +1938,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261124T063146Z",
+      "snapshotId": "snap_amd_1832_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
@@ -1727,14 +1970,11 @@
       "confluenceScore": 42.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "Open ASML position 3649295777 (buy, P/L=+0.40%, R=+0.10) is healthy; holding.",
       "direction": "buy",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1137,
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 4244,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1745,59 +1985,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261124T063146Z",
+      "snapshotId": "snap_asml_4244_20261124T064206Z",
       "status": "NO_ACTION",
-      "symbol": "NVDA"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 42.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New MU entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1130,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mu_1130_20261124T063146Z",
-      "status": "NO_ACTION",
-      "symbol": "MU"
+      "symbol": "ASML"
     },
     {
       "action": "open",
@@ -1827,14 +2017,12 @@
       "confluenceScore": 40.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (2.029%) exceeds 20% of expected 3xATR target (2.40%).', 'Pullback proximity guard: MS extended 1.07x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.4); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (1.843%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (2.029%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Pullback proximity guard: MS extended 1.07x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.4)",
-        "wait for pullback <= 1.0x ATR.",
+        "eToro spread (1.843%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1976,
@@ -1848,7 +2036,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261124T063146Z",
+      "snapshotId": "snap_ms_1976_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -1880,14 +2068,12 @@
       "confluenceScore": 40.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['eToro spread (2.075%) exceeds 20% of expected 3xATR target (2.40%).', 'Pullback proximity guard: SHOP extended 1.55x ATR beyond EMA20 on high RVOL (3.00x) & ADX (38.1); wait for pullback <= 1.0x ATR.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['eToro spread (1.180%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "eToro spread (2.075%) exceeds 20% of expected 3xATR target (2.40%).",
-        "Pullback proximity guard: SHOP extended 1.55x ATR beyond EMA20 on high RVOL (3.00x) & ADX (38.1)",
-        "wait for pullback <= 1.0x ATR.",
+        "eToro spread (1.180%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 4148,
@@ -1901,7 +2087,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261124T063146Z",
+      "snapshotId": "snap_shop_4148_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1911,11 +2097,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 3.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 12.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -1927,120 +2113,21 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 38.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4785,
-      "diagnostic": "Open CAT position 3649309843 (buy, P/L=-2.58%, R=-0.56) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (2.703%) exceeds 20% of expected 3xATR target (2.40%)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1012,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cat_1012_20261124T063146Z",
-      "status": "NO_ACTION",
-      "symbol": "CAT"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 36.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Post-headline spread stabilization guard: spread (0.357%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.357%) exceeds threshold (0.10%) following surprise catalyst.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 9272,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_hood_9272_20261124T063146Z",
-      "status": "NO_ACTION",
-      "symbol": "HOOD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 34.0,
+      "confluenceScore": 24.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.45,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (1.071%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "buy",
       "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "eToro spread (1.071%) exceeds 20% of expected 3xATR target (2.40%).",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1135,
+      "instrumentId": 1027,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2051,153 +2138,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261124T063146Z",
+      "snapshotId": "snap_mrk_1027_20261124T064206Z",
       "status": "NO_ACTION",
-      "symbol": "ORCL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 34.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Open AMZN position 3649211453 (buy, P/L=-0.85%, R=-0.20) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1005,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amzn_1005_20261124T063146Z",
-      "status": "NO_ACTION",
-      "symbol": "AMZN"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 5.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 29.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 5506,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_crwd_5506_20261124T063146Z",
-      "status": "NO_ACTION",
-      "symbol": "CRWD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 5.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 27.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "Open ASML position 3649295777 (buy, P/L=-0.32%, R=-0.08) is healthy; holding.",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 4244,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_asml_4244_20261124T063146Z",
-      "status": "NO_ACTION",
-      "symbol": "ASML"
+      "symbol": "MRK"
     },
     {
       "action": "open",
@@ -2227,12 +2170,61 @@
       "confluenceScore": 24.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['eToro spread (0.904%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1).']",
+      "diagnostic": "Open CAT position 3649309843 (buy, P/L=-2.58%, R=-0.56) is healthy; holding.",
+      "direction": "buy",
+      "hardVetoes": [
+        "eToro spread (2.305%) exceeds 20% of expected 3xATR target (2.40%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1012,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cat_1012_20261124T064206Z",
+      "status": "NO_ACTION",
+      "symbol": "CAT"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 3.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 12.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 0.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 24.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New COP entry blocked by hard veto(es): ['eToro spread (0.904%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1).']",
       "direction": "sellShort",
       "hardVetoes": [
         "eToro spread (0.904%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
-        "blocking new entry during illiquid/extended hours (current UTC=06:32, weekday=1)."
+        "blocking new entry during illiquid/extended hours (current UTC=06:42, weekday=1)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1510,
@@ -2246,12 +2238,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261124T063146Z",
+      "snapshotId": "snap_cop_1510_20261124T064206Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     }
   ],
-  "snapshotId": "snap_oil_17_20261124T063146Z",
+  "snapshotId": "snap_oil_17_20261124T064206Z",
   "status": "NO_ACTION",
   "topCandidate": "OIL",
   "watchlist": [
