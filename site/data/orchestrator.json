@@ -3,7 +3,7 @@
   "confluenceBreakdown": {
     "momentum": {
       "max": 15.0,
-      "score": 10.0
+      "score": 7.0
     },
     "regimeAndNews": {
       "max": 35.0,
@@ -22,10 +22,10 @@
       "score": 15.0
     }
   },
-  "confluenceScore": 100.0,
+  "confluenceScore": 97.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-24T18:53:16Z",
-  "diagnostic": "**`DECISION_EMITTED`** (`MODIFY`)",
+  "cycleTimestamp": "2026-11-24T19:03:52Z",
+  "diagnostic": "New OIL entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
@@ -50,13 +50,13 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 72.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "Open AMD position 3649951498 (sellShort, P/L=-1.45%, R=-0.08) is healthy; holding.",
+      "convictionScore": 0.9551,
+      "diagnostic": "Open AMD position 3649951498 (sellShort, P/L=-1.75%, R=-0.16) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -71,7 +71,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261124T185258Z",
+      "snapshotId": "snap_amd_1832_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
@@ -103,10 +103,12 @@
       "confluenceScore": 70.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Confluence score 70.00 < threshold 75.00; no new trade.",
+      "diagnostic": "New AMZN entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
       "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1005,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -118,7 +120,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261124T185258Z",
+      "snapshotId": "snap_amzn_1005_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -132,7 +134,7 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -144,18 +146,16 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 10.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 79.0,
+      "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9738,
-      "diagnostic": "Open ARM position 3649909499 (sellShort, P/L=-3.94%, R=-0.26) is healthy; holding.",
+      "convictionScore": 0.4,
+      "diagnostic": "Open ARM position 3649909499 (sellShort, P/L=-3.77%, R=-0.32) is healthy; holding.",
       "direction": "sellShort",
-      "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.111%) exceeds threshold (0.10%) following surprise catalyst."
-      ],
-      "hasHardVetoes": true,
+      "hardVetoes": [],
+      "hasHardVetoes": false,
       "instrumentId": 1365,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -167,7 +167,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261124T185258Z",
+      "snapshotId": "snap_arm_1365_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -198,7 +198,7 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.492,
+      "convictionScore": 0.5109,
       "diagnostic": "New ASML entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
       "direction": "sellShort",
       "hardVetoes": [
@@ -216,7 +216,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261124T185258Z",
+      "snapshotId": "snap_asml_4244_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -247,7 +247,7 @@
       },
       "confluenceScore": 72.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8202,
+      "convictionScore": 0.8191,
       "diagnostic": "Confluence score 72.00 < threshold 75.00; no new trade.",
       "direction": "sellShort",
       "hardVetoes": [],
@@ -263,7 +263,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261124T185258Z",
+      "snapshotId": "snap_cat_1012_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -295,10 +295,10 @@
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 66.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
+      "diagnostic": "New COP entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
       "direction": "buy",
       "hardVetoes": [
-        "Macro-bearish long gating: RSI(14) 66.1 >= 60.0 while 73% of watchlist is 4h-bearish."
+        "Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1510,
@@ -312,7 +312,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261124T185258Z",
+      "snapshotId": "snap_cop_1510_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -344,10 +344,12 @@
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Confluence score 61.00 < threshold 85.00; no new trade.",
+      "diagnostic": "New CRWD entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 5506,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -359,7 +361,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261124T185258Z",
+      "snapshotId": "snap_crwd_5506_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -381,21 +383,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 58.0,
+      "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Instrument GOOGL is in post-exit cooldown (20.2m < 60m; 39.8m remaining).']",
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\", 'Instrument GOOGL is in post-exit cooldown (30.8m < 60m; 29.2m remaining).']",
       "direction": "sellShort",
       "hardVetoes": [
-        "Instrument GOOGL is in post-exit cooldown (20.2m < 60m",
-        "39.8m remaining)."
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).",
+        "Instrument GOOGL is in post-exit cooldown (30.8m < 60m",
+        "29.2m remaining)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 6434,
@@ -409,7 +412,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261124T185258Z",
+      "snapshotId": "snap_googl_6434_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -440,7 +443,7 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5172,
+      "convictionScore": 0.5047,
       "diagnostic": "Confluence score 61.00 < threshold 75.00; no new trade.",
       "direction": "sellShort",
       "hardVetoes": [],
@@ -456,7 +459,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261124T185258Z",
+      "snapshotId": "snap_gs_1467_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -488,7 +491,7 @@
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Open HOOD position 3649953842 (sellShort, P/L=+1.11%, R=+0.19) is healthy; holding.",
+      "diagnostic": "Open HOOD position 3649953842 (sellShort, P/L=+0.62%, R=+0.11) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -503,7 +506,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261124T185258Z",
+      "snapshotId": "snap_hood_9272_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -529,10 +532,10 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 73.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
       "diagnostic": "New INTC entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
@@ -552,7 +555,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261124T185258Z",
+      "snapshotId": "snap_intc_1021_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -583,8 +586,8 @@
       },
       "confluenceScore": 84.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9636,
-      "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
+      "convictionScore": 0.852,
+      "diagnostic": "Open META position 3649965774 (sellShort, P/L=+0.24%, R=+0.06) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -599,12 +602,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261124T185258Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_meta_1003_20261124T190332Z",
+      "status": "NO_ACTION",
       "symbol": "META"
     },
     "MRK": {
-      "action": "hold",
+      "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -621,23 +624,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 20.0
+          "score": 4.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 100.0,
+      "confluenceScore": 84.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.0,
-      "diagnostic": "**`DECISION_EMITTED`** (`MODIFY`)",
-      "direction": "neutral",
+      "convictionScore": 1.0,
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 83.1 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Instrument MRK is in post-exit cooldown (3.2m < 60m; 56.8m remaining).', 'Macro-bearish long gating: RSI(14) 83.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
+      "direction": "buy",
       "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 83.2 >= 60.0 without tier-1 catalyst",
+        "Overbought momentum veto: RSI(14) is 83.1 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
-        "Pullback proximity guard: MRK extended 1.36x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.8)",
-        "wait for pullback <= 1.0x ATR."
+        "Instrument MRK is in post-exit cooldown (3.2m < 60m",
+        "56.8m remaining).",
+        "Macro-bearish long gating: RSI(14) 83.1 >= 60.0 while 73% of watchlist is 4h-bearish."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1027,
@@ -651,8 +655,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261124T185258Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_mrk_1027_20261124T190332Z",
+      "status": "NO_ACTION",
       "symbol": "MRK"
     },
     "MS": {
@@ -698,7 +702,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261124T185258Z",
+      "snapshotId": "snap_ms_1976_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -724,12 +728,12 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 72.0,
+      "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9182,
+      "convictionScore": 0.9621,
       "diagnostic": "New MU entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
       "direction": "sellShort",
       "hardVetoes": [
@@ -747,7 +751,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261124T185258Z",
+      "snapshotId": "snap_mu_1130_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -797,7 +801,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261124T185258Z",
+      "snapshotId": "snap_nvda_1137_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "NVDA"
     },
@@ -828,11 +832,11 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "New OIL entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 65.3 >= 60.0 while 73% of watchlist is 4h-bearish.']",
+      "convictionScore": 0.9241,
+      "diagnostic": "New OIL entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
       "direction": "buy",
       "hardVetoes": [
-        "Macro-bearish long gating: RSI(14) 65.3 >= 60.0 while 73% of watchlist is 4h-bearish."
+        "Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish."
       ],
       "hasHardVetoes": true,
       "instrumentId": 17,
@@ -846,7 +850,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261124T185258Z",
+      "snapshotId": "snap_oil_17_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -877,11 +881,13 @@
       },
       "confluenceScore": 72.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8458,
-      "diagnostic": "Confluence score 72.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.8422,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
       "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1135,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -893,7 +899,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261124T185258Z",
+      "snapshotId": "snap_orcl_1135_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -925,12 +931,13 @@
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 60.2 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Macro-bearish long gating: RSI(14) 60.2 >= 60.0 while 73% of watchlist is 4h-bearish.']",
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 60.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', \"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\", 'Macro-bearish long gating: RSI(14) 60.0 >= 60.0 while 73% of watchlist is 4h-bearish.']",
       "direction": "buy",
       "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 60.2 >= 60.0 without tier-1 catalyst",
+        "Overbought momentum veto: RSI(14) is 60.0 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
-        "Macro-bearish long gating: RSI(14) 60.2 >= 60.0 while 73% of watchlist is 4h-bearish."
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).",
+        "Macro-bearish long gating: RSI(14) 60.0 >= 60.0 while 73% of watchlist is 4h-bearish."
       ],
       "hasHardVetoes": true,
       "instrumentId": 7991,
@@ -944,61 +951,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261124T185258Z",
+      "snapshotId": "snap_pltr_7991_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
     "QCOM": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 69.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8815,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\", 'Macro-bearish long gating: RSI(14) 61.2 >= 60.0 while 73% of watchlist is 4h-bearish.']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).",
-        "Macro-bearish long gating: RSI(14) 61.2 >= 60.0 while 73% of watchlist is 4h-bearish."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1485,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_qcom_1485_20261124T185258Z",
-      "status": "NO_ACTION",
-      "symbol": "QCOM"
-    },
-    "SHOP": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -1026,7 +983,56 @@
       "confluenceScore": 70.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Open SHOP position 3649942679 (sellShort, P/L=+2.70%, R=+0.67) is healthy; holding.",
+      "diagnostic": "New QCOM entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1485,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_qcom_1485_20261124T190332Z",
+      "status": "NO_ACTION",
+      "symbol": "QCOM"
+    },
+    "SHOP": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 84.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8958,
+      "diagnostic": "Open SHOP position 3649942679 (sellShort, P/L=+3.33%, R=+0.79) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1041,7 +1047,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261124T185258Z",
+      "snapshotId": "snap_shop_4148_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1090,21 +1096,21 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261124T185258Z",
+      "snapshotId": "snap_txn_1634_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
   },
   "executionMode": "auto_execute_all",
   "funnelMetrics": {
-    "actionableEntries": 10,
+    "actionableEntries": 8,
     "activeProtectiveActions": 0,
     "confluenceEligible": 5,
     "parityPassed": 22,
     "totalWatched": 22
   },
-  "instrument": "MRK",
-  "instrumentId": 1027,
+  "instrument": "OIL",
+  "instrumentId": 17,
   "orchestratorEnabled": true,
   "parityChecks": {
     "allPassed": true,
@@ -1116,58 +1122,6 @@
     "technicals": true
   },
   "rankedCandidates": [
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 100.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0,
-      "diagnostic": "**`DECISION_EMITTED`** (`MODIFY`)",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 83.2 >= 60.0 without tier-1 catalyst",
-        "blocking new long entry at extended levels.",
-        "Pullback proximity guard: MRK extended 1.36x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.8)",
-        "wait for pullback <= 1.0x ATR."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1027,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mrk_1027_20261124T185258Z",
-      "status": "DECISION_EMITTED",
-      "symbol": "MRK"
-    },
     {
       "action": "open",
       "assessmentProvider": "llm",
@@ -1195,11 +1149,11 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "New OIL entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 65.3 >= 60.0 while 73% of watchlist is 4h-bearish.']",
+      "convictionScore": 0.9241,
+      "diagnostic": "New OIL entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
       "direction": "buy",
       "hardVetoes": [
-        "Macro-bearish long gating: RSI(14) 65.3 >= 60.0 while 73% of watchlist is 4h-bearish."
+        "Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish."
       ],
       "hasHardVetoes": true,
       "instrumentId": 17,
@@ -1213,7 +1167,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261124T185258Z",
+      "snapshotId": "snap_oil_17_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -1245,11 +1199,17 @@
       "confluenceScore": 84.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 1.0,
-      "diagnostic": "Open AMD position 3649951498 (sellShort, P/L=-1.45%, R=-0.08) is healthy; holding.",
-      "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1832,
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 83.1 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Instrument MRK is in post-exit cooldown (3.2m < 60m; 56.8m remaining).', 'Macro-bearish long gating: RSI(14) 83.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 83.1 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Instrument MRK is in post-exit cooldown (3.2m < 60m",
+        "56.8m remaining).",
+        "Macro-bearish long gating: RSI(14) 83.1 >= 60.0 while 73% of watchlist is 4h-bearish."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1027,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1260,9 +1220,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261124T185258Z",
+      "snapshotId": "snap_mrk_1027_20261124T190332Z",
       "status": "NO_ACTION",
-      "symbol": "AMD"
+      "symbol": "MRK"
     },
     {
       "action": "open",
@@ -1291,8 +1251,55 @@
       },
       "confluenceScore": 84.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9636,
-      "diagnostic": "**`DECISION_EMITTED`** (`OPEN`)",
+      "convictionScore": 0.8958,
+      "diagnostic": "Open SHOP position 3649942679 (sellShort, P/L=+3.33%, R=+0.79) is healthy; holding.",
+      "direction": "sellShort",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 4148,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_shop_4148_20261124T190332Z",
+      "status": "NO_ACTION",
+      "symbol": "SHOP"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 84.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.852,
+      "diagnostic": "Open META position 3649965774 (sellShort, P/L=+0.24%, R=+0.06) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1307,8 +1314,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261124T185258Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_meta_1003_20261124T190332Z",
+      "status": "NO_ACTION",
       "symbol": "META"
     },
     {
@@ -1338,105 +1345,7 @@
       },
       "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9738,
-      "diagnostic": "Open ARM position 3649909499 (sellShort, P/L=-3.94%, R=-0.26) is healthy; holding.",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.111%) exceeds threshold (0.10%) following surprise catalyst."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1365,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_arm_1365_20261124T185258Z",
-      "status": "NO_ACTION",
-      "symbol": "ARM"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 73.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New INTC entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1021,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_intc_1021_20261124T185258Z",
-      "status": "NO_ACTION",
-      "symbol": "INTC"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 72.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9182,
+      "convictionScore": 0.9621,
       "diagnostic": "New MU entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
       "direction": "sellShort",
       "hardVetoes": [
@@ -1454,9 +1363,60 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261124T185258Z",
+      "snapshotId": "snap_mu_1130_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "MU"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 74.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\", 'Instrument GOOGL is in post-exit cooldown (30.8m < 60m; 29.2m remaining).']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).",
+        "Instrument GOOGL is in post-exit cooldown (30.8m < 60m",
+        "29.2m remaining)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 6434,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_googl_6434_20261124T190332Z",
+      "status": "NO_ACTION",
+      "symbol": "GOOGL"
     },
     {
       "action": "open",
@@ -1485,11 +1445,60 @@
       },
       "confluenceScore": 72.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8458,
-      "diagnostic": "Confluence score 72.00 < threshold 75.00; no new trade.",
+      "convictionScore": 0.9551,
+      "diagnostic": "Open AMD position 3649951498 (sellShort, P/L=-1.75%, R=-0.16) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261124T190332Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 72.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8422,
+      "diagnostic": "New ORCL entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1135,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -1501,7 +1510,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261124T185258Z",
+      "snapshotId": "snap_orcl_1135_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -1532,7 +1541,7 @@
       },
       "confluenceScore": 72.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8202,
+      "convictionScore": 0.8191,
       "diagnostic": "Confluence score 72.00 < threshold 75.00; no new trade.",
       "direction": "sellShort",
       "hardVetoes": [],
@@ -1548,7 +1557,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261124T185258Z",
+      "snapshotId": "snap_cat_1012_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -1595,7 +1604,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261124T185258Z",
+      "snapshotId": "snap_ms_1976_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -1627,11 +1636,13 @@
       "confluenceScore": 70.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Open SHOP position 3649942679 (sellShort, P/L=+2.70%, R=+0.67) is healthy; holding.",
+      "diagnostic": "New QCOM entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
       "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 4148,
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1485,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1642,9 +1653,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261124T185258Z",
+      "snapshotId": "snap_qcom_1485_20261124T190332Z",
       "status": "NO_ACTION",
-      "symbol": "SHOP"
+      "symbol": "QCOM"
     },
     {
       "action": "open",
@@ -1674,10 +1685,12 @@
       "confluenceScore": 70.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Confluence score 70.00 < threshold 75.00; no new trade.",
+      "diagnostic": "New AMZN entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
       "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1005,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -1689,7 +1702,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261124T185258Z",
+      "snapshotId": "snap_amzn_1005_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -1699,11 +1712,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 10.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -1715,20 +1728,19 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 69.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8815,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\", 'Macro-bearish long gating: RSI(14) 61.2 >= 60.0 while 73% of watchlist is 4h-bearish.']",
-      "direction": "buy",
+      "convictionScore": 0.4,
+      "diagnostic": "New INTC entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
+      "direction": "sellShort",
       "hardVetoes": [
-        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).",
-        "Macro-bearish long gating: RSI(14) 61.2 >= 60.0 while 73% of watchlist is 4h-bearish."
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1485,
+      "instrumentId": 1021,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1739,9 +1751,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261124T185258Z",
+      "snapshotId": "snap_intc_1021_20261124T190332Z",
       "status": "NO_ACTION",
-      "symbol": "QCOM"
+      "symbol": "INTC"
     },
     {
       "action": "open",
@@ -1770,7 +1782,7 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5172,
+      "convictionScore": 0.5047,
       "diagnostic": "Confluence score 61.00 < threshold 75.00; no new trade.",
       "direction": "sellShort",
       "hardVetoes": [],
@@ -1786,9 +1798,56 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261124T185258Z",
+      "snapshotId": "snap_gs_1467_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "GS"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 61.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Open ARM position 3649909499 (sellShort, P/L=-3.77%, R=-0.32) is healthy; holding.",
+      "direction": "sellShort",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1365,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_arm_1365_20261124T190332Z",
+      "status": "NO_ACTION",
+      "symbol": "ARM"
     },
     {
       "action": "open",
@@ -1835,7 +1894,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261124T185258Z",
+      "snapshotId": "snap_txn_1634_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     },
@@ -1867,10 +1926,12 @@
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Confluence score 61.00 < threshold 85.00; no new trade.",
+      "diagnostic": "New CRWD entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\"]",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 5506,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -1882,7 +1943,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261124T185258Z",
+      "snapshotId": "snap_crwd_5506_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -1914,7 +1975,7 @@
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Open HOOD position 3649953842 (sellShort, P/L=+1.11%, R=+0.19) is healthy; holding.",
+      "diagnostic": "Open HOOD position 3649953842 (sellShort, P/L=+0.62%, R=+0.11) is healthy; holding.",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1929,7 +1990,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261124T185258Z",
+      "snapshotId": "snap_hood_9272_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -1979,7 +2040,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261124T185258Z",
+      "snapshotId": "snap_nvda_1137_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "NVDA"
     },
@@ -2010,7 +2071,7 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.492,
+      "convictionScore": 0.5109,
       "diagnostic": "New ASML entry blocked by hard veto(es): [\"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).\"]",
       "direction": "sellShort",
       "hardVetoes": [
@@ -2028,7 +2089,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261124T185258Z",
+      "snapshotId": "snap_asml_4244_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -2060,12 +2121,13 @@
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 60.2 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Macro-bearish long gating: RSI(14) 60.2 >= 60.0 while 73% of watchlist is 4h-bearish.']",
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 60.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', \"Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).\", 'Macro-bearish long gating: RSI(14) 60.0 >= 60.0 while 73% of watchlist is 4h-bearish.']",
       "direction": "buy",
       "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 60.2 >= 60.0 without tier-1 catalyst",
+        "Overbought momentum veto: RSI(14) is 60.0 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
-        "Macro-bearish long gating: RSI(14) 60.2 >= 60.0 while 73% of watchlist is 4h-bearish."
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'tech_software' (max=2).",
+        "Macro-bearish long gating: RSI(14) 60.0 >= 60.0 while 73% of watchlist is 4h-bearish."
       ],
       "hasHardVetoes": true,
       "instrumentId": 7991,
@@ -2079,7 +2141,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261124T185258Z",
+      "snapshotId": "snap_pltr_7991_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -2111,10 +2173,10 @@
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 66.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
+      "diagnostic": "New COP entry blocked by hard veto(es): ['Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish.']",
       "direction": "buy",
       "hardVetoes": [
-        "Macro-bearish long gating: RSI(14) 66.1 >= 60.0 while 73% of watchlist is 4h-bearish."
+        "Macro-bearish long gating: RSI(14) 63.1 >= 60.0 while 73% of watchlist is 4h-bearish."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1510,
@@ -2128,64 +2190,14 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261124T185258Z",
+      "snapshotId": "snap_cop_1510_20261124T190332Z",
       "status": "NO_ACTION",
       "symbol": "COP"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Instrument GOOGL is in post-exit cooldown (20.2m < 60m; 39.8m remaining).']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Instrument GOOGL is in post-exit cooldown (20.2m < 60m",
-        "39.8m remaining)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261124T185258Z",
-      "status": "NO_ACTION",
-      "symbol": "GOOGL"
     }
   ],
-  "snapshotId": "snap_mrk_1027_20261124T185258Z",
-  "status": "DECISION_EMITTED",
-  "topCandidate": "MRK",
+  "snapshotId": "snap_oil_17_20261124T190332Z",
+  "status": "NO_ACTION",
+  "topCandidate": "OIL",
   "watchlist": [
     "OIL",
     "NVDA",
