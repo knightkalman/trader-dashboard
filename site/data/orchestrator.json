@@ -24,8 +24,8 @@
   },
   "confluenceScore": 85.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-26T02:22:39Z",
-  "diagnostic": "Open OIL position 3650648925 (buy, P/L=-15.49%, R=-0.66) is healthy; holding.",
+  "cycleTimestamp": "2026-11-26T02:31:53Z",
+  "diagnostic": "Open OIL position 3650648925 (buy, P/L=-15.61%, R=-0.66) is healthy; holding.",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
@@ -34,11 +34,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 3.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 12.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -50,17 +50,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 44.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (415.55) > EMA20 (406.92); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.8824,
+      "diagnostic": "New AMD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (415.55) > EMA20 (406.92); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (415.55) > EMA20 (406.92)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -78,65 +78,11 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261126T022212Z",
+      "snapshotId": "snap_amd_1832_20261126T023126Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
     "AMZN": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 42.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (246.71) > EMA20 (245.42); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (246.71) > EMA20 (245.42)",
-        "blocking short into intraday bounce.",
-        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1005,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amzn_1005_20261126T022218Z",
-      "status": "NO_ACTION",
-      "symbol": "AMZN"
-    },
-    "ARM": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -163,13 +109,67 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7699,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (2.50% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (165.56) > EMA20 (162.16); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.5524,
+      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (246.71) > EMA20 (245.42); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (246.71) > EMA20 (245.42)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1005,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amzn_1005_20261126T023131Z",
+      "status": "NO_ACTION",
+      "symbol": "AMZN"
+    },
+    "ARM": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 12.0
+        }
+      },
+      "confluenceScore": 67.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7879,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (2.50% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (165.56) > EMA20 (162.16); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Abnormal Oil Signal WTI vs eToro price divergence (2.50% > 2.50% limit).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (165.56) > EMA20 (162.16)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -187,7 +187,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261126T022213Z",
+      "snapshotId": "snap_arm_1365_20261126T023127Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -197,11 +197,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 3.0
+          "score": 10.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 12.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -213,17 +213,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 15.0
         }
       },
-      "confluenceScore": 36.0,
+      "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New ASML entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (1317.50) > EMA20 (1302.87); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 1.0,
+      "diagnostic": "New ASML entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (1317.50) > EMA20 (1302.87); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (1317.50) > EMA20 (1302.87)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -241,7 +241,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261126T022213Z",
+      "snapshotId": "snap_asml_4244_20261126T023126Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -272,8 +272,8 @@
       },
       "confluenceScore": 64.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8729,
-      "diagnostic": "New CAT entry blocked by hard veto(es): ['eToro spread (0.864%) exceeds 20% of expected 3xATR target (4.04%).', 'Post-headline spread stabilization guard: spread (0.864%) exceeds threshold (0.10%) following surprise catalyst.', 'Overbought momentum veto: RSI(14) is 69.1 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.1 >= 55.0.']",
+      "convictionScore": 0.8727,
+      "diagnostic": "New CAT entry blocked by hard veto(es): ['eToro spread (0.864%) exceeds 20% of expected 3xATR target (4.04%).', 'Post-headline spread stabilization guard: spread (0.864%) exceeds threshold (0.10%) following surprise catalyst.', 'Overbought momentum veto: RSI(14) is 69.1 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.1 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
         "eToro spread (0.864%) exceeds 20% of expected 3xATR target (4.04%).",
@@ -281,7 +281,7 @@
         "Overbought momentum veto: RSI(14) is 69.1 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.1 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -296,7 +296,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261126T022207Z",
+      "snapshotId": "snap_cat_1012_20261126T023122Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -328,12 +328,12 @@
       "confluenceScore": 43.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['eToro spread (1.164%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).']",
+      "diagnostic": "New COP entry blocked by hard veto(es): ['eToro spread (1.164%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).']",
       "direction": "buy",
       "hardVetoes": [
         "eToro spread (1.164%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3)."
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1510,
@@ -347,7 +347,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261126T022215Z",
+      "snapshotId": "snap_cop_1510_20261126T023128Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -379,13 +379,13 @@
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Post-headline spread stabilization guard: spread (0.315%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).']",
+      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Post-headline spread stabilization guard: spread (0.315%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).']",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
         "Post-headline spread stabilization guard: spread (0.315%) exceeds threshold (0.10%) following surprise catalyst.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3)."
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -399,7 +399,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261126T022220Z",
+      "snapshotId": "snap_crwd_5506_20261126T023132Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -430,12 +430,12 @@
       },
       "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8142,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (274.85) > EMA20 (273.22); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.8134,
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (274.85) > EMA20 (273.22); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (274.85) > EMA20 (273.22)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -453,7 +453,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261126T022216Z",
+      "snapshotId": "snap_googl_6434_20261126T023130Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -485,11 +485,11 @@
       "confluenceScore": 52.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "New GS entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (807.66) > EMA20 (802.67); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "diagnostic": "New GS entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (807.66) > EMA20 (802.67); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "neutral",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (807.66) > EMA20 (802.67)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -507,7 +507,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261126T022208Z",
+      "snapshotId": "snap_gs_1467_20261126T023122Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -538,15 +538,15 @@
       },
       "confluenceScore": 71.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9844,
-      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (3.98% > 2.50% limit).', 'Overbought momentum veto: RSI(14) is 66.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 66.0 >= 55.0.']",
+      "convictionScore": 0.9846,
+      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (3.98% > 2.50% limit).', 'Overbought momentum veto: RSI(14) is 66.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 66.0 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
         "Abnormal Oil Signal WTI vs eToro price divergence (3.98% > 2.50% limit).",
         "Overbought momentum veto: RSI(14) is 66.0 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 66.0 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -561,7 +561,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261126T022221Z",
+      "snapshotId": "snap_hood_9272_20261126T023133Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -571,11 +571,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 3.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 12.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -587,17 +587,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 12.0
         }
       },
-      "confluenceScore": 44.0,
+      "confluenceScore": 78.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (54.90) > EMA20 (54.10); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.9622,
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (54.90) > EMA20 (54.10); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (54.90) > EMA20 (54.10)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -615,7 +615,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261126T022209Z",
+      "snapshotId": "snap_intc_1021_20261126T023123Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -625,11 +625,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 3.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 12.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -641,17 +641,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 12.0
         }
       },
-      "confluenceScore": 44.0,
+      "confluenceScore": 78.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New META entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.6 >= 55.0.']",
+      "convictionScore": 0.9289,
+      "diagnostic": "New META entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.6 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.6 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -666,7 +666,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261126T022219Z",
+      "snapshotId": "snap_meta_1003_20261126T023132Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -698,12 +698,12 @@
       "confluenceScore": 53.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.7091,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (0.673%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (0.673%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "eToro spread (0.673%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
         "blocking new equity short."
       ],
@@ -719,7 +719,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261126T022216Z",
+      "snapshotId": "snap_mrk_1027_20261126T023129Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -750,13 +750,13 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8472,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (1.085%) exceeds 20% of expected 3xATR target (2.62%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (169.57) > EMA20 (167.67); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.8538,
+      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (1.085%) exceeds 20% of expected 3xATR target (2.62%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (169.57) > EMA20 (167.67); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "eToro spread (1.085%) exceeds 20% of expected 3xATR target (2.62%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (169.57) > EMA20 (167.67)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -774,7 +774,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261126T022209Z",
+      "snapshotId": "snap_ms_1976_20261126T023123Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -805,12 +805,12 @@
       },
       "confluenceScore": 78.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9455,
-      "diagnostic": "New MU entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (615.63) > EMA20 (603.07); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.9447,
+      "diagnostic": "New MU entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (615.63) > EMA20 (603.07); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (615.63) > EMA20 (603.07)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -828,7 +828,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261126T022206Z",
+      "snapshotId": "snap_mu_1130_20261126T023121Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -838,11 +838,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 3.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 12.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -857,14 +857,14 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 42.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (151.38) > EMA20 (149.64); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (151.38) > EMA20 (149.64); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "neutral",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (151.38) > EMA20 (149.64)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -882,7 +882,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261126T022204Z",
+      "snapshotId": "snap_nvda_1137_20261126T023120Z",
       "status": "NO_ACTION",
       "symbol": "NVDA"
     },
@@ -913,8 +913,8 @@
       },
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8521,
-      "diagnostic": "Open OIL position 3650648925 (buy, P/L=-15.49%, R=-0.66) is healthy; holding.",
+      "convictionScore": 0.8826,
+      "diagnostic": "Open OIL position 3650648925 (buy, P/L=-15.61%, R=-0.66) is healthy; holding.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -929,7 +929,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261126T022204Z",
+      "snapshotId": "snap_oil_17_20261126T023119Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -961,11 +961,11 @@
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (105.75) > EMA20 (104.70); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (105.75) > EMA20 (104.70); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (105.75) > EMA20 (104.70)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -983,7 +983,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261126T022206Z",
+      "snapshotId": "snap_orcl_1135_20261126T023121Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -993,11 +993,11 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 3.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 12.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -1012,15 +1012,15 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 42.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (5.76% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 71.3 >= 55.0.']",
+      "convictionScore": 0.9004,
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (5.81% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 71.3 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (5.76% > 2.50% limit).",
+        "Abnormal Oil Signal WTI vs eToro price divergence (5.81% > 2.50% limit).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 71.3 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -1035,7 +1035,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261126T022210Z",
+      "snapshotId": "snap_pltr_7991_20261126T023124Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -1061,18 +1061,18 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 81.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9843,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): ['SEC Form 8-K spread stabilization guard: spread (0.130%) elevated within 48h of 8-K filing.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.8 >= 55.0.']",
+      "convictionScore": 0.9333,
+      "diagnostic": "New QCOM entry blocked by hard veto(es): ['SEC Form 8-K spread stabilization guard: spread (0.130%) elevated within 48h of 8-K filing.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.8 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
         "SEC Form 8-K spread stabilization guard: spread (0.130%) elevated within 48h of 8-K filing.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.8 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -1087,7 +1087,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261126T022217Z",
+      "snapshotId": "snap_qcom_1485_20261126T023130Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1097,7 +1097,7 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
@@ -1116,16 +1116,16 @@
           "score": 12.0
         }
       },
-      "confluenceScore": 73.0,
+      "confluenceScore": 70.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9231,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 64.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 64.0 >= 55.0.']",
+      "convictionScore": 0.9228,
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 64.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 64.0 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
         "Overbought momentum veto: RSI(14) is 64.0 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 64.0 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -1140,7 +1140,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261126T022211Z",
+      "snapshotId": "snap_shop_4148_20261126T023125Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1154,7 +1154,7 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -1169,17 +1169,17 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 52.0,
+      "confluenceScore": 41.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.88,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.921%) exceeds 20% of expected 3xATR target (5.18%).', 'Overbought momentum veto: RSI(14) is 61.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 61.0 >= 55.0.']",
+      "convictionScore": 0.4,
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.921%) exceeds 20% of expected 3xATR target (5.18%).', 'Overbought momentum veto: RSI(14) is 61.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 61.0 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
         "eToro spread (1.921%) exceeds 20% of expected 3xATR target (5.18%).",
         "Overbought momentum veto: RSI(14) is 61.0 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 61.0 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -1194,7 +1194,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261126T022214Z",
+      "snapshotId": "snap_txn_1634_20261126T023128Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
@@ -1203,7 +1203,7 @@
   "funnelMetrics": {
     "actionableEntries": 1,
     "activeProtectiveActions": 0,
-    "confluenceEligible": 3,
+    "confluenceEligible": 5,
     "parityPassed": 22,
     "totalWatched": 22
   },
@@ -1247,8 +1247,8 @@
       },
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8521,
-      "diagnostic": "Open OIL position 3650648925 (buy, P/L=-15.49%, R=-0.66) is healthy; holding.",
+      "convictionScore": 0.8826,
+      "diagnostic": "Open OIL position 3650648925 (buy, P/L=-15.61%, R=-0.66) is healthy; holding.",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1263,61 +1263,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261126T022204Z",
+      "snapshotId": "snap_oil_17_20261126T023119Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 81.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9843,
-      "diagnostic": "New QCOM entry blocked by hard veto(es): ['SEC Form 8-K spread stabilization guard: spread (0.130%) elevated within 48h of 8-K filing.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.8 >= 55.0.']",
-      "direction": "buy",
-      "hardVetoes": [
-        "SEC Form 8-K spread stabilization guard: spread (0.130%) elevated within 48h of 8-K filing.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.8 >= 55.0."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1485,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_qcom_1485_20261126T022217Z",
-      "status": "NO_ACTION",
-      "symbol": "QCOM"
     },
     {
       "action": "open",
@@ -1346,12 +1294,66 @@
       },
       "confluenceScore": 78.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9455,
-      "diagnostic": "New MU entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (615.63) > EMA20 (603.07); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.9622,
+      "diagnostic": "New INTC entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (54.90) > EMA20 (54.10); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (54.90) > EMA20 (54.10)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1021,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_intc_1021_20261126T023123Z",
+      "status": "NO_ACTION",
+      "symbol": "INTC"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 12.0
+        }
+      },
+      "confluenceScore": 78.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9447,
+      "diagnostic": "New MU entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (615.63) > EMA20 (603.07); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MU",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (615.63) > EMA20 (603.07)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -1369,9 +1371,60 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261126T022206Z",
+      "snapshotId": "snap_mu_1130_20261126T023121Z",
       "status": "NO_ACTION",
       "symbol": "MU"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 12.0
+        }
+      },
+      "confluenceScore": 78.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9289,
+      "diagnostic": "New META entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.6 >= 55.0.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.6 >= 55.0."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1003,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_meta_1003_20261126T023132Z",
+      "status": "NO_ACTION",
+      "symbol": "META"
     },
     {
       "action": "open",
@@ -1395,23 +1448,24 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 12.0
+          "score": 15.0
         }
       },
-      "confluenceScore": 73.0,
+      "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9231,
-      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 64.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 64.0 >= 55.0.']",
-      "direction": "buy",
+      "convictionScore": 1.0,
+      "diagnostic": "New ASML entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (1317.50) > EMA20 (1302.87); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "direction": "sellShort",
       "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 64.0 >= 60.0 without tier-1 catalyst",
-        "blocking new long entry at extended levels.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 64.0 >= 55.0."
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (1317.50) > EMA20 (1302.87)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 4148,
+      "instrumentId": 4244,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1422,9 +1476,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261126T022211Z",
+      "snapshotId": "snap_asml_4244_20261126T023126Z",
       "status": "NO_ACTION",
-      "symbol": "SHOP"
+      "symbol": "ASML"
     },
     {
       "action": "open",
@@ -1453,15 +1507,15 @@
       },
       "confluenceScore": 71.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9844,
-      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (3.98% > 2.50% limit).', 'Overbought momentum veto: RSI(14) is 66.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 66.0 >= 55.0.']",
+      "convictionScore": 0.9846,
+      "diagnostic": "New HOOD entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (3.98% > 2.50% limit).', 'Overbought momentum veto: RSI(14) is 66.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 66.0 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
         "Abnormal Oil Signal WTI vs eToro price divergence (3.98% > 2.50% limit).",
         "Overbought momentum veto: RSI(14) is 66.0 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity HOOD",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 66.0 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -1476,9 +1530,62 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261126T022221Z",
+      "snapshotId": "snap_hood_9272_20261126T023133Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 12.0
+        }
+      },
+      "confluenceScore": 70.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9228,
+      "diagnostic": "New SHOP entry blocked by hard veto(es): ['Overbought momentum veto: RSI(14) is 64.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 64.0 >= 55.0.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 64.0 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity SHOP",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 64.0 >= 55.0."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4148,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_shop_4148_20261126T023125Z",
+      "status": "NO_ACTION",
+      "symbol": "SHOP"
     },
     {
       "action": "open",
@@ -1507,12 +1614,170 @@
       },
       "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8142,
-      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (274.85) > EMA20 (273.22); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.9333,
+      "diagnostic": "New QCOM entry blocked by hard veto(es): ['SEC Form 8-K spread stabilization guard: spread (0.130%) elevated within 48h of 8-K filing.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.8 >= 55.0.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "SEC Form 8-K spread stabilization guard: spread (0.130%) elevated within 48h of 8-K filing.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity QCOM",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.8 >= 55.0."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1485,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_qcom_1485_20261126T023130Z",
+      "status": "NO_ACTION",
+      "symbol": "QCOM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 69.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9004,
+      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (5.81% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 71.3 >= 55.0.']",
+      "direction": "buy",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (5.81% > 2.50% limit).",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 71.3 >= 55.0."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 7991,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_pltr_7991_20261126T023124Z",
+      "status": "NO_ACTION",
+      "symbol": "PLTR"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 69.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8824,
+      "diagnostic": "New AMD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (415.55) > EMA20 (406.92); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (415.55) > EMA20 (406.92)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261126T023126Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 69.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8134,
+      "diagnostic": "New GOOGL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (274.85) > EMA20 (273.22); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GOOGL",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (274.85) > EMA20 (273.22)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -1530,9 +1795,118 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261126T022216Z",
+      "snapshotId": "snap_googl_6434_20261126T023130Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 69.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0,
+      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (151.38) > EMA20 (149.64); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (151.38) > EMA20 (149.64)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1137,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_nvda_1137_20261126T023120Z",
+      "status": "NO_ACTION",
+      "symbol": "NVDA"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 12.0
+        }
+      },
+      "confluenceScore": 67.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.7879,
+      "diagnostic": "New ARM entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (2.50% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (165.56) > EMA20 (162.16); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.50% > 2.50% limit).",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (165.56) > EMA20 (162.16)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1365,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_arm_1365_20261126T023127Z",
+      "status": "NO_ACTION",
+      "symbol": "ARM"
     },
     {
       "action": "open",
@@ -1561,8 +1935,8 @@
       },
       "confluenceScore": 64.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8729,
-      "diagnostic": "New CAT entry blocked by hard veto(es): ['eToro spread (0.864%) exceeds 20% of expected 3xATR target (4.04%).', 'Post-headline spread stabilization guard: spread (0.864%) exceeds threshold (0.10%) following surprise catalyst.', 'Overbought momentum veto: RSI(14) is 69.1 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.1 >= 55.0.']",
+      "convictionScore": 0.8727,
+      "diagnostic": "New CAT entry blocked by hard veto(es): ['eToro spread (0.864%) exceeds 20% of expected 3xATR target (4.04%).', 'Post-headline spread stabilization guard: spread (0.864%) exceeds threshold (0.10%) following surprise catalyst.', 'Overbought momentum veto: RSI(14) is 69.1 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.1 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
         "eToro spread (0.864%) exceeds 20% of expected 3xATR target (4.04%).",
@@ -1570,7 +1944,7 @@
         "Overbought momentum veto: RSI(14) is 69.1 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CAT",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.1 >= 55.0."
       ],
       "hasHardVetoes": true,
@@ -1585,7 +1959,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261126T022207Z",
+      "snapshotId": "snap_cat_1012_20261126T023122Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -1617,13 +1991,13 @@
       "confluenceScore": 63.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Post-headline spread stabilization guard: spread (0.315%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).']",
+      "diagnostic": "New CRWD entry blocked by hard veto(es): ['Signal direction is neutral (no directional edge > 0.15).', 'Post-headline spread stabilization guard: spread (0.315%) exceeds threshold (0.10%) following surprise catalyst.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).']",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
         "Post-headline spread stabilization guard: spread (0.315%) exceeds threshold (0.10%) following surprise catalyst.",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity CRWD",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3)."
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -1637,7 +2011,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261126T022220Z",
+      "snapshotId": "snap_crwd_5506_20261126T023132Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -1668,13 +2042,13 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8472,
-      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (1.085%) exceeds 20% of expected 3xATR target (2.62%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (169.57) > EMA20 (167.67); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.8538,
+      "diagnostic": "New MS entry blocked by hard veto(es): ['eToro spread (1.085%) exceeds 20% of expected 3xATR target (2.62%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (169.57) > EMA20 (167.67); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "eToro spread (1.085%) exceeds 20% of expected 3xATR target (2.62%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MS",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (169.57) > EMA20 (167.67)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -1692,7 +2066,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261126T022209Z",
+      "snapshotId": "snap_ms_1976_20261126T023123Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -1724,11 +2098,11 @@
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (105.75) > EMA20 (104.70); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "diagnostic": "New ORCL entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (105.75) > EMA20 (104.70); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ORCL",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (105.75) > EMA20 (104.70)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -1746,7 +2120,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261126T022206Z",
+      "snapshotId": "snap_orcl_1135_20261126T023121Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -1777,20 +2151,19 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7699,
-      "diagnostic": "New ARM entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (2.50% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (165.56) > EMA20 (162.16); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "convictionScore": 0.5524,
+      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (246.71) > EMA20 (245.42); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.50% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ARM",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (165.56) > EMA20 (162.16)",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (246.71) > EMA20 (245.42)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
         "blocking new equity short."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1365,
+      "instrumentId": 1005,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1801,9 +2174,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261126T022213Z",
+      "snapshotId": "snap_amzn_1005_20261126T023131Z",
       "status": "NO_ACTION",
-      "symbol": "ARM"
+      "symbol": "AMZN"
     },
     {
       "action": "open",
@@ -1833,12 +2206,12 @@
       "confluenceScore": 53.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.7091,
-      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (0.673%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "diagnostic": "New MRK entry blocked by hard veto(es): ['eToro spread (0.673%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "sellShort",
       "hardVetoes": [
         "eToro spread (0.673%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity MRK",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
         "blocking new equity short."
       ],
@@ -1854,63 +2227,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261126T022216Z",
+      "snapshotId": "snap_mrk_1027_20261126T023129Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 0.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 52.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.88,
-      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.921%) exceeds 20% of expected 3xATR target (5.18%).', 'Overbought momentum veto: RSI(14) is 61.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 61.0 >= 55.0.']",
-      "direction": "buy",
-      "hardVetoes": [
-        "eToro spread (1.921%) exceeds 20% of expected 3xATR target (5.18%).",
-        "Overbought momentum veto: RSI(14) is 61.0 >= 60.0 without tier-1 catalyst",
-        "blocking new long entry at extended levels.",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 61.0 >= 55.0."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1634,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_txn_1634_20261126T022214Z",
-      "status": "NO_ACTION",
-      "symbol": "TXN"
     },
     {
       "action": "hold",
@@ -1940,11 +2259,11 @@
       "confluenceScore": 52.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "New GS entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (807.66) > EMA20 (802.67); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
+      "diagnostic": "New GS entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (807.66) > EMA20 (802.67); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
       "direction": "neutral",
       "hardVetoes": [
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity GS",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
         "Short-entry 15m momentum guard: 15m trend is bullish and price (807.66) > EMA20 (802.67)",
         "blocking short into intraday bounce.",
         "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
@@ -1962,168 +2281,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261126T022208Z",
+      "snapshotId": "snap_gs_1467_20261126T023122Z",
       "status": "NO_ACTION",
       "symbol": "GS"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 44.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New INTC entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (54.90) > EMA20 (54.10); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity INTC",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (54.90) > EMA20 (54.10)",
-        "blocking short into intraday bounce.",
-        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1021,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_intc_1021_20261126T022209Z",
-      "status": "NO_ACTION",
-      "symbol": "INTC"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 44.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New AMD entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (415.55) > EMA20 (406.92); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMD",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (415.55) > EMA20 (406.92)",
-        "blocking short into intraday bounce.",
-        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261126T022212Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 44.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New META entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.6 >= 55.0.']",
-      "direction": "buy",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity META",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 69.6 >= 55.0."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1003,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_meta_1003_20261126T022219Z",
-      "status": "NO_ACTION",
-      "symbol": "META"
     },
     {
       "action": "open",
@@ -2153,12 +2313,12 @@
       "confluenceScore": 43.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "New COP entry blocked by hard veto(es): ['eToro spread (1.164%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).']",
+      "diagnostic": "New COP entry blocked by hard veto(es): ['eToro spread (1.164%) exceeds 20% of expected 3xATR target (2.40%).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).']",
       "direction": "buy",
       "hardVetoes": [
         "eToro spread (1.164%) exceeds 20% of expected 3xATR target (2.40%).",
         "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity COP",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3)."
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1510,
@@ -2172,7 +2332,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261126T022215Z",
+      "snapshotId": "snap_cop_1510_20261126T023128Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -2182,15 +2342,15 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 3.0
+          "score": 10.0
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 12.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 20.0
+          "score": 0.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -2201,19 +2361,21 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 42.0,
+      "confluenceScore": 41.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New PLTR entry blocked by hard veto(es): ['Abnormal Oil Signal WTI vs eToro price divergence (5.76% > 2.50% limit).', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 71.3 >= 55.0.']",
+      "convictionScore": 0.4,
+      "diagnostic": "New TXN entry blocked by hard veto(es): ['eToro spread (1.921%) exceeds 20% of expected 3xATR target (5.18%).', 'Overbought momentum veto: RSI(14) is 61.0 >= 60.0 without tier-1 catalyst; blocking new long entry at extended levels.', 'Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN; blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).', 'VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 61.0 >= 55.0.']",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (5.76% > 2.50% limit).",
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity PLTR",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 71.3 >= 55.0."
+        "eToro spread (1.921%) exceeds 20% of expected 3xATR target (5.18%).",
+        "Overbought momentum veto: RSI(14) is 61.0 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity TXN",
+        "blocking new entry during illiquid/extended hours (current UTC=02:31, weekday=3).",
+        "VIX backwardation long gating: VIX/VIX3M=1.08 > 1.0 with RSI(14) 61.0 >= 55.0."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 7991,
+      "instrumentId": 1634,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2224,174 +2386,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261126T022210Z",
+      "snapshotId": "snap_txn_1634_20261126T023128Z",
       "status": "NO_ACTION",
-      "symbol": "PLTR"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 42.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New AMZN entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (246.71) > EMA20 (245.42); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity AMZN",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (246.71) > EMA20 (245.42)",
-        "blocking short into intraday bounce.",
-        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1005,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amzn_1005_20261126T022218Z",
-      "status": "NO_ACTION",
-      "symbol": "AMZN"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 42.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0,
-      "diagnostic": "New NVDA entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (151.38) > EMA20 (149.64); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity NVDA",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (151.38) > EMA20 (149.64)",
-        "blocking short into intraday bounce.",
-        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1137,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_nvda_1137_20261126T022204Z",
-      "status": "NO_ACTION",
-      "symbol": "NVDA"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 3.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 12.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 36.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.45,
-      "diagnostic": "New ASML entry blocked by hard veto(es): ['Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML; blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).', 'Short-entry 15m momentum guard: 15m trend is bullish and price (1317.50) > EMA20 (1302.87); blocking short into intraday bounce.', 'Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%); blocking new equity short.']",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Outside regular US cash market hours (13:30\u201321:00 UTC) for equity ASML",
-        "blocking new entry during illiquid/extended hours (current UTC=02:22, weekday=3).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (1317.50) > EMA20 (1302.87)",
-        "blocking short into intraday bounce.",
-        "Intraday market-breadth filter: 100% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 4244,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_asml_4244_20261126T022213Z",
-      "status": "NO_ACTION",
-      "symbol": "ASML"
+      "symbol": "TXN"
     }
   ],
-  "snapshotId": "snap_oil_17_20261126T022204Z",
+  "snapshotId": "snap_oil_17_20261126T023119Z",
   "status": "NO_ACTION",
   "topCandidate": "OIL",
   "watchlist": [
