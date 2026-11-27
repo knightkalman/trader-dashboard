@@ -24,8 +24,8 @@
   },
   "confluenceScore": 100.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-27T14:42:15Z",
-  "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+  "cycleTimestamp": "2026-11-27T14:52:13Z",
+  "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
@@ -38,7 +38,7 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -50,16 +50,21 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 100.0,
+      "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8022,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "sellShort",
       "hardVetoes": [
-        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
+        "Post-headline spread stabilization guard: spread (0.109%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Pullback proximity guard: AMD extended 4.02x ATR beyond EMA20 on high RVOL (3.00x) & ADX (27.0)",
+        "wait for pullback <= 1.0x ATR.",
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).",
+        "Intraday market-breadth filter: 77% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1832,
@@ -73,7 +78,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261127T144148Z",
+      "snapshotId": "snap_amd_1832_20261127T145144Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
@@ -105,10 +110,14 @@
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Instrument AMZN is in post-exit cooldown (9.9m < 60m",
+        "50.1m remaining).",
+        "Anti-whipsaw veto: opposing direction buy after loss on sellShort (9.9m ago) without 4h HTF confirmation (htf=bearish)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1005,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -120,8 +129,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261127T144154Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_amzn_1005_20261127T145150Z",
+      "status": "NO_ACTION",
       "symbol": "AMZN"
     },
     "ARM": {
@@ -152,7 +161,7 @@
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -169,7 +178,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261127T144149Z",
+      "snapshotId": "snap_arm_1365_20261127T145146Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -200,8 +209,8 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5017,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -216,7 +225,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261127T144149Z",
+      "snapshotId": "snap_asml_4244_20261127T145145Z",
       "status": "DECISION_EMITTED",
       "symbol": "ASML"
     },
@@ -234,7 +243,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -245,10 +254,10 @@
           "score": 15.0
         }
       },
-      "confluenceScore": 89.0,
+      "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8768,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8848,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -263,7 +272,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261127T144143Z",
+      "snapshotId": "snap_cat_1012_20261127T145138Z",
       "status": "DECISION_EMITTED",
       "symbol": "CAT"
     },
@@ -294,11 +303,13 @@
       },
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8794,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8944,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "VIX backwardation long gating: VIX/VIX3M=1.05 > 1.0 with RSI(14) 60.2 >= 55.0."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1510,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -310,8 +321,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261127T144151Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_cop_1510_20261127T145147Z",
+      "status": "NO_ACTION",
       "symbol": "COP"
     },
     "CRWD": {
@@ -324,11 +335,11 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -339,20 +350,13 @@
           "score": 5.0
         }
       },
-      "confluenceScore": 71.0,
+      "confluenceScore": 90.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5533,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Oversold momentum veto: RSI(14) is 25.1 <= 30.0 without tier-1 catalyst",
-        "blocking new short entry at depressed levels.",
-        "Pullback proximity guard: CRWD extended 2.43x ATR beyond EMA20 on high RVOL (3.00x) & ADX (39.5)",
-        "wait for pullback <= 1.0x ATR.",
-        "Intraday market-breadth filter: 77% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
-      ],
-      "hasHardVetoes": true,
+      "convictionScore": 0.8895,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
       "instrumentId": 5506,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -364,8 +368,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261127T144156Z",
-      "status": "NO_ACTION",
+      "snapshotId": "snap_crwd_5506_20261127T145153Z",
+      "status": "DECISION_EMITTED",
       "symbol": "CRWD"
     },
     "GOOGL": {
@@ -395,8 +399,8 @@
       },
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8003,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8203,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -411,7 +415,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261127T144152Z",
+      "snapshotId": "snap_googl_6434_20261127T145148Z",
       "status": "DECISION_EMITTED",
       "symbol": "GOOGL"
     },
@@ -443,7 +447,7 @@
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -458,8 +462,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261127T144143Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_gs_1467_20261127T145139Z",
+      "status": "NO_ACTION",
       "symbol": "GS"
     },
     "HOOD": {
@@ -489,11 +493,14 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.927,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9069,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Instrument HOOD is in post-exit cooldown (3.6m < 150m",
+        "146.4m remaining)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 9272,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -505,7 +512,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261127T144157Z",
+      "snapshotId": "snap_hood_9272_20261127T145154Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -536,8 +543,8 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8906,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9198,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -554,7 +561,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261127T144144Z",
+      "snapshotId": "snap_intc_1021_20261127T145140Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -586,7 +593,7 @@
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -601,7 +608,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261127T144155Z",
+      "snapshotId": "snap_meta_1003_20261127T145152Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -627,17 +634,20 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 12.0
+          "score": 15.0
         }
       },
-      "confluenceScore": 97.0,
+      "confluenceScore": 100.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 1.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 65.6 >= 60.0 without tier-1 catalyst",
-        "blocking new long entry at extended levels."
+        "Overbought momentum veto: RSI(14) is 69.4 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: MRK extended 1.02x ATR beyond EMA20 on high RVOL (1.48x) & ADX (29.1)",
+        "wait for pullback <= 1.0x ATR.",
+        "VIX backwardation long gating: VIX/VIX3M=1.05 > 1.0 with RSI(14) 69.4 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1027,
@@ -651,7 +661,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261127T144151Z",
+      "snapshotId": "snap_mrk_1027_20261127T145148Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -682,8 +692,8 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.879,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8793,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -698,8 +708,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261127T144145Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_ms_1976_20261127T145140Z",
+      "status": "NO_ACTION",
       "symbol": "MS"
     },
     "MU": {
@@ -729,8 +739,8 @@
       },
       "confluenceScore": 92.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9152,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9198,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -747,7 +757,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261127T144142Z",
+      "snapshotId": "snap_mu_1130_20261127T145137Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -779,10 +789,10 @@
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
-        "Pullback proximity guard: NVDA extended 4.60x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.0)",
+        "Pullback proximity guard: NVDA extended 3.55x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.8)",
         "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
@@ -797,7 +807,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261127T144141Z",
+      "snapshotId": "snap_nvda_1137_20261127T145136Z",
       "status": "DECISION_EMITTED",
       "symbol": "NVDA"
     },
@@ -811,7 +821,7 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 35.0
+          "score": 24.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -826,14 +836,14 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 85.0,
+      "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8205,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.7412,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (7.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument OIL is in post-exit cooldown (68.3m < 150m",
-        "81.7m remaining)."
+        "Instrument OIL is in post-exit cooldown (78.3m < 150m",
+        "71.7m remaining)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 17,
@@ -847,7 +857,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261127T144140Z",
+      "snapshotId": "snap_oil_17_20261127T145136Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -865,7 +875,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 5.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -876,10 +886,10 @@
           "score": 5.0
         }
       },
-      "confluenceScore": 61.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15)."
@@ -896,7 +906,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261127T144142Z",
+      "snapshotId": "snap_orcl_1135_20261127T145138Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -928,7 +938,7 @@
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 1.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -943,7 +953,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261127T144146Z",
+      "snapshotId": "snap_pltr_7991_20261127T145141Z",
       "status": "DECISION_EMITTED",
       "symbol": "PLTR"
     },
@@ -974,8 +984,8 @@
       },
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8385,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8041,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -992,7 +1002,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261127T144153Z",
+      "snapshotId": "snap_qcom_1485_20261127T145149Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1024,10 +1034,12 @@
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "VIX backwardation long gating: VIX/VIX3M=1.05 > 1.0 with RSI(14) 64.5 >= 55.0."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 4148,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -1039,7 +1051,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261127T144147Z",
+      "snapshotId": "snap_shop_4148_20261127T145143Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1070,8 +1082,8 @@
       },
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8176,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8125,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -1088,21 +1100,21 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261127T144150Z",
+      "snapshotId": "snap_txn_1634_20261127T145146Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
   },
   "executionMode": "auto_execute_all",
   "funnelMetrics": {
-    "actionableEntries": 10,
+    "actionableEntries": 7,
     "activeProtectiveActions": 0,
     "confluenceEligible": 18,
     "parityPassed": 22,
     "totalWatched": 22
   },
-  "instrument": "AMD",
-  "instrumentId": 1832,
+  "instrument": "MRK",
+  "instrumentId": 1027,
   "orchestratorEnabled": true,
   "parityChecks": {
     "allPassed": true,
@@ -1141,108 +1153,15 @@
       },
       "confluenceScore": 100.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8022,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 1.0,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261127T144148Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 97.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 7991,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_pltr_7991_20261127T144146Z",
-      "status": "DECISION_EMITTED",
-      "symbol": "PLTR"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 12.0
-        }
-      },
-      "confluenceScore": 97.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 65.6 >= 60.0 without tier-1 catalyst",
-        "blocking new long entry at extended levels."
+        "Overbought momentum veto: RSI(14) is 69.4 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Pullback proximity guard: MRK extended 1.02x ATR beyond EMA20 on high RVOL (1.48x) & ADX (29.1)",
+        "wait for pullback <= 1.0x ATR.",
+        "VIX backwardation long gating: VIX/VIX3M=1.05 > 1.0 with RSI(14) 69.4 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1027,
@@ -1256,7 +1175,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261127T144151Z",
+      "snapshotId": "snap_mrk_1027_20261127T145148Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -1287,12 +1206,12 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.927,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 1.0,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
-      "instrumentId": 9272,
+      "instrumentId": 7991,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1303,9 +1222,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261127T144157Z",
-      "status": "NO_ACTION",
-      "symbol": "HOOD"
+      "snapshotId": "snap_pltr_7991_20261127T145141Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "PLTR"
     },
     {
       "action": "open",
@@ -1334,8 +1253,8 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8906,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9198,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -1352,7 +1271,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261127T144144Z",
+      "snapshotId": "snap_intc_1021_20261127T145140Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -1383,8 +1302,105 @@
       },
       "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.879,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9069,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Instrument HOOD is in post-exit cooldown (3.6m < 150m",
+        "146.4m remaining)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 9272,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_hood_9272_20261127T145154Z",
+      "status": "NO_ACTION",
+      "symbol": "HOOD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 97.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8848,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1012,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cat_1012_20261127T145138Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "CAT"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 97.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8793,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1399,8 +1415,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261127T144145Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_ms_1976_20261127T145140Z",
+      "status": "NO_ACTION",
       "symbol": "MS"
     },
     {
@@ -1430,8 +1446,8 @@
       },
       "confluenceScore": 92.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9152,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9198,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -1448,7 +1464,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261127T144142Z",
+      "snapshotId": "snap_mu_1130_20261127T145137Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -1458,7 +1474,7 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 7.0
+          "score": 10.0
         },
         "regimeAndNews": {
           "max": 35.0,
@@ -1466,7 +1482,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 12.0
+          "score": 20.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -1474,17 +1490,17 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 89.0,
+      "confluenceScore": 90.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8768,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8895,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
-      "instrumentId": 1012,
+      "instrumentId": 5506,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1495,9 +1511,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261127T144143Z",
+      "snapshotId": "snap_crwd_5506_20261127T145153Z",
       "status": "DECISION_EMITTED",
-      "symbol": "CAT"
+      "symbol": "CRWD"
     },
     {
       "action": "open",
@@ -1527,7 +1543,7 @@
       "confluenceScore": 89.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -1544,7 +1560,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261127T144149Z",
+      "snapshotId": "snap_arm_1365_20261127T145146Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -1575,8 +1591,8 @@
       },
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8385,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8041,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -1593,7 +1609,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261127T144153Z",
+      "snapshotId": "snap_qcom_1485_20261127T145149Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1625,10 +1641,10 @@
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
-        "Pullback proximity guard: NVDA extended 4.60x ATR beyond EMA20 on high RVOL (3.00x) & ADX (31.0)",
+        "Pullback proximity guard: NVDA extended 3.55x ATR beyond EMA20 on high RVOL (3.00x) & ADX (33.8)",
         "wait for pullback <= 1.0x ATR."
       ],
       "hasHardVetoes": true,
@@ -1643,7 +1659,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261127T144141Z",
+      "snapshotId": "snap_nvda_1137_20261127T145136Z",
       "status": "DECISION_EMITTED",
       "symbol": "NVDA"
     },
@@ -1674,11 +1690,13 @@
       },
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8794,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8944,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "VIX backwardation long gating: VIX/VIX3M=1.05 > 1.0 with RSI(14) 60.2 >= 55.0."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1510,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -1690,8 +1708,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261127T144151Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_cop_1510_20261127T145147Z",
+      "status": "NO_ACTION",
       "symbol": "COP"
     },
     {
@@ -1721,15 +1739,12 @@
       },
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8205,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8203,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [
-        "Instrument OIL is in post-exit cooldown (68.3m < 150m",
-        "81.7m remaining)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 17,
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 6434,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1740,9 +1755,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261127T144140Z",
-      "status": "NO_ACTION",
-      "symbol": "OIL"
+      "snapshotId": "snap_googl_6434_20261127T145148Z",
+      "status": "DECISION_EMITTED",
+      "symbol": "GOOGL"
     },
     {
       "action": "open",
@@ -1771,8 +1786,8 @@
       },
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8176,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8125,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
         "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2)."
@@ -1789,56 +1804,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261127T144150Z",
+      "snapshotId": "snap_txn_1634_20261127T145146Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 85.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8003,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261127T144152Z",
-      "status": "DECISION_EMITTED",
-      "symbol": "GOOGL"
     },
     {
       "action": "open",
@@ -1867,8 +1835,62 @@
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5017,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Post-headline spread stabilization guard: spread (0.109%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Pullback proximity guard: AMD extended 4.02x ATR beyond EMA20 on high RVOL (3.00x) & ADX (27.0)",
+        "wait for pullback <= 1.0x ATR.",
+        "Sector concentration veto: 2 open position(s) and 0 pending order(s) already active in sector 'semiconductors' (max=2).",
+        "Intraday market-breadth filter: 77% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261127T145144Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1883,7 +1905,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261127T144149Z",
+      "snapshotId": "snap_asml_4244_20261127T145145Z",
       "status": "DECISION_EMITTED",
       "symbol": "ASML"
     },
@@ -1915,10 +1937,14 @@
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Instrument AMZN is in post-exit cooldown (9.9m < 60m",
+        "50.1m remaining).",
+        "Anti-whipsaw veto: opposing direction buy after loss on sellShort (9.9m ago) without 4h HTF confirmation (htf=bearish)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1005,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -1930,8 +1956,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261127T144154Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_amzn_1005_20261127T145150Z",
+      "status": "NO_ACTION",
       "symbol": "AMZN"
     },
     {
@@ -1962,7 +1988,7 @@
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -1977,8 +2003,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261127T144143Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_gs_1467_20261127T145139Z",
+      "status": "NO_ACTION",
       "symbol": "GS"
     },
     {
@@ -2008,11 +2034,63 @@
       },
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.7412,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (7.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Instrument OIL is in post-exit cooldown (78.3m < 150m",
+        "71.7m remaining)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 17,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_oil_17_20261127T145136Z",
+      "status": "NO_ACTION",
+      "symbol": "OIL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 74.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "VIX backwardation long gating: VIX/VIX3M=1.05 > 1.0 with RSI(14) 64.5 >= 55.0."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 4148,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -2024,7 +2102,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261127T144147Z",
+      "snapshotId": "snap_shop_4148_20261127T145143Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -2056,7 +2134,7 @@
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -2071,17 +2149,17 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261127T144155Z",
+      "snapshotId": "snap_meta_1003_20261127T145152Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
     {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
@@ -2100,64 +2178,10 @@
           "score": 5.0
         }
       },
-      "confluenceScore": 71.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.5533,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Oversold momentum veto: RSI(14) is 25.1 <= 30.0 without tier-1 catalyst",
-        "blocking new short entry at depressed levels.",
-        "Pullback proximity guard: CRWD extended 2.43x ATR beyond EMA20 on high RVOL (3.00x) & ADX (39.5)",
-        "wait for pullback <= 1.0x ATR.",
-        "Intraday market-breadth filter: 77% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 5506,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_crwd_5506_20261127T144156Z",
-      "status": "NO_ACTION",
-      "symbol": "CRWD"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 5.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 61.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (6.1h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15)."
@@ -2174,14 +2198,14 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261127T144142Z",
+      "snapshotId": "snap_orcl_1135_20261127T145138Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     }
   ],
-  "snapshotId": "snap_amd_1832_20261127T144148Z",
+  "snapshotId": "snap_mrk_1027_20261127T145148Z",
   "status": "NO_ACTION",
-  "topCandidate": "AMD",
+  "topCandidate": "MRK",
   "watchlist": [
     "OIL",
     "NVDA",
