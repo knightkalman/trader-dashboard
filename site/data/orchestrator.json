@@ -15,17 +15,17 @@
     },
     "volatilityRvol": {
       "max": 15.0,
-      "score": 4.0
+      "score": 20.0
     },
     "windowAndHtf": {
       "max": 20.0,
       "score": 15.0
     }
   },
-  "confluenceScore": 84.0,
+  "confluenceScore": 100.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-27T17:32:28Z",
-  "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+  "cycleTimestamp": "2026-11-27T17:41:52Z",
+  "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
@@ -50,16 +50,16 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 15.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 73.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -74,7 +74,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amd_1832_20261127T173158Z",
+      "snapshotId": "snap_amd_1832_20261127T174123Z",
       "status": "NO_ACTION",
       "symbol": "AMD"
     },
@@ -96,22 +96,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 81.0,
+      "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.964,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.999,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Pullback proximity guard: AMZN extended 1.13x ATR beyond EMA20 on high RVOL (1.33x) & ADX (26.4)",
+        "wait for pullback <= 1.0x ATR.",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 67.6 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 69.3 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1005,
@@ -125,7 +127,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261127T173205Z",
+      "snapshotId": "snap_amzn_1005_20261127T174129Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -147,22 +149,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 61.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5516,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.5508,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument ARM is in post-exit cooldown (29.8m < 60m",
-        "30.2m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument ARM is in post-exit cooldown (39.1m < 60m",
+        "20.9m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -177,7 +179,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261127T173200Z",
+      "snapshotId": "snap_arm_1365_20261127T174124Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -199,20 +201,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 69.0,
+      "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8338,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8344,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -227,7 +229,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261127T173159Z",
+      "snapshotId": "snap_asml_4244_20261127T174124Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -249,22 +251,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 8.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 77.0,
+      "confluenceScore": 95.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8741,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8919,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument CAT is in post-exit cooldown (29.9m < 60m",
-        "30.1m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument CAT is in post-exit cooldown (39.3m < 60m",
+        "20.7m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -279,7 +281,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261127T173153Z",
+      "snapshotId": "snap_cat_1012_20261127T174119Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -301,22 +303,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 81.0,
+      "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9584,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9585,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument COP is in post-exit cooldown (29.7m < 60m",
-        "30.3m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument COP is in post-exit cooldown (39.1m < 60m",
+        "20.9m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -331,7 +333,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261127T173201Z",
+      "snapshotId": "snap_cop_1510_20261127T174126Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -353,24 +355,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 72.0,
+      "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9389,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.938,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 62.2 >= 60.0 without tier-1 catalyst",
+        "Overbought momentum veto: RSI(14) is 60.2 >= 60.0 without tier-1 catalyst",
         "blocking new long entry at extended levels.",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 62.2 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 60.2 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -384,11 +386,166 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261127T173207Z",
+      "snapshotId": "snap_crwd_5506_20261127T174131Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
     "GOOGL": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8349,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Instrument GOOGL is in post-exit cooldown (39.0m < 60m",
+        "21.0m remaining).",
+        "Anti-whipsaw veto: opposing direction buy after loss on sellShort (39.0m ago) without 4h HTF confirmation (htf=bearish).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 6434,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_googl_6434_20261127T174127Z",
+      "status": "NO_ACTION",
+      "symbol": "GOOGL"
+    },
+    "GS": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8034,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Instrument GS is in post-exit cooldown (39.3m < 60m",
+        "20.7m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1467,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_gs_1467_20261127T174119Z",
+      "status": "NO_ACTION",
+      "symbol": "GS"
+    },
+    "HOOD": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8893,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 9272,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_hood_9272_20261127T174132Z",
+      "status": "NO_ACTION",
+      "symbol": "HOOD"
+    },
+    "INTC": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -415,166 +572,11 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7977,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.4969,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument GOOGL is in post-exit cooldown (29.7m < 60m",
-        "30.3m remaining).",
-        "Anti-whipsaw veto: opposing direction buy after loss on sellShort (29.7m ago) without 4h HTF confirmation (htf=bearish).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261127T173203Z",
-      "status": "NO_ACTION",
-      "symbol": "GOOGL"
-    },
-    "GS": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 69.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8766,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Instrument GS is in post-exit cooldown (29.9m < 60m",
-        "30.1m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1467,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_gs_1467_20261127T173154Z",
-      "status": "NO_ACTION",
-      "symbol": "GS"
-    },
-    "HOOD": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 69.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8875,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 9272,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_hood_9272_20261127T173209Z",
-      "status": "NO_ACTION",
-      "symbol": "HOOD"
-    },
-    "INTC": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -589,7 +591,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261127T173155Z",
+      "snapshotId": "snap_intc_1021_20261127T174120Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -620,11 +622,11 @@
       },
       "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9241,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.947,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -639,7 +641,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261127T173206Z",
+      "snapshotId": "snap_meta_1003_20261127T174130Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -653,7 +655,7 @@
         },
         "regimeAndNews": {
           "max": 35.0,
-          "score": 24.0
+          "score": 35.0
         },
         "spreadEfficiency": {
           "max": 15.0,
@@ -661,22 +663,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 58.0,
+      "confluenceScore": 84.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.5535,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.896,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 60.9 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 60.3 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1027,
@@ -690,7 +692,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261127T173202Z",
+      "snapshotId": "snap_mrk_1027_20261127T174126Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -712,22 +714,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 60.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument MS is in post-exit cooldown (29.8m < 60m",
-        "30.2m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument MS is in post-exit cooldown (39.2m < 60m",
+        "20.8m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -742,7 +744,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261127T173156Z",
+      "snapshotId": "snap_ms_1976_20261127T174120Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -773,13 +775,13 @@
       },
       "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8801,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8812,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument MU is in post-exit cooldown (30.0m < 60m",
-        "30.0m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument MU is in post-exit cooldown (39.4m < 60m",
+        "20.6m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -794,7 +796,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261127T173152Z",
+      "snapshotId": "snap_mu_1130_20261127T174118Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -825,14 +827,12 @@
       },
       "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8987,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8664,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend.",
-        "Intraday market-breadth filter: 64% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1137,
@@ -846,7 +846,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261127T173150Z",
+      "snapshotId": "snap_nvda_1137_20261127T174116Z",
       "status": "NO_ACTION",
       "symbol": "NVDA"
     },
@@ -878,7 +878,7 @@
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (4.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (4.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15)."
@@ -895,7 +895,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261127T173150Z",
+      "snapshotId": "snap_oil_17_20261127T174116Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -917,21 +917,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 60.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -946,7 +946,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261127T173152Z",
+      "snapshotId": "snap_orcl_1135_20261127T174118Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -977,15 +977,15 @@
       },
       "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9893,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 1.0,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument PLTR is in post-exit cooldown (29.8m < 60m",
-        "30.2m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument PLTR is in post-exit cooldown (39.2m < 60m",
+        "20.8m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 60.3 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 59.1 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 7991,
@@ -999,7 +999,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261127T173157Z",
+      "snapshotId": "snap_pltr_7991_20261127T174121Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -1021,22 +1021,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 100.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 1.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 59.5 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 57.9 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1485,
@@ -1050,7 +1050,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261127T173204Z",
+      "snapshotId": "snap_qcom_1485_20261127T174128Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1072,22 +1072,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 58.0,
+      "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 60.7 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 57.7 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 4148,
@@ -1101,7 +1101,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261127T173158Z",
+      "snapshotId": "snap_shop_4148_20261127T174123Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1123,22 +1123,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 69.0,
+      "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9598,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9596,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 63.9 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 56.1 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1152,7 +1152,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261127T173201Z",
+      "snapshotId": "snap_txn_1634_20261127T174125Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
@@ -1161,7 +1161,7 @@
   "funnelMetrics": {
     "actionableEntries": 0,
     "activeProtectiveActions": 0,
-    "confluenceEligible": 9,
+    "confluenceEligible": 15,
     "parityPassed": 22,
     "totalWatched": 22
   },
@@ -1196,22 +1196,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 100.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 1.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 59.5 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 57.9 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1485,
@@ -1225,7 +1225,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261127T173204Z",
+      "snapshotId": "snap_qcom_1485_20261127T174128Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1247,22 +1247,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 81.0,
+      "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.964,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.999,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Pullback proximity guard: AMZN extended 1.13x ATR beyond EMA20 on high RVOL (1.33x) & ADX (26.4)",
+        "wait for pullback <= 1.0x ATR.",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 67.6 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 69.3 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1005,
@@ -1276,7 +1278,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261127T173205Z",
+      "snapshotId": "snap_amzn_1005_20261127T174129Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -1298,22 +1300,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 81.0,
+      "confluenceScore": 97.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9584,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9585,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument COP is in post-exit cooldown (29.7m < 60m",
-        "30.3m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument COP is in post-exit cooldown (39.1m < 60m",
+        "20.9m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -1328,9 +1330,165 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261127T173201Z",
+      "snapshotId": "snap_cop_1510_20261127T174126Z",
       "status": "NO_ACTION",
       "symbol": "COP"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 10.0
+        }
+      },
+      "confluenceScore": 95.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8919,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Instrument CAT is in post-exit cooldown (39.3m < 60m",
+        "20.7m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1012,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cat_1012_20261127T174119Z",
+      "status": "NO_ACTION",
+      "symbol": "CAT"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 88.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.938,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Overbought momentum veto: RSI(14) is 60.2 >= 60.0 without tier-1 catalyst",
+        "blocking new long entry at extended levels.",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend.",
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 60.2 >= 55.0."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 5506,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_crwd_5506_20261127T174131Z",
+      "status": "NO_ACTION",
+      "symbol": "CRWD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 10.0
+        }
+      },
+      "confluenceScore": 84.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.896,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend.",
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 60.3 >= 55.0."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1027,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mrk_1027_20261127T174126Z",
+      "status": "NO_ACTION",
+      "symbol": "MRK"
     },
     {
       "action": "open",
@@ -1359,11 +1517,11 @@
       },
       "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9241,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.947,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -1378,7 +1536,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261127T173206Z",
+      "snapshotId": "snap_meta_1003_20261127T174130Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -1409,14 +1567,12 @@
       },
       "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8987,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8664,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend.",
-        "Intraday market-breadth filter: 64% of watchlist is intraday bullish (>= 60%)",
-        "blocking new equity short."
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1137,
@@ -1430,7 +1586,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261127T173150Z",
+      "snapshotId": "snap_nvda_1137_20261127T174116Z",
       "status": "NO_ACTION",
       "symbol": "NVDA"
     },
@@ -1461,15 +1617,15 @@
       },
       "confluenceScore": 79.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9893,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 1.0,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument PLTR is in post-exit cooldown (29.8m < 60m",
-        "30.2m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument PLTR is in post-exit cooldown (39.2m < 60m",
+        "20.8m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 60.3 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 59.1 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 7991,
@@ -1483,7 +1639,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261127T173157Z",
+      "snapshotId": "snap_pltr_7991_20261127T174121Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -1493,7 +1649,7 @@
       "confluenceBreakdown": {
         "momentum": {
           "max": 15.0,
-          "score": 10.0
+          "score": 7.0
         },
         "regimeAndNews": {
           "max": 35.0,
@@ -1505,276 +1661,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 8.0
+          "score": 3.0
         }
       },
       "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8741,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9596,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument CAT is in post-exit cooldown (29.9m < 60m",
-        "30.1m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1012,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cat_1012_20261127T173153Z",
-      "status": "NO_ACTION",
-      "symbol": "CAT"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1021,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_intc_1021_20261127T173155Z",
-      "status": "NO_ACTION",
-      "symbol": "INTC"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.12,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (4.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 17,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_oil_17_20261127T173150Z",
-      "status": "NO_ACTION",
-      "symbol": "OIL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 73.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261127T173158Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 72.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9389,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Overbought momentum veto: RSI(14) is 62.2 >= 60.0 without tier-1 catalyst",
-        "blocking new long entry at extended levels.",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 62.2 >= 55.0."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 5506,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_crwd_5506_20261127T173207Z",
-      "status": "NO_ACTION",
-      "symbol": "CRWD"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 69.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9598,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 63.9 >= 55.0."
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 56.1 >= 55.0."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1788,7 +1690,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261127T173201Z",
+      "snapshotId": "snap_txn_1634_20261127T174125Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     },
@@ -1810,20 +1712,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 69.0,
+      "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8875,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8893,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -1838,7 +1740,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261127T173209Z",
+      "snapshotId": "snap_hood_9272_20261127T174132Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -1860,26 +1762,27 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 69.0,
+      "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8801,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8349,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument MU is in post-exit cooldown (30.0m < 60m",
-        "30.0m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Instrument GOOGL is in post-exit cooldown (39.0m < 60m",
+        "21.0m remaining).",
+        "Anti-whipsaw veto: opposing direction buy after loss on sellShort (39.0m ago) without 4h HTF confirmation (htf=bearish).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1130,
+      "instrumentId": 6434,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1890,9 +1793,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261127T173152Z",
+      "snapshotId": "snap_googl_6434_20261127T174127Z",
       "status": "NO_ACTION",
-      "symbol": "MU"
+      "symbol": "GOOGL"
     },
     {
       "action": "open",
@@ -1912,72 +1815,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 69.0,
+      "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8766,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8344,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument GS is in post-exit cooldown (29.9m < 60m",
-        "30.1m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1467,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_gs_1467_20261127T173154Z",
-      "status": "NO_ACTION",
-      "symbol": "GS"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 69.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8338,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -1992,9 +1843,317 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261127T173159Z",
+      "snapshotId": "snap_asml_4244_20261127T174124Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8034,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Instrument GS is in post-exit cooldown (39.3m < 60m",
+        "20.7m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1467,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_gs_1467_20261127T174119Z",
+      "status": "NO_ACTION",
+      "symbol": "GS"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 76.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.12,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (4.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Signal direction is neutral (no directional edge > 0.15)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 17,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_oil_17_20261127T174116Z",
+      "status": "NO_ACTION",
+      "symbol": "OIL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 74.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend.",
+        "VIX backwardation long gating: VIX/VIX3M=1.01 > 1.0 with RSI(14) 57.7 >= 55.0."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4148,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_shop_4148_20261127T174123Z",
+      "status": "NO_ACTION",
+      "symbol": "SHOP"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 69.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8812,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Instrument MU is in post-exit cooldown (39.4m < 60m",
+        "20.6m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1130,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_mu_1130_20261127T174118Z",
+      "status": "NO_ACTION",
+      "symbol": "MU"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 69.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.5508,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Instrument ARM is in post-exit cooldown (39.1m < 60m",
+        "20.9m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1365,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_arm_1365_20261127T174124Z",
+      "status": "NO_ACTION",
+      "symbol": "ARM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 5.0
+        }
+      },
+      "confluenceScore": 68.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Instrument MS is in post-exit cooldown (39.2m < 60m",
+        "20.8m remaining).",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
+        "blocking new entries before weekend."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1976,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_ms_1976_20261127T174120Z",
+      "status": "NO_ACTION",
+      "symbol": "MS"
     },
     {
       "action": "open",
@@ -2018,74 +2177,20 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 10.0
         }
       },
-      "confluenceScore": 61.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.5516,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Instrument ARM is in post-exit cooldown (29.8m < 60m",
-        "30.2m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1365,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_arm_1365_20261127T173200Z",
-      "status": "NO_ACTION",
-      "symbol": "ARM"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 5.0
-        }
-      },
-      "confluenceScore": 60.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument MS is in post-exit cooldown (29.8m < 60m",
-        "30.2m remaining).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1976,
+      "instrumentId": 1832,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2096,9 +2201,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261127T173156Z",
+      "snapshotId": "snap_amd_1832_20261127T174123Z",
       "status": "NO_ACTION",
-      "symbol": "MS"
+      "symbol": "AMD"
     },
     {
       "action": "hold",
@@ -2118,21 +2223,21 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 5.0
         }
       },
-      "confluenceScore": 60.0,
+      "confluenceScore": 68.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
         "Signal direction is neutral (no directional edge > 0.15).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
@@ -2147,7 +2252,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261127T173152Z",
+      "snapshotId": "snap_orcl_1135_20261127T174118Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -2178,18 +2283,15 @@
       },
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7977,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.4969,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Instrument GOOGL is in post-exit cooldown (29.7m < 60m",
-        "30.3m remaining).",
-        "Anti-whipsaw veto: opposing direction buy after loss on sellShort (29.7m ago) without 4h HTF confirmation (htf=bearish).",
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
+        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.3h until market close <= 4.0h lookahead)",
         "blocking new entries before weekend."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 6434,
+      "instrumentId": 1021,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2200,114 +2302,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261127T173203Z",
+      "snapshotId": "snap_intc_1021_20261127T174120Z",
       "status": "NO_ACTION",
-      "symbol": "GOOGL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.5535,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 60.9 >= 55.0."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1027,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_mrk_1027_20261127T173202Z",
-      "status": "NO_ACTION",
-      "symbol": "MRK"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (3.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Weekend switch active: inside Friday pre-weekend liquidation lookahead window (3.5h until market close <= 4.0h lookahead)",
-        "blocking new entries before weekend.",
-        "VIX backwardation long gating: VIX/VIX3M=1.02 > 1.0 with RSI(14) 60.7 >= 55.0."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 4148,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_shop_4148_20261127T173158Z",
-      "status": "NO_ACTION",
-      "symbol": "SHOP"
+      "symbol": "INTC"
     }
   ],
-  "snapshotId": "snap_qcom_1485_20261127T173204Z",
+  "snapshotId": "snap_qcom_1485_20261127T174128Z",
   "status": "NO_ACTION",
   "topCandidate": "QCOM",
   "watchlist": [
