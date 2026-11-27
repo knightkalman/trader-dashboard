@@ -15,69 +15,20 @@
     },
     "volatilityRvol": {
       "max": 15.0,
-      "score": 20.0
+      "score": 12.0
     },
     "windowAndHtf": {
       "max": 20.0,
-      "score": 3.0
+      "score": 15.0
     }
   },
-  "confluenceScore": 88.0,
+  "confluenceScore": 92.0,
   "confluenceThreshold": 75.0,
-  "cycleTimestamp": "2026-11-27T13:32:11Z",
-  "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+  "cycleTimestamp": "2026-11-27T13:41:54Z",
+  "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
   "dispatchChannel": "inline_prepare",
   "evaluations": {
     "AMD": {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 72.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8604,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.46% > 2.50% limit)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261127T133141Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    "AMZN": {
       "action": "open",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
@@ -95,20 +46,73 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (4.47% > 2.50% limit).",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261127T134121Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    "AMZN": {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 73.0,
+      "confluenceScore": 92.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8212,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.208%) exceeds threshold (0.10%) following surprise catalyst."
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.63% > 2.50% limit).",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1005,
@@ -122,7 +126,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_amzn_1005_20261127T133147Z",
+      "snapshotId": "snap_amzn_1005_20261127T134128Z",
       "status": "NO_ACTION",
       "symbol": "AMZN"
     },
@@ -153,12 +157,14 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7696,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.7695,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (6.13% > 2.50% limit).",
-        "Post-headline spread stabilization guard: spread (0.471%) exceeds threshold (0.10%) following surprise catalyst."
+        "Abnormal Oil Signal WTI vs eToro price divergence (6.28% > 2.50% limit).",
+        "Post-headline spread stabilization guard: spread (0.244%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1365,
@@ -172,7 +178,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261127T133142Z",
+      "snapshotId": "snap_arm_1365_20261127T134123Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
@@ -194,20 +200,23 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 61.0,
+      "confluenceScore": 77.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 4244,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -219,7 +228,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_asml_4244_20261127T133142Z",
+      "snapshotId": "snap_asml_4244_20261127T134123Z",
       "status": "NO_ACTION",
       "symbol": "ASML"
     },
@@ -250,11 +259,11 @@
       },
       "confluenceScore": 76.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9309,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9677,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.03% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.05% > 2.50% limit)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1012,
@@ -268,7 +277,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cat_1012_20261127T133136Z",
+      "snapshotId": "snap_cat_1012_20261127T134117Z",
       "status": "NO_ACTION",
       "symbol": "CAT"
     },
@@ -286,7 +295,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 5.0
+          "score": 0.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -297,13 +306,15 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 59.0,
+      "confluenceScore": 54.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "eToro spread (0.684%) exceeds 20% of expected 3xATR target (2.42%)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 1510,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -315,7 +326,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_cop_1510_20261127T133144Z",
+      "snapshotId": "snap_cop_1510_20261127T134126Z",
       "status": "NO_ACTION",
       "symbol": "COP"
     },
@@ -337,20 +348,22 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 76.0,
+      "confluenceScore": 84.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8033,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8026,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.471%) exceeds threshold (0.10%) following surprise catalyst."
+        "Post-headline spread stabilization guard: spread (0.348%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -364,7 +377,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261127T133149Z",
+      "snapshotId": "snap_crwd_5506_20261127T134130Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
     },
@@ -386,20 +399,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 73.0,
+      "confluenceScore": 81.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.55% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.73% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (280.56) > EMA20 (280.29)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 6434,
@@ -413,7 +430,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_googl_6434_20261127T133145Z",
+      "snapshotId": "snap_googl_6434_20261127T134126Z",
       "status": "NO_ACTION",
       "symbol": "GOOGL"
     },
@@ -435,22 +452,24 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 70.0,
+      "confluenceScore": 86.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.55% > 2.50% limit).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (821.50) > EMA20 (817.26)",
-        "blocking short into intraday bounce."
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.65% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (822.25) > EMA20 (817.35)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1467,
@@ -464,7 +483,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_gs_1467_20261127T133137Z",
+      "snapshotId": "snap_gs_1467_20261127T134118Z",
       "status": "NO_ACTION",
       "symbol": "GS"
     },
@@ -496,10 +515,10 @@
       "confluenceScore": 58.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.83% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (5.20% > 2.50% limit)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 9272,
@@ -513,7 +532,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_hood_9272_20261127T133150Z",
+      "snapshotId": "snap_hood_9272_20261127T134131Z",
       "status": "NO_ACTION",
       "symbol": "HOOD"
     },
@@ -545,10 +564,14 @@
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.46% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (4.68% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (57.02) > EMA20 (56.92)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1021,
@@ -562,7 +585,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261127T133137Z",
+      "snapshotId": "snap_intc_1021_20261127T134118Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
@@ -584,20 +607,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 20.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 10.0
         }
       },
-      "confluenceScore": 76.0,
+      "confluenceScore": 92.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9367,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.9352,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.19% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.26% > 2.50% limit)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1003,
@@ -611,7 +634,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_meta_1003_20261127T133148Z",
+      "snapshotId": "snap_meta_1003_20261127T134129Z",
       "status": "NO_ACTION",
       "symbol": "META"
     },
@@ -629,7 +652,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 12.0
+          "score": 0.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -640,13 +663,14 @@
           "score": 5.0
         }
       },
-      "confluenceScore": 71.0,
+      "confluenceScore": 59.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.12,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15)."
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "eToro spread (0.588%) exceeds 20% of expected 3xATR target (2.40%)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1027,
@@ -660,7 +684,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261127T133144Z",
+      "snapshotId": "snap_mrk_1027_20261127T134126Z",
       "status": "NO_ACTION",
       "symbol": "MRK"
     },
@@ -678,7 +702,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 20.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -689,15 +713,17 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 58.0,
+      "confluenceScore": 50.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.75% > 2.50% limit).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (172.16) > EMA20 (170.98)",
-        "blocking short into intraday bounce."
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.83% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (172.30) > EMA20 (170.98)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1976,
@@ -711,7 +737,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_ms_1976_20261127T133138Z",
+      "snapshotId": "snap_ms_1976_20261127T134119Z",
       "status": "NO_ACTION",
       "symbol": "MS"
     },
@@ -742,11 +768,15 @@
       },
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.5695,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (5.58% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (6.07% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (637.77) > EMA20 (637.48)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1130,
@@ -760,7 +790,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261127T133135Z",
+      "snapshotId": "snap_mu_1130_20261127T134116Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -782,17 +812,17 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 92.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "neutral",
       "hardVetoes": [],
       "hasHardVetoes": false,
@@ -807,8 +837,8 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_nvda_1137_20261127T133135Z",
-      "status": "DECISION_EMITTED",
+      "snapshotId": "snap_nvda_1137_20261127T134116Z",
+      "status": "NO_ACTION",
       "symbol": "NVDA"
     },
     "OIL": {
@@ -839,10 +869,13 @@
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.8795,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (8.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (8.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Instrument OIL is in post-exit cooldown (7.9m < 150m",
+        "142.1m remaining)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 17,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -854,7 +887,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261127T133134Z",
+      "snapshotId": "snap_oil_17_20261127T134115Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -885,11 +918,13 @@
       },
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9318,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8868,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.83% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.88% > 2.50% limit).",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1135,
@@ -903,7 +938,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261127T133136Z",
+      "snapshotId": "snap_orcl_1135_20261127T134117Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
     },
@@ -925,20 +960,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 15.0
         }
       },
-      "confluenceScore": 84.0,
+      "confluenceScore": 92.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 1.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.02% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.27% > 2.50% limit)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 7991,
@@ -952,7 +987,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_pltr_7991_20261127T133139Z",
+      "snapshotId": "snap_pltr_7991_20261127T134120Z",
       "status": "NO_ACTION",
       "symbol": "PLTR"
     },
@@ -974,20 +1009,20 @@
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
           "score": 3.0
         }
       },
-      "confluenceScore": 72.0,
+      "confluenceScore": 80.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.8808,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8855,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.42% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.61% > 2.50% limit)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1485,
@@ -1001,7 +1036,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_qcom_1485_20261127T133146Z",
+      "snapshotId": "snap_qcom_1485_20261127T134127Z",
       "status": "NO_ACTION",
       "symbol": "QCOM"
     },
@@ -1019,7 +1054,7 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 0.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
@@ -1030,14 +1065,13 @@
           "score": 3.0
         }
       },
-      "confluenceScore": 57.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.18% > 2.50% limit).",
-        "eToro spread (2.362%) exceeds 20% of expected 3xATR target (4.42%)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (4.37% > 2.50% limit)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 4148,
@@ -1051,7 +1085,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261127T133140Z",
+      "snapshotId": "snap_shop_4148_20261127T134121Z",
       "status": "NO_ACTION",
       "symbol": "SHOP"
     },
@@ -1083,11 +1117,11 @@
       "confluenceScore": 65.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.8828,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.75% > 2.50% limit).",
-        "eToro spread (0.996%) exceeds 20% of expected 3xATR target (4.24%)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.51% > 2.50% limit).",
+        "eToro spread (1.462%) exceeds 20% of expected 3xATR target (3.91%)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1101,21 +1135,21 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261127T133143Z",
+      "snapshotId": "snap_txn_1634_20261127T134125Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     }
   },
   "executionMode": "auto_execute_all",
   "funnelMetrics": {
-    "actionableEntries": 3,
+    "actionableEntries": 0,
     "activeProtectiveActions": 0,
-    "confluenceEligible": 7,
+    "confluenceEligible": 13,
     "parityPassed": 22,
     "totalWatched": 22
   },
-  "instrument": "ORCL",
-  "instrumentId": 1135,
+  "instrument": "PLTR",
+  "instrumentId": 7991,
   "orchestratorEnabled": true,
   "parityChecks": {
     "allPassed": true,
@@ -1145,6 +1179,202 @@
         },
         "volatilityRvol": {
           "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 92.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 1.0,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.27% > 2.50% limit)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 7991,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_pltr_7991_20261127T134120Z",
+      "status": "NO_ACTION",
+      "symbol": "PLTR"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 10.0
+        }
+      },
+      "confluenceScore": 92.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9352,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.26% > 2.50% limit)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1003,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_meta_1003_20261127T134129Z",
+      "status": "NO_ACTION",
+      "symbol": "META"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 92.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8212,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.63% > 2.50% limit).",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1005,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amzn_1005_20261127T134128Z",
+      "status": "NO_ACTION",
+      "symbol": "AMZN"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 92.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "neutral",
+      "hardVetoes": [],
+      "hasHardVetoes": false,
+      "instrumentId": 1137,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_nvda_1137_20261127T134116Z",
+      "status": "NO_ACTION",
+      "symbol": "NVDA"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
           "score": 20.0
         },
         "windowAndHtf": {
@@ -1154,11 +1384,13 @@
       },
       "confluenceScore": 88.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.9318,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8868,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.83% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.88% > 2.50% limit).",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1135,
@@ -1172,9 +1404,62 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_orcl_1135_20261127T133136Z",
+      "snapshotId": "snap_orcl_1135_20261127T134117Z",
       "status": "NO_ACTION",
       "symbol": "ORCL"
+    },
+    {
+      "action": "hold",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 86.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.0,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "neutral",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.65% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (822.25) > EMA20 (817.35)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1467,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_gs_1467_20261127T134118Z",
+      "status": "NO_ACTION",
+      "symbol": "GS"
     },
     {
       "action": "open",
@@ -1204,10 +1489,13 @@
       "confluenceScore": 85.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.8795,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (8.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T22:00:00+00:00 (8.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
+      "hardVetoes": [
+        "Instrument OIL is in post-exit cooldown (7.9m < 150m",
+        "142.1m remaining)."
+      ],
+      "hasHardVetoes": true,
       "instrumentId": 17,
       "isFallbackSentiment": false,
       "parityChecks": {
@@ -1219,7 +1507,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_oil_17_20261127T133134Z",
+      "snapshotId": "snap_oil_17_20261127T134115Z",
       "status": "NO_ACTION",
       "symbol": "OIL"
     },
@@ -1237,11 +1525,11 @@
         },
         "spreadEfficiency": {
           "max": 15.0,
-          "score": 20.0
+          "score": 12.0
         },
         "volatilityRvol": {
           "max": 15.0,
-          "score": 4.0
+          "score": 12.0
         },
         "windowAndHtf": {
           "max": 20.0,
@@ -1250,205 +1538,13 @@
       },
       "confluenceScore": 84.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 1.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.02% > 2.50% limit)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 7991,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_pltr_7991_20261127T133139Z",
-      "status": "NO_ACTION",
-      "symbol": "PLTR"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 84.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "neutral",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1137,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_nvda_1137_20261127T133135Z",
-      "status": "DECISION_EMITTED",
-      "symbol": "NVDA"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 10.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9367,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.19% > 2.50% limit)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1003,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_meta_1003_20261127T133148Z",
-      "status": "NO_ACTION",
-      "symbol": "META"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.9309,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.03% > 2.50% limit)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1012,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cat_1012_20261127T133136Z",
-      "status": "NO_ACTION",
-      "symbol": "CAT"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 12.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 76.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8033,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.8026,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.471%) exceeds threshold (0.10%) following surprise catalyst."
+        "Post-headline spread stabilization guard: spread (0.348%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 5506,
@@ -1462,9 +1558,261 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_crwd_5506_20261127T133149Z",
+      "snapshotId": "snap_crwd_5506_20261127T134130Z",
       "status": "NO_ACTION",
       "symbol": "CRWD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 81.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.73% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (280.56) > EMA20 (280.29)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 6434,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_googl_6434_20261127T134126Z",
+      "status": "NO_ACTION",
+      "symbol": "GOOGL"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 80.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.8855,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.61% > 2.50% limit)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1485,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_qcom_1485_20261127T134127Z",
+      "status": "NO_ACTION",
+      "symbol": "QCOM"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (4.47% > 2.50% limit).",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1832,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_amd_1832_20261127T134121Z",
+      "status": "NO_ACTION",
+      "symbol": "AMD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 77.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 4244,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_asml_4244_20261127T134123Z",
+      "status": "NO_ACTION",
+      "symbol": "ASML"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 10.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 35.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 15.0
+        }
+      },
+      "confluenceScore": 76.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.9677,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (3.05% > 2.50% limit)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1012,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cat_1012_20261127T134117Z",
+      "status": "NO_ACTION",
+      "symbol": "CAT"
     },
     {
       "action": "open",
@@ -1493,11 +1841,15 @@
       },
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.5695,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (5.58% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (6.07% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (637.77) > EMA20 (637.48)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1130,
@@ -1511,7 +1863,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mu_1130_20261127T133135Z",
+      "snapshotId": "snap_mu_1130_20261127T134116Z",
       "status": "NO_ACTION",
       "symbol": "MU"
     },
@@ -1543,10 +1895,14 @@
       "confluenceScore": 74.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.46% > 2.50% limit)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (4.68% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (57.02) > EMA20 (56.92)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1021,
@@ -1560,208 +1916,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_intc_1021_20261127T133137Z",
+      "snapshotId": "snap_intc_1021_20261127T134118Z",
       "status": "NO_ACTION",
       "symbol": "INTC"
     },
     {
       "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 73.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.55% > 2.50% limit)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 6434,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_googl_6434_20261127T133145Z",
-      "status": "NO_ACTION",
-      "symbol": "GOOGL"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 73.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Post-headline spread stabilization guard: spread (0.208%) exceeds threshold (0.10%) following surprise catalyst."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1005,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amzn_1005_20261127T133147Z",
-      "status": "NO_ACTION",
-      "symbol": "AMZN"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 72.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8808,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.42% > 2.50% limit)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1485,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_qcom_1485_20261127T133146Z",
-      "status": "NO_ACTION",
-      "symbol": "QCOM"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 35.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 72.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.8604,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.46% > 2.50% limit)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1832,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_amd_1832_20261127T133141Z",
-      "status": "NO_ACTION",
-      "symbol": "AMD"
-    },
-    {
-      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -1782,19 +1942,19 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 5.0
+          "score": 3.0
         }
       },
-      "confluenceScore": 71.0,
+      "confluenceScore": 69.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.12,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "neutral",
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
       "hardVetoes": [
-        "Signal direction is neutral (no directional edge > 0.15)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (4.37% > 2.50% limit)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 1027,
+      "instrumentId": 4148,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -1805,60 +1965,9 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_mrk_1027_20261127T133144Z",
+      "snapshotId": "snap_shop_4148_20261127T134121Z",
       "status": "NO_ACTION",
-      "symbol": "MRK"
-    },
-    {
-      "action": "hold",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 15.0
-        }
-      },
-      "confluenceScore": 70.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.0,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "neutral",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.55% > 2.50% limit).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (821.50) > EMA20 (817.26)",
-        "blocking short into intraday bounce."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1467,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_gs_1467_20261127T133137Z",
-      "status": "NO_ACTION",
-      "symbol": "GS"
+      "symbol": "SHOP"
     },
     {
       "action": "open",
@@ -1888,11 +1997,11 @@
       "confluenceScore": 65.0,
       "confluenceThreshold": 75.0,
       "convictionScore": 0.8828,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "buy",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.75% > 2.50% limit).",
-        "eToro spread (0.996%) exceeds 20% of expected 3xATR target (4.24%)."
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.51% > 2.50% limit).",
+        "eToro spread (1.462%) exceeds 20% of expected 3xATR target (3.91%)."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1634,
@@ -1906,7 +2015,7 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_txn_1634_20261127T133143Z",
+      "snapshotId": "snap_txn_1634_20261127T134125Z",
       "status": "NO_ACTION",
       "symbol": "TXN"
     },
@@ -1937,12 +2046,14 @@
       },
       "confluenceScore": 61.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.7696,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
+      "convictionScore": 0.7695,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
       "direction": "sellShort",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (6.13% > 2.50% limit).",
-        "Post-headline spread stabilization guard: spread (0.471%) exceeds threshold (0.10%) following surprise catalyst."
+        "Abnormal Oil Signal WTI vs eToro price divergence (6.28% > 2.50% limit).",
+        "Post-headline spread stabilization guard: spread (0.244%) exceeds threshold (0.10%) following surprise catalyst.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
       ],
       "hasHardVetoes": true,
       "instrumentId": 1365,
@@ -1956,206 +2067,12 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_arm_1365_20261127T133142Z",
+      "snapshotId": "snap_arm_1365_20261127T134123Z",
       "status": "NO_ACTION",
       "symbol": "ARM"
     },
     {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 10.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 61.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "sellShort",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 4244,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_asml_4244_20261127T133142Z",
-      "status": "NO_ACTION",
-      "symbol": "ASML"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 5.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 59.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [],
-      "hasHardVetoes": false,
-      "instrumentId": 1510,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_cop_1510_20261127T133144Z",
-      "status": "NO_ACTION",
-      "symbol": "COP"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "sellShort",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (2.75% > 2.50% limit).",
-        "Short-entry 15m momentum guard: 15m trend is bullish and price (172.16) > EMA20 (170.98)",
-        "blocking short into intraday bounce."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 1976,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_ms_1976_20261127T133138Z",
-      "status": "NO_ACTION",
-      "symbol": "MS"
-    },
-    {
-      "action": "open",
-      "assessmentProvider": "llm",
-      "confluenceBreakdown": {
-        "momentum": {
-          "max": 15.0,
-          "score": 7.0
-        },
-        "regimeAndNews": {
-          "max": 35.0,
-          "score": 24.0
-        },
-        "spreadEfficiency": {
-          "max": 15.0,
-          "score": 20.0
-        },
-        "volatilityRvol": {
-          "max": 15.0,
-          "score": 4.0
-        },
-        "windowAndHtf": {
-          "max": 20.0,
-          "score": 3.0
-        }
-      },
-      "confluenceScore": 58.0,
-      "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
-      "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (4.83% > 2.50% limit)."
-      ],
-      "hasHardVetoes": true,
-      "instrumentId": 9272,
-      "isFallbackSentiment": false,
-      "parityChecks": {
-        "allPassed": true,
-        "benchmarks": true,
-        "compression": true,
-        "etoroInstrument": true,
-        "sentiment": true,
-        "signal": true,
-        "technicals": true
-      },
-      "snapshotId": "snap_hood_9272_20261127T133150Z",
-      "status": "NO_ACTION",
-      "symbol": "HOOD"
-    },
-    {
-      "action": "open",
+      "action": "hold",
       "assessmentProvider": "llm",
       "confluenceBreakdown": {
         "momentum": {
@@ -2176,20 +2093,20 @@
         },
         "windowAndHtf": {
           "max": 20.0,
-          "score": 3.0
+          "score": 5.0
         }
       },
-      "confluenceScore": 57.0,
+      "confluenceScore": 59.0,
       "confluenceThreshold": 75.0,
-      "convictionScore": 0.4,
-      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.5h remaining, lookahead=4.0h, mandatory=30m).",
-      "direction": "buy",
+      "convictionScore": 0.12,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "neutral",
       "hardVetoes": [
-        "Abnormal Oil Signal WTI vs eToro price divergence (3.18% > 2.50% limit).",
-        "eToro spread (2.362%) exceeds 20% of expected 3xATR target (4.42%)."
+        "Signal direction is neutral (no directional edge > 0.15).",
+        "eToro spread (0.588%) exceeds 20% of expected 3xATR target (2.40%)."
       ],
       "hasHardVetoes": true,
-      "instrumentId": 4148,
+      "instrumentId": 1027,
       "isFallbackSentiment": false,
       "parityChecks": {
         "allPassed": true,
@@ -2200,14 +2117,165 @@
         "signal": true,
         "technicals": true
       },
-      "snapshotId": "snap_shop_4148_20261127T133140Z",
+      "snapshotId": "snap_mrk_1027_20261127T134126Z",
       "status": "NO_ACTION",
-      "symbol": "SHOP"
+      "symbol": "MRK"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 58.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (5.20% > 2.50% limit)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 9272,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_hood_9272_20261127T134131Z",
+      "status": "NO_ACTION",
+      "symbol": "HOOD"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 0.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 20.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 54.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "buy",
+      "hardVetoes": [
+        "eToro spread (0.684%) exceeds 20% of expected 3xATR target (2.42%)."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1510,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_cop_1510_20261127T134126Z",
+      "status": "NO_ACTION",
+      "symbol": "COP"
+    },
+    {
+      "action": "open",
+      "assessmentProvider": "llm",
+      "confluenceBreakdown": {
+        "momentum": {
+          "max": 15.0,
+          "score": 7.0
+        },
+        "regimeAndNews": {
+          "max": 35.0,
+          "score": 24.0
+        },
+        "spreadEfficiency": {
+          "max": 15.0,
+          "score": 12.0
+        },
+        "volatilityRvol": {
+          "max": 15.0,
+          "score": 4.0
+        },
+        "windowAndHtf": {
+          "max": 20.0,
+          "score": 3.0
+        }
+      },
+      "confluenceScore": 50.0,
+      "confluenceThreshold": 75.0,
+      "convictionScore": 0.4,
+      "diagnostic": "Weekend switch active: Friday session, close=2026-11-27T21:00:00+00:00 (7.3h remaining, lookahead=4.0h, mandatory=30m).",
+      "direction": "sellShort",
+      "hardVetoes": [
+        "Abnormal Oil Signal WTI vs eToro price divergence (2.83% > 2.50% limit).",
+        "Short-entry 15m momentum guard: 15m trend is bullish and price (172.30) > EMA20 (170.98)",
+        "blocking short into intraday bounce.",
+        "Intraday market-breadth filter: 68% of watchlist is intraday bullish (>= 60%)",
+        "blocking new equity short."
+      ],
+      "hasHardVetoes": true,
+      "instrumentId": 1976,
+      "isFallbackSentiment": false,
+      "parityChecks": {
+        "allPassed": true,
+        "benchmarks": true,
+        "compression": true,
+        "etoroInstrument": true,
+        "sentiment": true,
+        "signal": true,
+        "technicals": true
+      },
+      "snapshotId": "snap_ms_1976_20261127T134119Z",
+      "status": "NO_ACTION",
+      "symbol": "MS"
     }
   ],
-  "snapshotId": "snap_orcl_1135_20261127T133136Z",
+  "snapshotId": "snap_pltr_7991_20261127T134120Z",
   "status": "NO_ACTION",
-  "topCandidate": "ORCL",
+  "topCandidate": "PLTR",
   "watchlist": [
     "OIL",
     "NVDA",
